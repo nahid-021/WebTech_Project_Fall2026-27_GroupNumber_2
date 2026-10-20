@@ -2,25 +2,34 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="../Design/bus.css">
         <title> Admin Page </title>
     </head>
     <body>
-        <h1>Admin Login</h1>
+        <div class="header">
+            <img src="../Asset/logo(admin login).png" id="logo">
+            <h1> Admin Login </h1>
+        </div>
         <form>
             <fieldset>
                 <table>
                     <tr>
                         <td> <label for="username">Username:</label> </td>
+                    </tr>
+                    <tr>
                         <td> <input type="text" id="username" name="username"> </td>
                     </tr>
                     <tr>
                         <td> <label for="password">Password:</label> </td>
+                    </tr>
+                    <tr>
                         <td> <input type="password" id="password" name="password"> </td>
                     </tr>
                 </table>
             </fieldset>
             <br>
             <input type="submit" value="Login">
+            <!-- <input type="reset" value="Cancel"> -->
         </form>
     </body>
 
