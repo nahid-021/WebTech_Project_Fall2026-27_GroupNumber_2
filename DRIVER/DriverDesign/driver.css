@@ -156,3 +156,53 @@ body{
     margin-top: 20px;
     padding:10px 25px;
 }
+.SafetyReports{
+    margin: 30px 20px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+}
+.safety-card{
+    maz-width:700px;
+    margin:0 auto;
+    padding: 25px;
+    background-color:white;
+    border:1px solid lightgray;
+    border-radius:10px;
+}
+.safety-cards h2{
+    margin:0 0 25px;
+    font-size: 25px;
+    color: darkslategray;
+
+}
+.form-group{
+    margin-bottom: 20px;
+}
+.form-group label{
+    display: block;
+    margin-bottom:8px;
+    font-weight: bold;
+    color:darkslategray;
+}
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding:12px;
+    border:1px solid lightgray;
+    border-radius: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    background-color:white;
+}
+.form-group textarea {
+    resize:vertical
+}
+.submit-button{
+    padding: 10px 25px;
+    border:none ;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
+    background-color:teal;
+}
