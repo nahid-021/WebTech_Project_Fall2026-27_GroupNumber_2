@@ -1,40 +1,17 @@
-*{
-    box-sizing: border-box;
-}
-
 body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 16px;
     background-color: whitesmoke;
-    max-width: 300px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 30px 20px;
 }
 
-#logo{
-    display: block;
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-h1{
+.header{
+    background-color: black;
+    padding: 2px 2px 2px 5px;
     text-align: center;
-    color: limegreen;
-    font-size: 24px;
-}
-
-input[type="submit"]{
-    background-color: limegreen;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 100%;
+    border: 5px solid white;
+    margin: 10px ;
 }
