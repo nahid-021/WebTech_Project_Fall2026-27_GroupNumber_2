@@ -85,13 +85,7 @@ body{
     border-radius: 10px;
     border: white;
 }
-/* .container-card{
-    margin: 30px 20px;
-    padding: 25px;
-    background-color: white;
-    border-radius: 10px;
-    border: lightsteelblue;
-} */
+
 .container-card h2{
     text-align: center;
     margin-bottom: 20px;
@@ -109,17 +103,13 @@ body{
     border-collapse: collapse;
     background-color:white;
 }
-.data-table th,
+
 .data-table td {
     border: 1px solid lightsteelblue;
     padding:12px;
     text-align:center;
 }
-.data-table th {
-    background-color: royalblue;
-    color:white;
-    font-weight:bold;
-}
+
 
 .btn{
     padding: 8px 15px;
