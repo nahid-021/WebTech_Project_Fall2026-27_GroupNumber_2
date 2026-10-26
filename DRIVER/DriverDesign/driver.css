@@ -5,59 +5,104 @@ body{
    font-family: 'Segoe UI' , 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    font-size: 16px;
    background-color: whitesmoke;
-   
+   padding-left: 220px;
    margin: 0 auto;
+   color:darkslategray;
    
+}
+.BUSNames{
+     display: flex;
+    align-items: center;
+    padding:10px 20px 20px;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
 }
 .logo{
-    float : left;
-    width:50px;
-    height:5-px;
-    margin: 5px 15px;
-    object-fit: contain;
-
+    float : none;
+    display:block;
+    
+    width: 45px;
+    
+    margin: 0 10px 0 0;
+    cursor: pointer;
+    
 }
 .topnav{
-    background-color:teal;
-    overflow:  hidden;
-    border-bottom:1px solid gray;
+    position: fixed;
+    top:0;
+    left:0;
+    width:220px;
+    height:100vh;
+    background-color: midnightblue;
+    overflow:  hidden; 
+    border: bottom 3px solid lightskyblue;
+    padding: 3px 10px;
+    
 }
 .topnav a{
-    float: left;
-    display: block;
-    color:white;
-    text-align:center;
+    float: none;;
+    
+    display: block; 
+    color:white; 
+    text-align:left;
     padding: 15px 20px;
     text-decoration: none;
-    font-weight:bold;
+    font-weight:bold; 
 
 }
 .topnav a:hover {
-    coor:lightyellow;
+    background-color:lightblue;
+    color: midnightblue;
 }
 .topnav .signout{
-    float: right;
-    background-color:crimson;
-    color:white;
-    border-radius:5px;
+    position: fixed;
+    top:15px;
+    right:20px;
+    float: none;
+    background-color:lightblue;
+    color: midnightblue;
+    border-radius:6px;
     margin:5px 15px;
     padding:10px 20px;
 }
 .topnav .signout:hover {
-    background-color: darkred;
-    color:white;
+    background-color: black;
+    color: lightblue;
 }
 .container {
     margin: 30px 20px;
     padding:25px;
-    background-color: 10px;
-    border-radius:10px;
+    background-color: lightsteelblue;
+    border-radius: 10px;
+    border: 1px solid lightsteelblue;
 
+}
+.container{
+    margin: 32px 25px;
+    padding: 25px;
+    background-color: lightsteelblue;
+    border-radius: 10px;
+    border: white;
+}
+/* .container-card{
+    margin: 30px 20px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    border: lightsteelblue;
+} */
+.container-card h2{
+    text-align: center;
+    margin-bottom: 20px;
+    
 }
 .container h2{
     margin: 0 0 20px;
     font-size: 25px;
-    color:darkslategray;
+    color:midnightblue;
+    text-align: center;
+    
 }
 .data-table{
     width:100%;
@@ -66,68 +111,75 @@ body{
 }
 .data-table th,
 .data-table td {
-    border: 1px solid lightgray;
+    border: 1px solid lightsteelblue;
     padding:12px;
     text-align:center;
 }
 .data-table th {
-    background-color:teal;
+    background-color: royalblue;
     color:white;
     font-weight:bold;
 }
-.data-table tbody tr:hover{
-    background-color:lightcyan;
-}
+
 .btn{
     padding: 8px 15px;
     border:none;
     border-radius:5px;
-    background-color:teal;
+    background-color:royalblue;
     color:white;
     font-size:14px;
     cursor:pointer;
 }
 .btn:hover {
-    background-color: darkslategray;
+    background-color: midnightblue;
 }
 .bus-sheba{
      max-width: width 700px;;
       margin:40px auto;
       padding:0 20px;
       text-align: center;
+      background-color: whitesmoke;
+      border:1px solid lightsteelblue;
+      border-radius: 10px;
 }
 .bus-sheba h2{
     margin:0 0 10px;
     font-size:25px;
-    color: teal;
+    color: royalblue;
 
 }
 .bus-sheba{
     margin: 0 0 8px;
-    color:dimgray;
+    color:slategray;
     font-size:16px;
 }
 .site-footer{
     text-align:center;
     padding: 20px 10px;
-    border-top:1px solid lightgray;
-    color:dimgray;
+    border-top:1px solid lightsteelblue;
+    color:slategray;
     font-size:14px;
 
 }
 .site-footer a {
-    color: teal;
+    color: royal blue;
     margin:0 8px;
     text-decoration: none;
 }
+.site-footer a:hover {
+    color: black;
+
+}
 .topnav a.active {
     color:lightyellow;
-    border-bottom: 3px solidyellow;
+    border-bottom: 1px solid lightsteelblue;
     padding-bottom:12 px;
 }
 .card{
     background-color:white;
-    border:1px solid lightgray;
+    border:1px solid lightsteelblue;
+    border-radius: 10px;
+    padding: 20px;
 }
 .table-wrap{
     overflow-x: auto;
@@ -136,21 +188,25 @@ body{
     display: block;
     margin:10px 0 8px;
     font-weight:bold;
-    color:darkslategrey;
+    color:midnightblue;
+    background-color: transparent;
 }
+
 .schedule-input {
     width:100%;
     height:40px;
     padding:0 10px;
-    border:1px solid lightgrey;
+    border:1px solid lightsteelblue;
     border-radius:5px;
     font-family:'Segoe UI' , 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size:15px;
-    background-color:white;
+    background-color: white;
+    
 }
 .schedule-input:focus{
     outline:20px;
-    border-color:teal;
+    border-color:royalblue;
+    
 }
 .schedule-form .btn {
     margin-top: 20px;
@@ -159,21 +215,22 @@ body{
 .SafetyReports{
     margin: 30px 20px;
     padding: 25px;
-    background-color: white;
+    background-color: lightsteelblue;
     border-radius: 10px;
 }
 .safety-card{
-    maz-width:700px;
+    max-width:700px;
     margin:0 auto;
     padding: 25px;
     background-color:white;
-    border:1px solid lightgray;
+    border:1px solid lightsteelblue;
     border-radius:10px;
 }
 .safety-cards h2{
     margin:0 0 25px;
     font-size: 25px;
-    color: darkslategray;
+    color: midnightblue;
+    text-align: center;
 
 }
 .form-group{
@@ -183,13 +240,13 @@ body{
     display: block;
     margin-bottom:8px;
     font-weight: bold;
-    color:darkslategray;
+    color:midnightblue;
 }
 .form-group select,
 .form-group textarea {
     width: 100%;
     padding:12px;
-    border:1px solid lightgray;
+    border:1px solid lightsteelblue;
     border-radius: 5px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
@@ -204,5 +261,5 @@ body{
     border-radius:5px;
     font-weight:bold;
     cursor:pointer;
-    background-color:teal;
+    background-color:royalblue;
 }
