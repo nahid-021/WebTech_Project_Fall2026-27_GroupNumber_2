@@ -28,23 +28,25 @@
             <h1>Book Your Bus Tickets</h1>
             <p>Compare prices from multiple bus operators and find the best deals</p>
 
-            <form class="search-form">
+            <form class="search-form" onsubmit="return ValidateSearch()">
                 <div class="form-group">
                     <label for="from">From</label>
                         <input class="search-input" type="text" id="from" name="from" placeholder="Origin city">
-                    
+                    <p id="fromError"></p>
                 </div>
 
                 <div class="form-group">
                     <label for="to">To</label>
                         
                         <input class="search-input" type="text" id="to" name="to" placeholder="Destination city">
+                        <p id="toError"></p>
                 </div>
 
                 <div class="form-group">
                     <label for="date">Date</label>
                        
                         <input class="search-input" type="date" id="date" name="date">
+                        <p id="dateError"></p>
                 </div>
 
                 <input class="search" type="submit" value="Search Buses">

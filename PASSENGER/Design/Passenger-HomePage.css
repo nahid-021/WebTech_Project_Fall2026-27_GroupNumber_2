@@ -174,3 +174,13 @@ body {
     font-size: 13px;
     margin: 0;
 }
+
+
+
+form-group p {
+    color: red;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px 0 0;
+}
