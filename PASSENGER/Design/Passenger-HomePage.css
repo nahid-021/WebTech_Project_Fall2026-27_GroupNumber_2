@@ -58,7 +58,7 @@ body {
 .main {
     background-color: #00B4D8;
     text-align: center;
-    padding: 55px 20px;
+    padding: 50px 20px;
     color: white;
 }
 
@@ -75,6 +75,7 @@ body {
 
 .search-form {
     max-width: 700px;
+    height: 130px;
     margin: 0 auto;
     padding: 25px 20px;
     background-color: white;
@@ -86,6 +87,7 @@ body {
     display: inline-block;
     width: 23%;
     margin-right: 1%;
+    vertical-align: top;
 }
 
 .form-group label {
@@ -104,6 +106,12 @@ body {
     padding: 0 10px;
 }
 
+
+.search-button{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 26px;
+}
 
 .search {
     height: 30px;
@@ -140,7 +148,7 @@ body {
     display: inline-block;
     width: 23%;
     vertical-align: top;
-    margin: 20px 0;
+    margin: 14px 0;
 }
 
 
@@ -177,10 +185,11 @@ body {
 
 
 
-form-group p {
+.form-group p {
     color: red;
     text-align: left;
     font-size: 12px;
     font-weight: bold;
     margin: 5px 0 0;
+    height: 35px;
 }
