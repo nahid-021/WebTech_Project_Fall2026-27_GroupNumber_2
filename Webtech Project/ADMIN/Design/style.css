@@ -1,0 +1,182 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    background-color: aliceblue;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+
+body.login{
+    max-width: 300px;
+}
+
+
+#logo{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h1{
+    text-align: center;
+    color: limegreen;
+    font-size: 24px;
+}
+
+
+.header{
+    background-color: midnightblue;
+    padding: 10px 2px;
+    text-align: center;
+    color: white;
+    border: 5px solid white;
+    margin: 10px;
+}
+
+
+.topnav{
+    background-color: steelblue;
+    overflow: hidden;
+}
+.topnav a{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.topnav a:hover{
+    background-color: midnightblue;
+}
+.topnav a.active{
+    background-color: limegreen;
+    color: midnightblue;
+    font-weight: bold;
+}
+
+
+fieldset{
+    background-color: white;
+    border: 1px solid steelblue;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+legend{
+    font-weight: bold;
+    color: white;
+    background-color: midnightblue;
+    padding: 6px 14px;
+    border-radius: 100px;
+}
+
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+td{
+    padding: 8px 6px;
+    vertical-align: top;
+}
+
+
+td.card{
+    text-align: center;
+    border: 1px solid steelblue;
+    background-color: lightcyan;
+    width: 25%;
+}
+
+
+.data th,
+.data td{
+    border: 1px solid steelblue;
+    padding: 8px;
+    text-align: left;
+}
+.data th{
+    background-color: steelblue;
+    color: white;
+}
+
+
+.ok{
+    color: green;
+    font-weight: bold;
+}
+.late{
+    color: darkorange;
+    font-weight: bold;
+}
+.none{
+    color: red;
+    font-weight: bold;
+}
+
+
+p{
+    color: red;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="time"],
+input[type="date"],
+select,
+textarea{
+    width: 100%;
+    padding: 8px 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    border: 1px solid steelblue;
+    border-radius: 5px;
+    background-color: white;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+    accent-color: limegreen;
+}
+
+input[type="submit"]{
+    background-color: limegreen;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+}
+input[type="submit"]:hover{
+    background-color: steelblue;
+}
+
+
+.footer{
+    background-color: steelblue;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 10px;
+    max-height: 80px;
+}

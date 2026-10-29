@@ -1,23 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../Design/login.css">
-        <link rel="stylesheet" href="../Design/bus.css">
+        <link rel="stylesheet" href="../Design/Style.css">
         <title> Admin Dashboard </title>
     </head>
+
     <body>
-        <div class="header">
-            <img src="../Assets/logo(admin login).png" id="logo">
-            <h1> Admin Dashboard </h1>
-        </div>
-        <div class="dashboard">
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Timetable</a></li>
-                <li><a href="#">Staff</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
+        <div class="container">
+
+            <div class="header">
+                <img src="../Assets/logo.png" id="logo">
+                <h1> Bus Admin Dashboard </h1>
+            </div>
+
+            <div class="topnav">
+                <a href="dashboard.html" class="active"> Dashboard </a>
+                <!-- <a href="timetable.html"> Timetable </a>
+                <a href="buses.html"> buses </a>
+                <a href="staff.html"> Staff </a>
+                <a href="fares.html"> Fares </a>
+                <a href="applications.html"> Applications </a> -->
+                <a href="admin.html"> Logout </a>
+            </div>
+
+            <br>
+
+            <fieldset>
+                <legend> Today's Summary </legend>
+                <table>
+                    <tr>
+                        <td class="card"> <h2> 42 </h2> Total Buses </td>
+                        <td class="card"> <h2> 28 </h2> Trips Today </td>
+                        <td class="card"> <h2> 3 </h2> Pending Applications </td>
+                        <td class="card"> <h2> 6.2 Lakh </h2> Revenue Today (Tk) </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend> Today's Departures </legend>
+                <table class="data">
+                    <tr>
+                        <th> Time </th>
+                        <th> Route </th>
+                        <th> Bus </th>
+                        <th> Type </th>
+                        <th> Driver </th>
+                        <th> Status </th>
+                    </tr>
+                    <tr>
+                        <td> 07:00 AM </td>
+                        <td> Dhaka to Rangpur </td>
+                        <td> DH-1021 </td>
+                        <td> AC </td>
+                        <td> Shafwan </td>
+                        <td class="ok"> On Time </td>
+                    </tr>
+                    <tr>
+                        <td> 07:00 AM </td>
+                        <td> Rangpur to Dhaka </td>
+                        <td> RG-2045 </td>
+                        <td> AC </td>
+                        <td> Aritra </td>
+                        <td class="ok"> On Time </td>
+                    </tr>
+                    <tr>
+                        <td> 09:30 AM </td>
+                        <td> Dhaka to Rangpur </td>
+                        <td> DH-1034 </td>
+                        <td> Non-AC </td>
+                        <td> Ishrak </td>
+                        <td class="late"> Delayed </td>
+                    </tr>
+                    <tr>
+                        <td> 09:30 AM </td>
+                        <td> Rangpur to Dhaka </td>
+                        <td> RG-2051 </td>
+                        <td> Non-AC </td>
+                        <td> Rahad </td>
+                        <td class="ok"> On Time </td>
+                    </tr>
+                    <tr>
+                        <td> 11:00 PM </td>
+                        <td> Dhaka to Rangpur </td>
+                        <td> DH-1008 </td>
+                        <td> AC </td>
+                        <td> Not Assigned </td>
+                        <td class="none"> No Driver </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend> Alerts </legend>
+                <p> 11:00 PM Dhaka to Rangpur trip has no driver assigned. </p>
+                <p> Bus DH-1034 is due for maintenance. </p>
+                <p> 3 new job applications are waiting for review. </p>
+                <p> Diesel price has changed. Please review the fares. </p>
+            </fieldset>
+
+            <div class="footer">
+                <h5> AIUB Bus Service </h5>
+            </div>
+
         </div>
     </body>
 </html>
+
+
+
+
+
+
+
