@@ -75,15 +75,21 @@ font-size: 30px;
 .bus-section {
     background-color: white;
     padding: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 500px;
     border-radius: 15px;
     margin-top: 10px;
+    position: relative;
 }
 
 
 .available-buses {
     margin-left: 18%;
+    height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 10px;
+    padding-bottom: 50px;
 }
 
 .available-buses h3 {
@@ -98,7 +104,7 @@ font-size: 30px;
     background-color: whitesmoke;
     padding: 15px;
     border-radius: 10px;
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
 
@@ -118,8 +124,12 @@ font-size: 30px;
 
 
 .select{
+    position: absolute;
+    bottom: 15px;
+    left: 0;
     text-align: center;
-    margin-top: 400px;
+    /* margin-top: 400px; */
+    width: 100%;
 }
 
 
@@ -159,4 +169,44 @@ font-size: 30px;
     display: inline-block;
     font-size: 13px;
     margin: 0;
+}
+
+
+.bus-card {
+    background-color: whitesmoke;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.bus-info {
+    float: left;
+}
+
+.bus-card .select-button {
+    float: right;
+    margin-top: 15px;
+    margin-right: 10px;
+    width: 80px;
+    height: 40px;
+    background-color: #0077B6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.bus-card .select-button:hover {
+    background-color: #023E8A;
+}
+
+.bus-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.bus-card p {
+    margin: 5px 0;
 }
