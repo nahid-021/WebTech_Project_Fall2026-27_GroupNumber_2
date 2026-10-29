@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel = "stylesheet" href="../DriverDesign/driver.css">
-        <title>BusSheba-Duty Schedule</title>
+        <title>BusSheba-Availability Status</title>
         <script src = "../DriverJs/driver.js"></script>
     </head>
 
@@ -14,29 +14,31 @@
             BusSheba
             </div>
             <a href="dashboard.html" >Dashboard</a>
-            <a href="dutySchedule.html" class="active">Duty Schedule</a>
+            <a href="avaibalityStatus.html" class="active">Availability Status</a>
             <a href="SafetyReports.html">Safety Reports</a>
-            <a href="logs.html">Logs</a>
+            <a href="TripHistory.html">Trip History</a>
             <a href="PassengerVerify.html">Passenger Verify</a>
 
             <a href="" class="signout">Sign Out</a>
         </div>
         <div class="container">
 
-        <h2>Add Schedule</h2>
-        <form class = "schedule-form" action="" method="post">
+        <h2>Availability Status</h2>
+        <form class = "schedule-form" onsubmit= "return addSchedule()">
             <label for = "date">Date</label>
-            <input type = "date" id="date" name="date"class="schedule-input" required>
+            <input type = "date" id="date" name="date" class="schedule-input" required>
 
             <label for="status">Status</label>
-            <select id="status" name="status"class="schedule-input" >
-                <option>Available</option>
-                <option>On Duty</option>
-                <option>On leave</option>
+            <select id="status" name="status" class="schedule-input" >
+                <option value = "">Select Status</option>
+                <option value="Available">Available</option>
+                <option value="On Duty">On Duty</option>
+                <option value = "On leave ">On leave</option>
             </select>
 
             <label for="note">Note</label>
-            <input type="text" id="text"name="text"class="schedule-input">
+            <input type="text" id="note"  class="schedule-input">
+            <p id = "ScheduleError" ></p>
 
             <button type="submit" class = "btn">ADD</button>
             </form>
@@ -46,13 +48,13 @@
             <h2>Driver Schedule</h2>
 
             <div class="table-wrap">
-                <table class="data-table">
+                <table class="data-table" id="ScheduleTable">
                     
                         <tr>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Note</th>
-                            <th>Action</th>
+                            <td>Date</td>
+                            <td>Status</td>
+                            <td>Note</td>
+                            <td>Action</td>
                         </tr>
                     
                 </table>
@@ -71,9 +73,7 @@
      </div>
      
      <footer class = "site-footer">
-        <p>&copy;2026 BusSheba.All rights Reserved.</p>
-        <p>
-            <a href = "">Support</a>
-            <a href="">Privacy Policy</a>
-        </p>
+        <p>2026 BusSheba.All rights Reserved.</p>
      </footer>
+    </body>
+</html>

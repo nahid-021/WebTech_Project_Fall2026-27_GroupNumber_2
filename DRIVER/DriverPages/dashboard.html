@@ -17,17 +17,40 @@
         </div>
         
             <a href="dashboard.html" class="active">Dashboard</a>
-            <a href="dutySchedule.html">Duty Schedule</a>
+            <a href="avaibalityStatus.html">Availability Status</a>
             <a href="SafetyReports.html">Safety Reports</a>
-            <a href="logs.html">Logs</a>
+            <a href="TripHistory.html">Trip History</a>
             <a href="PassengerVerify.html">Passenger Verify</a>
 
             <a href="" class="signout">Sign Out</a>
         </div>
-        <div class = container>
-            <h2> Assigned Trips</h2>
+    
+        <div class = "container">
+            <h1 class = "dashboard title">Driver Dashboard</h1>
+            <p class = "Dashboard lines">
+                Welcome to BusSheba! 
+                Check your asssigned Trips Below.
+            </p>
+        </div>
+            <div class = "container">
+                
+            <div class = "trip-count-box">
+                <p> Total Assigned Trips:</p>
+                <h2 id ="tripCount">0</h2>
+            </div>
+            </div>
 
-            <table class = "data-table">
+            <div class = "container">
+            <h2> Assigned Trips</h2>
+            <p class = "section-description">
+                View Your Assigned Bus Trip Infromation.
+            </p>
+            
+            
+            
+            
+            
+            <table class = "data-table" id = "tripTable">
                 
                     <tr>
                         <td>Route</td>
@@ -40,51 +63,10 @@
                         <td>Status</td>
                         
                     </tr>
-                
-                
-                    <tr>
-                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td> 
-                        
-                        <td><button class = "btn">Confirm</button></td>
-                    </tr>
-                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        
-                        <td><button class = "btn">Confirm</button></td>
-                    </tr>
-                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        
-                        <td><button class = "btn">Confirm</button></td>
-                    </tr>
-                    
-                
+   
             </table>
-        </div>
-
-
-     
+            <p class = "empty-row" id = "emptyMsg">Trip details will appear when the admin Assigns trips .</p>
+            </div>
      <div class = "bus-sheba">
         <h2>BusSheba</h2>
         <p>Safe Journeys, On-time trips,Happy passengers.</p>
@@ -92,11 +74,8 @@
      </div>
      
      <footer class = "site-footer">
-        <p>&copy;2026 BusSheba.All rights Reserved.</p>
-        <p>
-            <a href ="">Support</a>
-            <a href="">Privacy Policy</a>
-        </p>
+        <p>2026 BusSheba.All rights Reserved.</p>
+        
      </footer>
-    </body>>
+    </body>
 </html>

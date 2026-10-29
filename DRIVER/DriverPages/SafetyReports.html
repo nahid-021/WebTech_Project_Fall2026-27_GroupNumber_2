@@ -14,9 +14,9 @@
             BusSheba
             </div>
             <a href="dashboard.html" >Dashboard</a>
-            <a href="dutySchedule.html" class="active">Duty Schedule</a>
+            <a href="avaibalityStatus.html" class="active">Availability Status</a>
             <a href="SafetyReports.html">Safety Reports</a>
-            <a href="logs.html">Logs</a>
+            <a href="TripHistory.html">Trip History</a>
             <a href="PassengerVerify.html">Passenger Verify</a>
 
             <a href="" class="signout">Sign Out</a>
@@ -24,9 +24,16 @@
         <div class="SafetyReports">
             <div class="safety-cards">
                 <h2>Submit a Safety Report</h2>
+               
+                <div class = "form-group">
+                  <label for="reportDate">Report Date</label>
+                  <input type = "date" id = "reportDate">
+
+                </div> 
 
               <div class="form-group">
                 <label for="type">Report Type</label>
+              
 
                 <select id = "type">
                     <option value ="">Select Report Type</option>
@@ -35,23 +42,43 @@
                     <option value ="Other">Other</option>
                 </select>
               </div>
+            
               <div class = "form-group">
                 <label for="DESCRIPTION">Description</label>
 
                 <textarea
                 id="description"
-                rows="10";
+                rows="10"
                 placeholder="Describe the safety issue"
                 ></textarea>
               </div>
 
-              <button type = "button" class ="submit-button">
+              <button type = "button" class ="submit-button" onclick="submitReport()">
+    
                 Submit Report
               </button>
+              
+              <p id = "ReportError"></p>
             </div>
         </div>
 
-        </div>
+         <div class="container-card">
+            <h2>Driver Report</h2>
+             <div class="table-wrap">
+
+         <table class = "data-table" id ="ReportTable">
+                  <tr>
+                    <td>Date</td>
+                    <td>Report Type</td>
+                    <td>Description</td>
+                    <td>Action</td>
+                  </tr>
+                </table>
+              </div>
+              </div>
+
+       
+        
          <div class = "bus-sheba">
         <h2>BusSheba</h2>
         <p>Safe Journeys, On-time trips,Happy passengers.</p>
@@ -59,11 +86,8 @@
      </div>
      
      <footer class = "site-footer">
-        <p>&copy;2026 BusSheba.All Rights Reserved.</p>
-        <p>
-            <a href ="">Support</a>
-            <a href="">Privacy Policy</a>
-        </p>
+        <p></p>2026 BusSheba.All Rights Reserved.</p>
+        
      </footer>
-    </body>>
+    </body>
 </html>

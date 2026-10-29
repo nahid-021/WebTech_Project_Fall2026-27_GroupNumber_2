@@ -3,41 +3,43 @@
 }
 body{
    font-family: 'Segoe UI' , 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   font-size: 16px;
+   font-size: 14px;
    background-color: whitesmoke;
-   padding-left: 220px;
+   padding-left: 270px;
    margin: 0 auto;
    color:darkslategray;
+   overflow-x: hidden;
    
 }
 .BUSNames{
      display: flex;
     align-items: center;
-    padding:10px 20px 20px;
+    padding:8px 12px 14px;
     color:white;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
+    gap: 10px;
 }
 .logo{
     float : none;
     display:block;
     
-    width: 45px;
+    width: 36px;
     
-    margin: 0 10px 0 0;
+    margin: 0 8px 0 0;
     cursor: pointer;
     
 }
 .topnav{
     position: fixed;
-    top:0;
-    left:0;
-    width:220px;
-    height:100vh;
+    top:8px;
+    left:3px;
+    width:264px;
+    height:100vh; 
     background-color: midnightblue;
-    overflow:  hidden; 
-    border: bottom 3px solid lightskyblue;
-    padding: 3px 10px;
+    overflow-y:auto; 
+    border:3px solid lightskyblue;
+    padding: 3px 8px;
     
 }
 .topnav a{
@@ -46,9 +48,10 @@ body{
     display: block; 
     color:white; 
     text-align:left;
-    padding: 15px 20px;
+    padding: 11px 14px;
     text-decoration: none;
     font-weight:bold; 
+    font-size: 13px;
 
 }
 .topnav a:hover {
@@ -57,126 +60,141 @@ body{
 }
 .topnav .signout{
     position: fixed;
-    top:15px;
-    right:20px;
+    top:10px;
+    right:12px;
     float: none;
     background-color:lightblue;
     color: midnightblue;
-    border-radius:6px;
-    margin:5px 15px;
-    padding:10px 20px;
+    border-radius:5px;
+    font-size: 12px;
+    padding:7px 13px;
 }
 .topnav .signout:hover {
     background-color: black;
     color: lightblue;
 }
+.topnav a.active {
+    color:lightyellow;
+    border-bottom:1px solid lightsteelblue;
+    padding-bottom: 10px;
+}
 .container {
-    margin: 30px 20px;
-    padding:25px;
+    margin: 6px 0;
+    padding: 10px 14px;
     background-color: lightsteelblue;
     border-radius: 10px;
-    border: 1px solid lightsteelblue;
 
 }
-.container{
-    margin: 32px 25px;
-    padding: 25px;
+.container h2{
+    margin:0 0 14px;
+    padding: 10px 14px;
     background-color: lightsteelblue;
-    border-radius: 10px;
-    border: white;
+    
+    border:none;
 }
 
 .container-card h2{
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     
 }
-.container h2{
-    margin: 0 0 20px;
-    font-size: 25px;
-    color:midnightblue;
-    text-align: center;
-    
+.dashboard.title {
+    margin-top: 10px;
+    margin-bottom:12px;
+    color:darkslategray;
+}
+.dashboard.lines{
+    margin-bottom:5px;
 }
 .data-table{
     width:100%;
     border-collapse: collapse;
     background-color:white;
+    font-size: 12px;
 }
 
 .data-table td {
     border: 1px solid lightsteelblue;
-    padding:12px;
+    padding:12px 8px;
     text-align:center;
 }
 
-
+.table-wrap {
+    overflow-x: auto;
+}
 .btn{
-    padding: 8px 15px;
+    padding: 6px 11px;
     border:none;
-    border-radius:5px;
+    border-radius:4px;
     background-color:royalblue;
     color:white;
-    font-size:14px;
+    font-size:12px;
     cursor:pointer;
 }
 .btn:hover {
     background-color: midnightblue;
 }
-.bus-sheba{
-     max-width: width 700px;;
-      margin:40px auto;
-      padding:0 20px;
-      text-align: center;
-      background-color: whitesmoke;
-      border:1px solid lightsteelblue;
-      border-radius: 10px;
+.card {
+    background-color: white;
+    border:1px solid lightsteelblue;
+    border-radius: 8px;
+    padding: 15px;
 }
+
 .bus-sheba h2{
-    margin:0 0 10px;
-    font-size:25px;
+    margin:0 0 7px;
+    font-size:20px;
     color: royalblue;
 
 }
 .bus-sheba{
-    margin: 0 0 8px;
+    width: 100%;
+    margin: 20px 0 6px;
     color:slategray;
-    font-size:16px;
+    font-size:13px;
+    padding: 14px;
+    text-align: center;
+    background-color: whitesmoke;
+    border: 1px solid lightsteelblue;
+    border-radius:8px;
+    
+}
+.bus-sheba p {
+    margin: 5px 0;
+    color: slategray;
+    font-size: 12px;
 }
 .site-footer{
     text-align:center;
-    padding: 20px 10px;
+    padding: 12px 8px;
     border-top:1px solid lightsteelblue;
     color:slategray;
-    font-size:14px;
+    font-size:11px;
+    width: 100%;
+    margin-top: 12px;
 
 }
+.site-footer p{
+    margin : 5px 0;
+}
 .site-footer a {
-    color: royal blue;
-    margin:0 8px;
+    color: royalblue;
+    margin:0 6px;
     text-decoration: none;
 }
 .site-footer a:hover {
-    color: black;
+    color: midnightblue;
 
 }
-.topnav a.active {
+/* .topnav a.active {
     color:lightyellow;
     border-bottom: 1px solid lightsteelblue;
     padding-bottom:12 px;
-}
-.card{
-    background-color:white;
-    border:1px solid lightsteelblue;
-    border-radius: 10px;
-    padding: 20px;
-}
-.table-wrap{
-    overflow-x: auto;
-}
+} */
+
 .schedule-form label{
     display: block;
-    margin:10px 0 8px;
+    margin:8px 0 6px;
     font-weight:bold;
     color:midnightblue;
     background-color: transparent;
@@ -184,72 +202,194 @@ body{
 
 .schedule-input {
     width:100%;
-    height:40px;
-    padding:0 10px;
+    height:34px;
+    padding:0 8px;
     border:1px solid lightsteelblue;
-    border-radius:5px;
+    border-radius:4px;
     font-family:'Segoe UI' , 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size:15px;
+    font-size:12px;
     background-color: white;
     
 }
 .schedule-input:focus{
-    outline:20px;
+    outline:1px solid royalblue;
     border-color:royalblue;
     
 }
 .schedule-form .btn {
-    margin-top: 20px;
-    padding:10px 25px;
+    margin-top: 12px;
+    padding:8px 18px;
 }
 .SafetyReports{
-    margin: 30px 20px;
-    padding: 25px;
+    margin: 20px 16px;
+    padding: 18px;
     background-color: lightsteelblue;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 .safety-card{
-    max-width:700px;
+    max-width:650px;
     margin:0 auto;
-    padding: 25px;
+    padding: 18px;
     background-color:white;
     border:1px solid lightsteelblue;
-    border-radius:10px;
+    border-radius:8px;
 }
+.safety-card,
 .safety-cards h2{
-    margin:0 0 25px;
-    font-size: 25px;
+    margin:0 0 18px;
+    font-size: 20px;
     color: midnightblue;
     text-align: center;
 
 }
 .form-group{
-    margin-bottom: 20px;
+    margin-bottom: 13px;
 }
 .form-group label{
     display: block;
-    margin-bottom:8px;
+    margin-bottom:6px;
     font-weight: bold;
+    font-size: 12px;
     color:midnightblue;
 }
+.form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding:12px;
+    padding:8px;
     border:1px solid lightsteelblue;
-    border-radius: 5px;
+    border-radius: 4px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
+    font-size: 12px;
     background-color:white;
 }
 .form-group textarea {
     resize:vertical
 }
 .submit-button{
-    padding: 10px 25px;
+    padding: 8px 18px;
     border:none ;
-    border-radius:5px;
+    border-radius:4px;
     font-weight:bold;
     cursor:pointer;
     background-color:royalblue;
+}
+.empty-row{
+    text-align : center;
+    color:slategray;
+    padding : 18px;
+    margin: 0;
+}
+.trip-count-box{
+    background-color:midnightblue;
+    color: darkslategray;
+    overflow: hidden;
+    border-radius: 10px; 
+    text-align: center;
+     border: 2px solid lightskyblue; 
+}
+.trip-count-box p {
+    color:midnightblue;
+    color:lightblue;
+    font-size: 14px;
+    font-weight: bold; 
+    margin: 0;
+    padding: 12px;
+}
+.trip-count-box h2{
+    background-color: white;
+    color: rgb(77, 102, 243);
+    font-size: 32px;
+    margin: 0;
+    padding: 20px;
+}
+.dashboard-header {
+    padding :5px 0;
+}
+.section-description {
+    margin-bottom:18px;
+}
+
+
+
+/* Trip History */
+.trip-history-container {
+    margin: 20px 16px;
+    padding:18px;
+    background-color: lightsteelblue;
+    border-radius: 8px;
+    
+}
+.trip-history-container h2{
+    margin: 0 0 10px;
+    color:midnightblue;
+    font-size:20px;
+}
+.search-panel{
+    padding:20px;
+    border-radius:8px;
+    gap:10px;
+    display:flex;
+    align-items: stretch
+    ;
+    margin:10px 0 18px;
+    background-color: white;
+    border:1px solid lightsteelblue;;
+}
+.search-panel.form-group{
+    width:100%;
+    margin : 0;
+}
+
+.search-panel input,
+.search-panel select {
+    width : 100%;
+    height:36px;
+    padding: 6px 8px;
+    border: 1px solid lightsteelblue;
+    border-radius:4px;
+    font-size:12px;
+}
+
+
+.search-button,.reset-button{
+    font-size: 8px 16px;
+    min-width:75px;
+    padding:0 14px;
+    height:36px;
+    border:none;
+    border-radius:4px;
+    background-color:royalblue;
+    color:white;
+    cursor:pointer;
+}
+.search-button:hover{
+    background-color: darkslategray;
+}
+
+.reset-button:hover{
+    background-color: darkslategray;
+}
+#TripHistoryTable td {
+    padding:12px 8px;
+    background-color:midnightblue;
+color:white;
+}
+.trip-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background-color: rgb(0,0,0,0.5);
+    align-items:center;
+}
+.trip-modal-content{
+    width:90%;
+    max-width:500px;
+    padding:20px;
+    background-color: white;
+    border-radius:8px;
+}
+.trip-modal-content h2{
+    color:midnightblue;
+    margin-top:0;
 }

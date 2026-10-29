@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <link rel = "stylesheet" href="../DriverDesign/driver.css">
+        <title>"BusSheba-Logs"</title>
+        <script src = "../DriverJs/driver.js"></script>
+    </head>
+
+    <body>
+        <div class="topnav">
+           <div class="BUSNames">
+
+           
+            <img src="../DriverAssest/driver-logoi.jpeg" class="logo">
+            BusSheba
+            </div>
+            <a href="dashboard.html" >Dashboard</a>
+            <a href="avaibalityStatus.html" class="active">Availability Status</a>
+            <a href="SafetyReports.html">Safety Reports</a>
+            <a href="TripHistory.html">Trip History</a>
+            <a href="PassengerVerify.html">Passenger Verify</a>
+
+            <a href="" class="signout">Sign Out</a>
+        </div>
+
+        <div class = "trip-history-container">
+            <h2>Trip History</h2>
+            <p>View and Search Your Previous Trips.</p>
+        </div>
+
+        <div class = "search-panel">
+            <div class = "form-group">
+                <label for="searchTrip">Search Trip</label>
+                <input type = "text" id="searchTrip" placeholder="Enter Trip ID,Route or Bus Number">
+            </div>
+
+            <div class = "form-group">
+                <label for = "filterStatus">Filter by Status</label>
+                <select id = "filterStatus">
+                    <option value = "">All Status</option>
+                    <option value = "Completed">Completed</option>
+                    <option value = "Cancel">Cancelled</option>
+                    
+                </select>
+            </div>
+            
+            <button type = "button" class = "search-button" onclick="searchTrips()">Search</button>
+            <button type = "button" class = "reset-button" onclick="resetSearch()">Reset</button>
+        </div>
+        
+        <p id ="searchMessage"></p>
+        <div class = "table-wrap">
+            <table class = "data-table" id="TripHistoryTable">
+                <tr>
+                    <td>Trip ID</td>
+                    <td>Route</td>
+                    <td>Bus Number</td>
+                    <td>Trip Date</td>
+                    <td>Status</td>
+                    <td>Action</td>
+
+                </tr>
+            </table>
+        </div>
+        </div>
+
+        <div class = "trip-modal" id = "tripModal">
+            <div class = "trip-modal-content">
+                <h2>Trip Detail</h2>
+
+                <p id = "detialTripID"><strong>Trip ID:</strong></p>
+                <p id = "detialRoute"><strong>Route:</strong></p>
+                <p id = "detialBus"><strong>Bus Number:</strong></p>
+                <p id = "detialDate"><strong>Trip Date:</strong></p>
+                <p id = "detialDeparture"><strong>Departure</strong></p>
+                <p id = "detialArrival"><strong>Arrival:</strong></p>
+                <p id = "detialStatus"><strong>Status</strong></p>
+                <p id = "detialNote"><strong>Note</strong></p>
+
+                <button type = "button" class = "close-button" onclick="closeDetails()">Close</button>
+            </div>
+        </div>
+        
+
+         <div class = "bus-sheba">
+        <h2>BusSheba</h2>
+        <p>Safe Journeys, On-time trips,Happy passengers.</p>
+        <p>Check Your Bus Before Every Trip And Drive Safe</p>
+     </div>
+     
+     <footer class = "site-footer">
+        <p>2026 BusSheba.All Rights Reserved.</p>
+        
+     </footer>
+        </body>
+</html>
