@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../Design/Passenger-Reviews.css">
+    <script src="../JS/Passenger-Reviews.js"></script>
+    <title>Passenger Reviews</title>
+</head>
+
+<body>
+
+<div class="topnav">
+    <a href="" class="logo">
+        <img src="../Assets/logo.jpg" alt="">
+    </a>
+    <a href="">Home</a>
+    <a href="">Search Buses</a>
+    <a href="">Previous Bookings</a>
+    <a href="">Bus Ratings</a>
+    <a href="">Reviews</a>
+
+    <a href="" class="signout">Sign Out</a>
+
+</div>
+
+
+    <div class="header">
+        <h2>My Reviews</h2>
+        <p>Share feedback on your completed trips</p>
+    </div>
+
+    <div class="review-section">
+
+        <h3>Give Review</h3>
+
+        <form onsubmit="return validateReview()">
+            <div class="review-details">
+
+                <div class="bus-operator">
+                    <label for="operator">Bus Operator</label>
+
+                    <select id="operator" name="operator">
+                        <option value="">Select Bus Operator</option>
+                        <option value="Green Line Paribahan">Green Line Paribahan</option>
+                        <option value="Hanif Enterprise">Hanif Enterprise</option>
+                        <option value="Shohagh Paribahan">Shohagh Paribahan</option>
+                        <option value="Shyamoli Paribahan">Shyamoli Paribahan</option>
+                    </select>
+                    <p id="operatorError" class="error"></p>
+                </div>
+
+                <div class="rating">
+                    <label for="rating">Rating</label>
+
+                    <select id="rating" name="rating">
+                        <option value="5">5 Star</option>
+                        <option value="4">4 Star</option>
+                        <option value="3">3 Star</option>
+                        <option value="2">2 Star</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <br>
+
+            <label for="comment">Comment</label>
+
+            <textarea id="comment" name="comment" placeholder="Enter Your Comment Here..."></textarea>
+                <p id="commentError" class="error"></p>
+            <br><br>
+
+            <div class="submit">
+                <input type="submit" class="submit-button" value="Submit Review">
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="footer">
+    <p class="copyright">&copy; 2026 BusSheba |</p>
+    <p class="rights">All Rights Reserved.</p>
+</div>
+
+</body>
+
+</html>
