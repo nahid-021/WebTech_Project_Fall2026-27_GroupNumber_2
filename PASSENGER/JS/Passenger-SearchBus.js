@@ -59,8 +59,7 @@ function filterBuses()
 
 function selectBus(index)
 {
-    // The next page will be linked here later.
-    alert("Bus selected: " + buses[index].name);
+    window.location.href = "Passenger-PaymentPage.html";
 }
 
 filterBuses();

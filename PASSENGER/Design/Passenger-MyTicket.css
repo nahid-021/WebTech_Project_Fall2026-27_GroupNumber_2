@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+    font-size: 15px;
+}
+
+
+.topnav {
+    background-color: #00B4D8;
+    overflow: hidden;
+    border-bottom: 1px solid lightgray;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.topnav a:hover {
+    color: #023E8A;
+}
+
+.topnav .logo {
+    padding: 5px 15px;
+}
+
+.topnav .logo img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    object-fit: contain;
+}
+
+.topnav .signout {
+    float: right;
+    background-color: crimson;
+    color: white;
+    border-radius: 5px;
+    margin: 5px 15px;
+    padding: 10px 20px;
+}
+
+.topnav .signout:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.header {
+    padding: 20px 50px;
+}
+
+.header h2 {
+    font-size: 30px;
+    margin: 0 0 10px;
+}
+
+.header p {
+    font-size: 15px;
+    color: grey;
+    margin: 0;
+}
+
+.ticket-section {
+    padding: 0 50px 35px;
+}
+
+.ticket-details {
+    height: 400px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ticket-details img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ticket-actions {
+    text-align: center;
+}
+
+.print-button {
+    height: 40px;
+    padding: 0 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.print-button:hover {
+    background-color: darkgreen;
+}
+
+.download-button {
+    height: 40px;
+    padding: 0 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0077B6;;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    background-color: #023E8A;
+}
+
+.footer {
+    background-color: #00B4D8;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.copyright {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 5px 0 0;
+}
+
+.rights {
+    display: inline-block;
+    font-size: 13px;
+    margin: 0;
+}

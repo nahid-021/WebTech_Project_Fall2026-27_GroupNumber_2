@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../Design/Passenger-PaymentPage.css">
+    <script src="../JS/Passenger-PaymentPage.js"></script>
+    <title>Payment Page</title>
+</head>
+<body>
+
+    <div class="topnav">
+    <a href="" class="logo">
+        <img src="../Assets/logo.jpg" alt="">
+    </a>
+    <a href="Passenger-HomePage.html">Home</a>
+    <a href="Passenger-SearchBus.html">Search Buses</a>
+    <a href="Passenger-PreviousBookings.html">Previous Bookings</a>
+    <a href="Passenger-BusRatings.html">Bus Ratings</a>
+    <a href="Passenger-Reviews.html">Reviews</a>
+
+    <a href="" class="signout">Sign Out</a>
+
+</div>
+
+    <div class="header">
+        <h2>Payment</h2>
+        <p>Review and Confirm Your Payment</p>
+    </div>
+
+    <div class="booking-section">
+    <div class="booking-details">
+
+        <div class="passenger-details">
+
+            <h4>Passenger Details</h4>
+            <p>Number of Seats (max 4)</p>
+
+<select class="seat-number" name="seats">
+    <option value="1">1 Seat</option>
+    <option value="2">2 Seats</option>
+    <option value="3">3 Seats</option>
+    <option value="4">4 Seats</option>
+</select>
+
+        </div>
+
+        <div class="payment-method">
+
+            <h4>Payment Method</h4>
+
+            <div class="payment-option">
+                <input type="radio" id="banking" name="payment">
+                <label for="banking">
+                    <h4>Online Payment</h4>
+                    <p>Pay using Mobile Banking</p>
+                </label>
+            </div>
+
+            <div class="payment-option">
+                <input type="radio" id="counter" name="payment">
+                <label for="counter">
+                    <h4>Pay at Counter</h4>
+                    <p>Pay at the counter before departure</p>
+                </label>
+            </div>
+        <p id="paymentError"></p>
+        </div>
+
+    </div>
+
+    <div class="booking-total">
+
+    <div class="subtotal-field">
+        <p>Subtotal</p>
+        <h4>0</h4>
+    </div>
+
+    <div class="total-field">
+        <p>Total</p>
+        <h4>0</h4>
+    </div>
+
+</div>
+
+    
+<div class="confirm">
+    <input type="button" class="confirm-button" value="Proceed to Confirm & Pay" onclick="validatePayment()">
+</div>
+    
+</div>
+
+<div class="footer">
+    <p class="copyright">&copy; 2026 BusSheba |</p>
+    <p class="rights">All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

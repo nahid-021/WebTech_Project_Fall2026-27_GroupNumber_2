@@ -1,0 +1,163 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+    font-size: 15px;
+}
+
+.topnav {
+    background-color: #00B4D8;
+    overflow: hidden;
+    border-bottom: 1px solid lightgray;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.topnav a:hover {
+    color: #023E8A;
+}
+
+.topnav .logo {
+    padding: 5px 15px;
+}
+
+.topnav .logo img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    object-fit: contain;
+}
+
+.topnav .signout {
+    float: right;
+    background-color: crimson;
+    color: white;
+    border-radius: 5px;
+    margin: 5px 15px;
+    padding: 10px 20px;
+}
+
+.topnav .signout:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.header p{
+    color: grey;
+    margin: 0;
+    font-size: 15px;
+}
+
+.header {
+    padding: 20px 50px;
+}
+
+.header h2 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+
+
+.history-section {
+    padding: 10px 50px 50px;
+}
+
+.history-filter {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.history-filter h3 {
+    margin: 0 0 25px;
+    font-size: 20px;
+}
+
+.search-box {
+    display: inline-block;
+    width: 470px;
+    margin-right: 15px;
+    vertical-align: bottom;
+}
+
+.sits-box {
+    display: inline-block;
+    width: 470px;
+    margin-right: 15px;
+    vertical-align: bottom;
+}
+
+.search-box label, .sits-box label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.search-box input, .sits-box select {
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 15px;
+}
+
+.filter-button {
+    width: 90px;
+    height: 40px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0077b6;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background-color: #023E8A;
+}
+
+
+.ticket-history {
+    background-color: white;
+    height: 300px;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.footer {
+    background-color: #00B4D8;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.copyright {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 5px 0 0;
+}
+
+.rights {
+    display: inline-block;
+    font-size: 13px;
+    margin: 0;
+}
