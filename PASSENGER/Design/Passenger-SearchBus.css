@@ -3,8 +3,160 @@
 }
 
 body {
-    
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: whitesmoke;
-    /* font-size: 15px; */
+    font-size: 15px;
+}
+
+.topnav {
+    background-color: #00B4D8;
+    overflow: hidden;
+    border-bottom: 1px solid lightgray;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.topnav a:hover {
+    color: #023E8A;
+}
+
+.topnav .logo {
+    padding: 5px 15px;
+}
+
+.topnav .logo img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    object-fit: contain;
+}
+
+.topnav .signout {
+    float: right;
+    background-color: crimson;
+    color: white;
+    border-radius: 5px;
+    margin: 5px 15px;
+    padding: 10px 20px;
+}
+
+.topnav .signout:hover {
+    background-color: darkred;
+    color: white;
+}
+
+
+.header{
+    padding: 15px 30px;
+}
+
+
+.header p{
+margin: 0;
+font-size: 15px;
+color: grey;
+}
+
+.header h2{
+margin: 0 0 10px;
+font-size: 30px;
+
+}
+
+.bus-section {
+    background-color: white;
+    padding: 20px;
+    overflow: hidden;
+    height: 500px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+
+.available-buses {
+    margin-left: 18%;
+}
+
+.available-buses h3 {
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+
+.filter {
+    float: left;
+    width: 200px;
+    background-color: whitesmoke;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+
+.filter h4 {
+    margin-bottom: 10px;
+}
+
+
+.filter select {
+    width: 170px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+
+.select{
+    text-align: center;
+    margin-top: 400px;
+}
+
+
+
+.select-button {
+    width: 80px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #0077B6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.select-button:hover {
+    background-color: #023E8A;
+}
+
+.footer {
+    background-color: #00B4D8;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 8px;
+}
+
+.copyright {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 5px 0 0;
+}
+
+.rights {
+    display: inline-block;
+    font-size: 13px;
+    margin: 0;
 }

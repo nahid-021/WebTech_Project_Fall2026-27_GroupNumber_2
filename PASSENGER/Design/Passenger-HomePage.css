@@ -10,7 +10,7 @@ body {
 }
 
 .topnav {
-    background-color: #0077B6;
+    background-color: #00B4D8;
     overflow: hidden;
     border-bottom: 1px solid lightgray;
 }
@@ -26,7 +26,7 @@ body {
 }
 
 .topnav a:hover {
-    color: #90E0EF;
+    color: #023E8A;
 }
 
 .topnav .logo {
@@ -56,7 +56,7 @@ body {
 
 
 .main {
-    background-color: #00B4D8;
+    background-color: #0077B6;
     text-align: center;
     padding: 50px 20px;
     color: white;
@@ -164,7 +164,7 @@ body {
 }
 
 .footer {
-    background-color: #0077B6;
+    background-color: #00B4D8;
     color: white;
     text-align: center;
     padding: 10px;
