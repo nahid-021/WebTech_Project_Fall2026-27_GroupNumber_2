@@ -75,11 +75,9 @@ font-size: 30px;
 .bus-section {
     background-color: white;
     padding: 20px;
-    /* overflow: hidden; */
     height: 500px;
     border-radius: 15px;
     margin-top: 10px;
-    position: relative;
 }
 
 
@@ -128,7 +126,6 @@ font-size: 30px;
     bottom: 15px;
     left: 0;
     text-align: center;
-    /* margin-top: 400px; */
     width: 100%;
 }
 
