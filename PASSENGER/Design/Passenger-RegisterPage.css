@@ -21,8 +21,8 @@ body {
     object-fit: contain;
 }
 
-.register-section h2 {
-    font-size: 28px;
+h2 {
+    font-size: 30px;
     color: #0077B6;
     margin: 10px 0 25px;
 }
@@ -36,20 +36,16 @@ form {
 
 table {
     width: 100%;
-    text-align: left;
 }
 
 td {
     padding: 8px;
+    text-align: left;
     vertical-align: top;
 }
 
-td:first-child {
-    width: 35%;
-}
-
-td label {
-    font-size: 16px;
+label {
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -62,21 +58,20 @@ input[type="password"] {
     padding: 8px;
     border: 1px solid lightgrey;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 input[type="radio"] {
     margin: 5px;
 }
 
-td p {
+p {
     color: red;
     font-size: 12px;
     margin: 5px 0;
 }
 
-#submit,
-#reset {
+#submit {
     padding: 10px 25px;
     border: none;
     border-radius: 5px;
@@ -86,8 +81,7 @@ td p {
     cursor: pointer;
 }
 
-#submit:hover,
-#reset:hover {
+#submit:hover {
     background-color: #0077B6;
 }
 

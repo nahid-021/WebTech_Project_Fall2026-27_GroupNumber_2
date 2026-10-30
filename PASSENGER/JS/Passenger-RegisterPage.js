@@ -10,12 +10,10 @@ function collect_data()
 
     if (Name && Gender && Age && Email && Username && Password && ConfirmPassword)
     {
-        return false;
+        window.location.href = "Passenger-HomePage.html";
     }
-    else
-    {
-        return false;
-    }
+
+    return false;
 }
 
 function validName()
@@ -25,12 +23,11 @@ function validName()
 
     if (Name == "")
     {
-        Error.innerHTML = "Please Enter Your Name";
+        Error.innerHTML = "*Please Enter Your Name";
         return false;
     }
     else
     {
-        Error.innerHTML = "";
         return true;
     }
 }
@@ -52,12 +49,11 @@ function ValidateGender()
 
     if (selectGender == "")
     {
-        GenderError.innerHTML = "Please Select Your Gender";
+        GenderError.innerHTML = "*Please Select Your Gender";
         return false;
     }
     else
     {
-        GenderError.innerHTML = "";
         return true;
     }
 }
@@ -69,17 +65,16 @@ function validAge()
 
     if (Age == "")
     {
-        Error.innerHTML = "Please Enter Your Age";
+        Error.innerHTML = "*Please Enter Your Age";
         return false;
     }
     else if (Age < 1 || Age > 100)
     {
-        Error.innerHTML = "Age Must Be Between 1 and 100";
+        Error.innerHTML = "*Age Must Be Between 1 and 100";
         return false;
     }
     else
     {
-        Error.innerHTML = "";
         return true;
     }
 }
@@ -93,17 +88,16 @@ function validateEmail()
 
     if (Email == "")
     {
-        Error.innerHTML = "Please Enter Your Email";
+        Error.innerHTML = "*Please Enter Your Email";
         return false;
     }
     else if (!RegularExpression.test(Email))
     {
-        Error.innerHTML = "Please Enter a Valid Email";
+        Error.innerHTML = "*Please Enter a Valid Email";
         return false;
     }
     else
     {
-        Error.innerHTML = "";
         return true;
     }
 }
@@ -115,12 +109,11 @@ function validUsername()
 
     if (Username == "")
     {
-        Error.innerHTML = "Please Enter Your Username";
+        Error.innerHTML = "*Please Enter Your Username";
         return false;
     }
     else
     {
-        Error.innerHTML = "";
         return true;
     }
 }
@@ -132,12 +125,11 @@ function validPassword()
 
     if (Password == "")
     {
-        Error.innerHTML = "Please Enter Your Password";
+        Error.innerHTML = "*Please Enter Your Password";
         return false;
     }
     else
     {
-        Error.innerHTML = "";
         return true;
     }
 }
@@ -150,17 +142,16 @@ function validateConfirmPassword()
 
     if (ConfirmPassword == "")
     {
-        Error.innerHTML = "Please Confirm Your Password";
+        Error.innerHTML = "*Please Confirm Your Password";
         return false;
     }
     else if (Password != ConfirmPassword)
     {
-        Error.innerHTML = "Passwords Do Not Match";
+        Error.innerHTML = "*Passwords Do Not Match";
         return false;
     }
     else
     {
-        Error.innerHTML = "";
         return true;
     }
 }
