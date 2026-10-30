@@ -313,6 +313,17 @@ body{
 
 
 /* Trip History */
+.modal-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+.modal buttons button{
+    padding:12px;
+    border:none;
+    border-radius:7ox;
+    cursor:pointer;
+}
 .trip-history-container {
     margin: 20px 16px;
     padding:18px;
@@ -513,4 +524,76 @@ color:white;
     font-size: 16px;
     color:darkslategray;
     margin:12px 0;
+}
+/* Login */
+.login-container{
+    width:100%;
+    display:flex;
+    
+    display:flex;
+    align-items:center;
+    background-color:aliceblue;
+    padding:30px;
+
+    
+}
+.login-image{
+    width:50%;
+    height:450px;
+}
+.login-image img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius:15px;
+}
+.login{
+    width:40%;
+    max-width:430px;
+    background-color: white;
+    margin-left:45px;
+    border-radius:15px;
+    padding:35px;
+}
+.login h2,
+.login h1{
+    text-align: center;
+    color:midnightblue;
+}
+.login p{
+    text-align:center;
+    color:gray;
+    margin-bottom:25px;
+}
+.login label{
+    display:block;
+    color:midnightblue;
+    font-weight: bold;
+    margin-top:18px;
+}
+.login input{
+    width:100%;
+    padding:13px;
+    margin-top:8px;
+    border:1px solid lightsteelblue;
+    border-radius:7px;
+}
+.login button{
+    width:100%;
+    padding:14px;
+    margin-top:25px;
+    background-color: royalblue;
+    color:white;
+    border-radius: 8px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.login button:hover{
+    background-color: royalblue;
+}
+.login .register-link a{
+    color:royalblue;
+    text-decoration:none;
+    font-weight: bold;
 }

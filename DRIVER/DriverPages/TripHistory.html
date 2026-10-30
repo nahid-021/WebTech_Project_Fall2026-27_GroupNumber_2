@@ -21,7 +21,7 @@
             <a href="TripHistory.html">Trip History</a>
             <a href="PassengerVerify.html" class = "active">Passenger Verify</a>
 
-            <a href="" class="signout">Sign Out</a>
+            <a href="Login.html" class="signout">Sign Out</a>
         </div>
 
         <div class = "trip-history-container">
@@ -106,12 +106,11 @@
                     <option value = "cancelled">Cancelled</option>
                    
                 </select>
-                
-
-                 <p id = "detialNote"><strong>Note</strong></p>
-
-                <button type = "button" class = "close-button" onclick="closeDetails()">Close</button>
+                <div class = "modal-buttons">                
+                    <button type = "button" class = "close-button" onclick="closeDetails()">
+                        Close</button>
                 <button type = "button" class = "Update" onclick="updateTrip()">Update</button>
+                </div>
             </div>
 </div>
         

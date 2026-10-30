@@ -164,7 +164,7 @@ let tripList = [
         arrival:"02:00 PM",
         seats: "40",
         status:"completed",
-        note:"Trip Completed Succesfully"
+        
 
 
     },
@@ -177,7 +177,7 @@ let tripList = [
         arrival:"08:00 PM",
         seats: "40",
         status:"cancelled",
-        note:"Trip Cancelled"
+       
 
     }
    
@@ -206,7 +206,7 @@ function showTrips(){
          "<td>"+ tripList[i].bus+"</td>" +
           "<td>"+ tripList[i].date+"</td>" +
            "<td>"+ tripList[i].status+"</td>" +
-           "<td><button type = 'button' class = 'btn' onclick = \"viewDetails('" + tripList[i].id+ "')\">View Deatils</button></td>" +
+           "<td><button type = 'button' class = 'btn' onclick = \"viewDetails('" + tripList[i].id+ "')\">View Details</button></td>" +
     "</tr>";
        
 
@@ -235,7 +235,7 @@ function showTrips(){
                 
                 
                 document.getElementById("detialSeat").innerHTML = "<strong>seats:</strong>" + trip.seats;
-                document.getElementById("detialNote").innerHTML = "<strong>Note:</strong>" + trip.note;
+               
                 
 
             let modal = document.getElementById("tripModal");
@@ -375,6 +375,46 @@ function confirmPassenger(){
             passengerList[i].status = "verified";
             document.getElementById("passengerStatus").innerHTML = "<strong>Status:</strong> Verified";
         }
+    }
+}
+
+//Driver Login
+
+function driverLogin(){
+    let driverID = document.getElementById("driverID").value.trim();
+    let password = document.getElementById("password").value;
+
+    if(driverID == "" || password == ""){
+        alert("Invalid Driver ID!");
+        return false;
+    }
+    
+    if(driverID!="DRIVER101"){
+        alert("Invalid");
+        return false;
+
+    }
+    if(password.length < 5){
+        alert("Password must contain at least 5 characters!");
+        return false;
+    }
+    let found = false;
+    for(let i =0;i<password.length;i++){
+        if(password[i]=="@"|| password[i]=="$"|| password[i]=="#"||
+            password[i]=="%"|| password[i]=="&"
+        ){
+            found = true;
+        }
+    }
+    if(found==false){
+        alert("Pasword must contain this charcter(@,#,$,%)!")
+    }
+    if(password == "123@456"){
+        alert("Welcome to BusSheba Driver Panel!");
+        return true;
+    }
+    else{
+        alert("Incorrect Password");
     }
 }
 
