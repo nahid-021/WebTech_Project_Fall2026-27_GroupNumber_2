@@ -393,3 +393,9 @@ color:white;
     color:midnightblue;
     margin-top:0;
 }
+.trip-note{
+    text-align:center;
+    color:gray;
+    font-size:14px;
+    margin:20px;
+}

@@ -153,5 +153,93 @@ function deleteReport()
     return false;
 }
 
+//Trip History
+let tripList = [
+    {
+        id: "TR-101",
+        route: "Dhaka to Chittagong",
+        bus:"DHA-1234",
+        date:"25-10-2026",
+        departure:"08:00 AM",
+        arrival:"02:00 PM",
+        seats: "40",
+        status:"completed",
+        note:"Trip Comleted Succesfully"
+
+
+    },
+    {
+        id: "TR-102",
+        route: "Dhaka to Sylhet",
+        bus:"DHA-5678",
+        date:"28-10-2026",
+        departure:"10:00 AM",
+        arrival:"08:00 PM",
+        seats: "40",
+        status:"cancelled",
+        note:"Trip Cancelled"
+
+    }
+
+];
+function showTrips(){
+    let table = document.getElementById("TripHistoryTable");
+
+    // table.innerHTML =
+    // <tr>
+    //     <td>Trip ID</td>
+    //     <td>Route</td>
+    //     <td>Bus Number</td>
+    //      <td>Trip Date</td>
+    //     <td>Status</td>
+    //       <td>Action</td>
+    // </tr>;
+
+    for(let i = 0;i<tripList.length;i++){
+        table.innerHTML +=
+        "<tr>" +
+       "<td>"+ tripList[i].id+"</td>" +
+        "<td>"+ tripList[i].route+"</td>" +
+         "<td>"+ tripList[i].bus+"</td>" +
+          "<td>"+ tripList[i].date+"</td>" +
+           "<td>"+ tripList[i].status+"</td>" +
+           "<td><button type = 'button' onclick = \"viewDetails('" + tripList[i].id+ "')\">View Deatils</button></td>" +
+    "</tr>";
+       
+
+    }
+        
+        
+    }
+
+    function viewDetails(tripID){
+        for(let i= 0;i<tripList.length;i++){
+            if(tripList[i].id==tripID){
+                let trip = tripList[i];
+
+                document.getElementById("detialTripID").innerHTML = "<strong>Trip ID:</strong>" + trip.id;
+                document.getElementById("detialRoute").innerHTML = "<strong>Route:</strong>" + trip.route;
+                document.getElementById("detialBus").innerHTML = "<strong>Bus Number:</strong>" + trip.bus ;
+                document.getElementById("detialDate").innerHTML = "<strong>Date:</strong>" + trip.date;
+                document.getElementById("detialDeparture").innerHTML = "<strong>Deaparture:</strong>" + trip.departure;
+                document.getElementById("detialArrival").innerHTML = "<strong>Arrival:</strong>" + trip.arrival;
+                 document.getElementById("detialStatus").innerHTML = "<strong>Status:</strong>" + trip.status;
+                
+                document.getElementById("detialSeat").innerHTML = "<strong>seats:</strong>" + trip.seats;
+                document.getElementById("detialNote").innerHTML = "<strong>Note:</strong>" + trip.note;
+                
+
+            
+           // document.getElementById("tripModal").style.display = "flex";
+            }
+        }
+    }
+
+    function closeDetails(){
+        //document.getElementById("tripModal").style.display = "none";
+    }
+
+
+
     
 
