@@ -17,6 +17,11 @@ body.login{
 }
 
 
+body.register{
+    max-width: 650px;
+}
+
+
 #logo{
     display: block;
     width: 100px;
@@ -135,6 +140,8 @@ p{
 
 input[type="text"],
 input[type="number"],
+input[type="email"],
+input[type="file"],
 input[type="password"],
 input[type="time"],
 input[type="date"],
@@ -148,11 +155,11 @@ textarea{
     border-radius: 5px;
     background-color: white;
 }
-
 input[type="radio"],
 input[type="checkbox"]{
     accent-color: limegreen;
 }
+
 
 input[type="submit"]{
     background-color: limegreen;
