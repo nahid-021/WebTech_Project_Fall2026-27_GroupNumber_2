@@ -58,7 +58,7 @@ function showSchedule()
      "<td>" + scheduleList[i].Date + "</td>" +
      "<td>" + scheduleList[i].Status + "</td>" +
     "<td>" + scheduleList[i].Note + "</td>" +
-    "<td><button type = 'button' onclick = 'deleteSchedule()'+>Delete</button></td>" +
+    "<td><button type = 'button' onclick = 'deleteSchedule("+i+")'>Delete</button></td>" +
     "</tr>";
 }
 }
@@ -180,8 +180,11 @@ let tripList = [
         note:"Trip Cancelled"
 
     }
+   
+    
 
 ];
+ let selectedTripID = "";
 function showTrips(){
     let table = document.getElementById("TripHistoryTable");
 
@@ -218,6 +221,9 @@ function showTrips(){
         for(let i= 0;i<tripList.length;i++){
             if(tripList[i].id==tripID){
                 let trip = tripList[i];
+                selectedTripID = tripID;
+                document.getElementById("updateStatus").value = trip.status;
+                
             
 
                 document.getElementById("detialTripID").innerHTML = "<strong>Trip ID:</strong>" + trip.id;
@@ -226,7 +232,7 @@ function showTrips(){
                 document.getElementById("detialDate").innerHTML = "<strong>Date:</strong>" + trip.date;
                 document.getElementById("detialDeparture").innerHTML = "<strong>Deaparture:</strong>" + trip.departure;
                 document.getElementById("detialArrival").innerHTML = "<strong>Arrival:</strong>" + trip.arrival;
-                 document.getElementById("detialStatus").innerHTML = "<strong>Status:</strong>" + trip.status;
+                
                 
                 document.getElementById("detialSeat").innerHTML = "<strong>seats:</strong>" + trip.seats;
                 document.getElementById("detialNote").innerHTML = "<strong>Note:</strong>" + trip.note;
@@ -307,7 +313,70 @@ function filterTrips(){
     
 
 }
+function updateTrip(){
+    let status = document.getElementById("updateStatus").value;
 
+    for(let i = 0;i<tripList.length;i++){
+        if(tripList[i].id==selectedTripID){
+            tripList[i].status = status;
+        }
+    }
+   
+    showTrips();
+    showTripCount();
+    closeDetails();
+}
+//passengfer verify
+
+let passengerList = [
+{
+    bookingID : "BK101",
+    name:"Rahim",
+    route:"Dhaka to Chittagong",
+    bus:"DHA-1234",
+    seat:"A1",
+    status:"Not Verified"
+},
+{
+ bookingID : "BK102",
+    name:"Samia",
+    route:"Dhaka to Sylhet",
+    bus:"DHA-4567",
+    seat:"B1",
+    status:"Not Verified"
+}
+];
+let selectedPassengerID = "";
+function verifyPassenger(){
+    let bookingID = document.getElementById("bookingID").value;
+    let found=false;
+    for(let i = 0;i<passengerList.length;i++){
+        if(passengerList[i].bookingID==bookingID){
+            found=true;
+            selectedPassengerID=bookingID;
+            document.getElementById("passengerDetails").style.display = "block";
+            document.getElementById("passengerName").innerHTML = "<strong>Name:</strong>" + passengerList[i].name;
+            document.getElementById("passengerBus").innerHTML = "<strong>Bus Number:</strong>" + passengerList[i].bus;
+            document.getElementById("passengerRoute").innerHTML = "<strong>Route:</strong>" + passengerList[i].route;
+            document.getElementById("passengerSeat").innerHTML = "<strong>Seat:</strong>" + passengerList[i].seat;
+            document.getElementById("passengerStatus").innerHTML = "<strong>Status:</strong>" + passengerList[i].status;
+            document.getElementById("verifyMessage").innerHTML="";
+        }
+    }
+    if(found==false){
+        document.getElementById("passengerDetails").style.display="none";
+        document.getElementById("verifyMessage").innerHTML = "Invalid Booking Id! passenger Not Found";
+    }
+}
+function confirmPassenger(){
+
+    for(let i =0;i<passengerList.length;i++){
+        if(passengerList[i].bookingID == selectedPassengerID){
+            passengerList[i].status = "verified";
+            document.getElementById("passengerStatus").innerHTML = "<strong>Status:</strong> Verified";
+        }
+    }
+}
 
     
 

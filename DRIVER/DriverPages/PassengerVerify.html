@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel = "stylesheet" href="../DriverDesign/driver.css">
-        <title>BusSheba-Duty Schedule</title>
+        <title>BusSheba-Passenger Verify</title>
         <script src = "../DriverJs/driver.js"></script>
     </head>
 
@@ -16,12 +16,50 @@
             BusSheba
             </div>
             <a href="dashboard.html" >Dashboard</a>
-            <a href="avaibalityStatus.html" class="active">Availability Status</a>
+            <a href="avaibalityStatus.html">Availability Status</a>
             <a href="SafetyReports.html">Safety Reports</a>
             <a href="TripHistory.html">Trip History</a>
-            <a href="PassengerVerify.html">Passenger Verify</a>
+            <a href="PassengerVerify.html" class="active">Passenger Verify</a>
 
             <a href="" class="signout">Sign Out</a>
+        </div>
+
+
+        <div class = "container">
+            <h1 class = "dashboard-title">Passenger Verification</h1>
+
+            <p class = "dashboard-description">
+                Verify passenger Ticket Before Boarding.
+            </p>
+            <div class = "passenger-section">
+                <h2>Verify Passenger Ticket</h2>
+
+                <div class = "passenger-form">
+                    <label for = "bookingID">Booking ID</label>
+
+                    <input type = "text" id = "bookingID" placeholder="Enter Booking ID">
+
+                    <button type="button" onclick="verifyPassenger()">
+                        Search passenger
+                    </button>
+                </div>
+                <p id = "verifyMessage"></p>
+
+                <div id = "passengerDetails" style="display:none;">
+
+                    <h2>Passenger Details</h2>
+
+                    <p id = "passengerName"></p>
+                    <p id = "passengerRoute"></p>
+                    <p id = "passengerBus"></p>
+                    <p id = "passengerSeat"></p>
+                    <p id = "passengerStatus"></p>
+
+                    <button type="button" class = "Update" onclick="confirmPassenger()">
+                        Verify Passenger
+                    </button>
+                </div>
+            </div>
         </div>
          <div class = "bus-sheba">
         <h2>BusSheba</h2>
