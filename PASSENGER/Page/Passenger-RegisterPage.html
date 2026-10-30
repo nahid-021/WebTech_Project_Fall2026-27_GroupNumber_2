@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../Design/Passenger-RegisterPage.css">
+     <script src="../JS/Passenger-RegisterPage.js"></script>
+    <title>Registration</title>
+</head>
+<body>
+
+    <div class="register-section">
+
+        <img src="../Assets/logo.jpg" class="logo">
+        <h2>BusSheba Registration</h2>
+
+        <form onsubmit="return collect_data()" novalidate>
+
+            <table>
+                <tr>
+                    <td><label for="Name">Name:</label></td>
+                    <td>
+                        <input type="text" id="Name" name="Name" placeholder="Enter Your Name">
+                        <p id="NameError"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label>Gender:</label></td>
+                    <td>
+                        <input type="radio" name="Gender" value="Male"> Male
+                        <input type="radio" name="Gender" value="Female"> Female
+                        <p id="GenderError"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="Age">Age:</label></td>
+                    <td>
+                        <input type="number" id="Age" name="Age" placeholder="Enter Your Age">
+                        <p id="AgeError"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="Email">Email:</label></td>
+                    <td>
+                        <input type="email" id="Email" name="Email" placeholder="Enter Your Email">
+                        <p id="EmailError"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="Username">Username:</label></td>
+                    <td>
+                        <input type="text" id="Username" name="Username" placeholder="Enter Your Username">
+                        <p id="UsernameError"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="Password">Password:</label></td>
+                    <td>
+                        <input type="password" id="Password" name="Password" placeholder="Enter Your Password">
+                        <p id="PasswordError"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="ConfirmPassword">Confirm Password:</label></td>
+                    <td>
+                        <input type="password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Your Password">
+                        <p id="ConfirmPasswordError"></p>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+
+            <input type="submit" id="submit" value="Register">
+            <input type="reset" id="reset" value="Reset">
+
+        </form>
+
+        <div class="login">
+            <p>Already have an account?</p>
+            <a href="Passenger-LoginPage.html">Login</a>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
