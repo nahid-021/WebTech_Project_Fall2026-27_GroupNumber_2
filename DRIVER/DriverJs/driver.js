@@ -164,7 +164,7 @@ let tripList = [
         arrival:"02:00 PM",
         seats: "40",
         status:"completed",
-        note:"Trip Comleted Succesfully"
+        note:"Trip Completed Succesfully"
 
 
     },
@@ -185,15 +185,15 @@ let tripList = [
 function showTrips(){
     let table = document.getElementById("TripHistoryTable");
 
-    // table.innerHTML =
-    // <tr>
-    //     <td>Trip ID</td>
-    //     <td>Route</td>
-    //     <td>Bus Number</td>
-    //      <td>Trip Date</td>
-    //     <td>Status</td>
-    //       <td>Action</td>
-    // </tr>;
+     table.innerHTML =
+     "<tr>" +
+       "<td>Trip ID</td>" +
+        "<td>Route</td>"+
+       "<td>Bus Number</td>"+
+         "<td>Trip Date</td>"+
+        "<td>Status</td>"+
+           "<td>Action</td>"+
+     "</tr>";
 
     for(let i = 0;i<tripList.length;i++){
         table.innerHTML +=
@@ -203,19 +203,22 @@ function showTrips(){
          "<td>"+ tripList[i].bus+"</td>" +
           "<td>"+ tripList[i].date+"</td>" +
            "<td>"+ tripList[i].status+"</td>" +
-           "<td><button type = 'button' onclick = \"viewDetails('" + tripList[i].id+ "')\">View Deatils</button></td>" +
+           "<td><button type = 'button' class = 'btn' onclick = \"viewDetails('" + tripList[i].id+ "')\">View Deatils</button></td>" +
     "</tr>";
        
 
     }
+    showTripCount();
         
         
     }
 
     function viewDetails(tripID){
+        let found = false;
         for(let i= 0;i<tripList.length;i++){
             if(tripList[i].id==tripID){
                 let trip = tripList[i];
+            
 
                 document.getElementById("detialTripID").innerHTML = "<strong>Trip ID:</strong>" + trip.id;
                 document.getElementById("detialRoute").innerHTML = "<strong>Route:</strong>" + trip.route;
@@ -229,16 +232,81 @@ function showTrips(){
                 document.getElementById("detialNote").innerHTML = "<strong>Note:</strong>" + trip.note;
                 
 
-            
-           // document.getElementById("tripModal").style.display = "flex";
+            let modal = document.getElementById("tripModal");
+            modal.style.display = "grid";
+        
             }
         }
+       
     }
 
     function closeDetails(){
-        //document.getElementById("tripModal").style.display = "none";
+         let modal = document.getElementById("tripModal");
+            modal.style.display = "none";
+   
     }
+    function showTripCount(){
 
+        let total = tripList.length;
+        let completed = 0;
+        let cancelled = 0;
+
+        for(let i=0;i<tripList.length;i++){
+            if(tripList[i].status == "completed"){
+                completed++;
+            }
+            else if(tripList[i].status=="cancelled"){
+                cancelled++;
+            }
+        }
+        document.getElementById("totalTrips").innerHTML = total;
+        document.getElementById("completedTrips").innerHTML = completed;
+        document.getElementById("cancelledTrips").innerHTML = cancelled;
+    }
+function filterTrips(){
+    let search = document.getElementById("searchTrip").value.toLowerCase();
+    let status = document.getElementById("filterStatus").value;
+
+    let table = document.getElementById("TripHistoryTable");
+
+
+    table.innerHTML =
+    "<tr>" +
+       "<td>Trip ID</td>" +
+        "<td>Route</td>"+
+       "<td>Bus Number</td>"+
+         "<td>Trip Date</td>"+
+        "<td>Status</td>"+
+           "<td>Action</td>"+
+     "</tr>";
+    for(let i=0;i<tripList.length;i++){
+        let trip = tripList[i];
+
+        let searchMatch = 
+        trip.id.toLowerCase().includes(search) ||
+         trip.route.toLowerCase().includes(search) ||
+          trip.bus.toLowerCase().includes(search)
+
+          let statusMatch =
+          status == "all" || trip.status == status;
+
+          if(searchMatch && statusMatch){
+          
+            table.innerHTML +=
+        "<tr>" +
+       "<td>"+ trip.id+"</td>" +
+        "<td>"+ trip.route+"</td>" +
+         "<td>"+ trip.bus+"</td>" +
+          "<td>"+ trip.date+"</td>" +
+           "<td>"+ trip.status+"</td>" +
+           "<td><button type = 'button' class = 'btn' onclick = \"viewDetails('" + trip.id+ "')\">View Deatils</button></td>" +
+    "</tr>";
+
+          }
+    }
+    
+
+}
 
 
     

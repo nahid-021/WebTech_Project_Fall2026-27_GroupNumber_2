@@ -29,23 +29,42 @@
             <p>View and Search Your Previous Trips.</p>
         </div>
 
+        <div class = "trip-count-box">
+
+            <div>
+                <p>Total Trips</p>
+                <h2 id = "totalTrips">0</h2>
+            </div>
+
+            <div>
+                <p>Completed Trips</p>
+                <h2 id = "completedTrips">0</h2>
+            </div>
+             <div>
+                <p>Completed Trips</p>
+                <h2 id = "cancelledTrips">0</h2>
+            </div>
+
+        </div>
+
         <div class = "search-panel">
             <div class = "form-group">
                 <label for="searchTrip">Search Trip</label>
-                <input type = "text" id="searchTrip" placeholder="Enter Trip ID,Route or Bus Number">
+                <input type = "text" id="searchTrip" placeholder="Enter Trip ID,Route or Bus Number" >
+
+                <button type = "button" onclick="filterTrips()">Search</button>
             </div>
 
             <div class = "form-group">
-                <label for = "filterStatus">Status</label>
-                <select id = "filterStatus">
-                    <option value = "">All Status</option>
-                    <option value = "Completed">Completed</option>
-                    <option value = "Cancelled">Cancelled</option>
+                <label for = "filterStatus">Filter By Status</label>
+                <select id = "filterStatus" onchange= "filterTrips()">
+                    <option value = "all">All Status</option>
+                    <option value = "completed">Completed</option>
+                    <option value = "cancelled">Cancelled</option>
                 </select>
             </div>
             
-            <!-- <button type = "button" class = "search-button" onclick="searchTrips()">Search</button> -->
-            <!-- <button type = "button" class = "reset-button" onclick="resetSearch()">Reset</button> -->
+           
         </div>
         
         <p id ="searchMessage"></p>
@@ -63,13 +82,13 @@
             </table>
         </div>
         <p class = "trip-note">
-            Note: The information displayed above is dummy data for demonstration purposes.Actual trip details will appear here once the admin assigns trips to the Driver.Driver can view Assigned trip details and update them throung the view details option.</p>
+            Note: The information displayed above is dummy data for demonstration purposes.Actual trip details will appear here once the admin assigns trips to the Driver.Driver can view Assigned trip details and update them throung the view details option.
         </p>
         
 
         <div class = "trip-modal" id = "tripModal">
             <div class = "trip-modal-content">
-                <h2>Trip Detail</h2>
+                <h2>Trip Details</h2>
 
                 <p id = "detialTripID"><strong>Trip ID:</strong></p>
                 <p id = "detialRoute"><strong>Route:</strong></p>
