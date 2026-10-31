@@ -6,8 +6,51 @@
         <title>"BusSheba-Register"</title>
         <script src = "../DriverJs/driver.js"></script>
     </head>
-    <body>
+    <body class="register-page">
         <div class = "login-container">
+            
             <div class = "login-image">
-            <img src = "../DriverAssest/loginImage.jpeg" class="background-image" alt="Bus background">
+            <img src = "../DriverAssest/loginImage.jpeg" class="background-image">
 </div>
+
+<div class = "login">
+    <h2>BusSheba</h2>
+    <h1>Driver Register</h1>
+
+    <p>Create Your Driver Account</p>
+    <form onsubmit = "return driverRegister()">
+        <label for = "registerID">Driver ID</label>
+        <input type = "text" id="registerID" placeholder="Enter Driver ID">
+        <div id="IDError"></div>
+
+        <label for = "driverName">Full Name</label>
+        <input type = "text" id="driverName" placeholder="Enter Your Name">
+        <div id="NameError"></div>
+
+        <label for="driverEmail">Email</label>
+        <input type = "email" id="registerEmail" placeholder="Enter your Email">
+        <div id="EmailError"></div>
+
+         <label for="driverPhone">Phone Number</label>
+        <input type = "text" id="registerNumber" placeholder="Enter your Number">
+        <div id="PhoneError"></div>
+
+         <label for="registerPassword">Password</label>
+        <input type = "password" id="registerpassword" placeholder="Create Your Password">
+        <div id="passwordError"></div>
+
+         <label for="confirmPassword">Confirm Password</label>
+        <input type = "password" id="confirmPassword" placeholder="Confirm Password">
+        <div id="ConfirmError"></div>
+
+        <button type = "submit">Register</button>
+    </form>
+    <p class = "register-link">
+        Already Have An Account?
+        <a href ="Login.html">Login Here</a>
+    </p>
+</div>
+
+
+</body>
+</html>
