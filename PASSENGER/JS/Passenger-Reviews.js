@@ -1,35 +1,46 @@
-function validateReview()
+function collect_data()
 {
-    let operator = document.getElementById("operator").value;
-    let comment = document.getElementById("comment").value;
+    let Operator = validOperator();
+    let Comment = validComment();
 
-    let operatorError = document.getElementById("operatorError");
-    let commentError = document.getElementById("commentError");
-
-    operatorError.textContent = "";
-    commentError.textContent = "";
-
-    let valid = true;
-
-    if (operator == "")
+    if (Operator && Comment)
     {
-        operatorError.textContent = "*Bus operator cannot be empty.";
-        valid = false;
+        alert("Review submitted successfully!");
     }
 
-    if (comment.trim() == "")
-    {
-        commentError.textContent = "*Comment cannot be empty.";
-        valid = false;
-    }
+    return false;
+}
 
-    if (valid == false)
+function validOperator()
+{
+    let Operator = document.getElementById("operator").value;
+    let Error = document.getElementById("operatorError");
+
+    if (Operator == "")
     {
+        Error.innerHTML = "* Please Select a Bus Operator";
         return false;
     }
     else
     {
-        alert("Review submitted successfully!");
+        Error.innerHTML = "";
+        return true;
+    }
+}
+
+function validComment()
+{
+    let Comment = document.getElementById("comment").value;
+    let Error = document.getElementById("commentError");
+
+    if (Comment.trim() == "")
+    {
+        Error.innerHTML = "* Please Enter Your Comment";
         return false;
+    }
+    else
+    {
+        Error.innerHTML = "";
+        return true;
     }
 }
