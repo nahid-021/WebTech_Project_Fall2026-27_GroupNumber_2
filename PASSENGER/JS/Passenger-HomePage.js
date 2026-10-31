@@ -1,4 +1,4 @@
-function validateSearch()
+function collect_data()
 {
     let From = validFrom();
     let To = validTo();
