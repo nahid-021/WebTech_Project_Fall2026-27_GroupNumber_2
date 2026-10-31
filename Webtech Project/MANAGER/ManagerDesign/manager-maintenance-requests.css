@@ -1,0 +1,420 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightblue;
+    color: blue;
+    font-size: 14px;
+}
+
+
+
+.topnav {
+    background-color: beige;
+    overflow: hidden;
+    padding: 10px 5%;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.topnav a {
+    float: left;
+    display: block;
+    color: darkblue;
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+.topnav a.logo {
+    color: darkblue;
+    font-size: 20px;
+    margin-right: auto;
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+
+.topnav a.active {
+    color: darkblue;
+}
+
+
+.topnav a:hover {
+    color: darkblue;
+}
+
+
+.manager-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 15px;
+}
+
+
+.profile-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.manager-name {
+    font-size: 12px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+
+.manager-role {
+    font-size: 10px;
+    color: gray;
+}
+
+
+.signout {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 17px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+
+.signout:hover {
+    background-color: red;
+}
+
+
+
+
+.main-content {
+    max-width: 848px;
+    margin: 0 auto;
+    padding: 40px 43px 50px;
+    background-color: white;
+    min-height: 650px;
+}
+
+
+
+
+.panel {
+    background-color: white;
+    padding: 22px 20px;
+    border-radius: 13px;
+    margin-bottom: 18px;
+    box-shadow: 0 5px 15px black;
+}
+
+
+.panel h3 {
+    font-size: 14px;
+    margin: 0 0 20px;
+    color: blue;
+    font-weight: bold;
+}
+
+
+
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: darkblue;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 9px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: whitesmoke;
+    color: darkblue;
+}
+
+
+.form-group select {
+    height: 32px;
+}
+
+
+.form-group textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: blue;
+}
+
+
+
+
+.submit-btn {
+    background: linear-gradient(to right, blue, blue);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 18px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.submit-btn:hover {
+    background: blue;
+}
+
+
+
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+
+.search-box input {
+    width: 50%;
+    max-width: 360px;
+    padding: 9px 10px;
+    border: 1px solid black;
+    border-radius: 7px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.search-box input:focus {
+    outline: none;
+    border-color: black;
+}
+
+
+.search-btn {
+    background-color: white;
+    color: darkblue;
+    border: none;
+    border-radius: 7px;
+    padding: 9px 13px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.search-btn:hover {
+    background-color: white;
+}
+
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+
+th {
+    background-color: white;
+    color: darkblue;
+    font-weight: bold;
+}
+
+
+th, td {
+    padding: 13px 10px;
+    border-bottom: 1px solid black;
+    font-size: 11px;
+}
+
+
+td {
+    color: darkblue;
+}
+
+
+
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+.done {
+    background-color: lightgreen;
+    color: darkgreen;
+}
+
+
+.cancelled {
+    background-color: lightcoral;
+    color: darkred;
+}
+
+
+
+
+.footer {
+    max-width: 848px;
+    margin: 0 auto;
+    padding: 35px 15px 20px;
+    border-top: 1px solid white;
+    text-align: center;
+    color: black;
+}
+
+
+.footer h3 {
+    color: darkblue;
+    font-size: 14px;
+}
+
+
+.footer p {
+    font-size: 11px;
+    margin: 10px 0;
+}
+
+
+.footer-links a {
+    text-decoration: none;
+    color: darkblue;
+    margin: 0 7px;
+    font-size: 11px;
+}
+
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+@media (max-width: 900px) {
+
+    .topnav {
+        padding: 10px 2%;
+    }
+
+    .topnav a {
+        padding: 12px 9px;
+    }
+
+    .main-content {
+        padding: 30px 25px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .topnav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .topnav a.logo {
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .manager-profile {
+        margin: 5px;
+    }
+
+    .signout {
+        margin: 5px;
+    }
+
+    .main-content {
+        padding: 20px 12px;
+    }
+
+    .panel {
+        padding: 18px 14px;
+        overflow-x: auto;
+    }
+
+    .search-box input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    table {
+        min-width: 600px;
+    }
+
+    th, td {
+        padding: 12px 8px;
+        font-size: 10px;
+    }
+
+    .footer {
+        margin-top: 20px;
+    }
+
+}

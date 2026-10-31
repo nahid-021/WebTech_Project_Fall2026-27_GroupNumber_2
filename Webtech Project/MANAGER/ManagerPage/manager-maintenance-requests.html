@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../ManagerDesign/manager-maintenance-requests.css">
+
+    <title>BusSheba - Manager Maintenance Requests</title>
+</head>
+
+<body>
+
+    
+    <div class="topnav">
+
+        <a href="" class="logo">🚌 BusSheba</a>
+
+        <div class="nav-links">
+            <a href="">Dashboard</a>
+            <a href="">Parts</a>
+            <a href="" class="active">Requests</a>
+            <a href="">Services</a>
+        </div>
+
+        <div class="manager-profile">
+
+            <span class="profile-icon">M</span>
+
+            <div class="profile-info">
+                <span class="manager-name">manager</span>
+                <span class="manager-role">Manager</span>
+            </div>
+
+        </div>
+
+        <button class="signout" id="signout">
+            Sign out
+        </button>
+
+    </div>
+
+
+    
+    <div class="main-content">
+
+
+        
+        <div class="panel">
+
+            <h3>Report a Maintenance Issue</h3>
+
+            <form id="maintenanceForm">
+
+                <div class="form-group">
+
+                    <label for="bus">Bus</label>
+
+                    <select id="bus" name="bus" required>
+
+                        <option value="">— Select a bus —</option>
+
+                        <option value="Green Line (DHAKA-BA-1234)">
+                            Green Line (DHAKA-BA-1234)
+                        </option>
+
+                        <option value="Hanif Enterprise (DHAKA-BA-2001)">
+                            Hanif Enterprise (DHAKA-BA-2001)
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="issue">Issue Description</label>
+
+                    <textarea
+                        id="issue"
+                        name="issue"
+                        rows="4"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Submit Request
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        
+        <div class="panel">
+
+            <h3>My Maintenance Requests</h3>
+
+
+            
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchRequest"
+                    placeholder="Search by issue or bus number..."
+                >
+
+                <button type="button" class="search-btn">
+                    Search
+                </button>
+
+            </div>
+
+
+
+            
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Bus</th>
+                        <th>Issue</th>
+                        <th>Status</th>
+                        <th>Reported</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="requestTable">
+
+                    <tr>
+
+                        <td>
+                            Green Line (DHAKA-BA-1234)
+                        </td>
+
+                        <td>
+                            service issue
+                        </td>
+
+                        <td>
+                            <span class="status done">
+                                Done
+                            </span>
+                        </td>
+
+                        <td>
+                            2026-10-31 02:18
+                        </td>
+
+                        <td>
+                            —
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            Hanif Enterprise (DHAKA-BA-2001)
+                        </td>
+
+                        <td>
+                            tire issue
+                        </td>
+
+                        <td>
+                            <span class="status cancelled">
+                                Cancelled
+                            </span>
+                        </td>
+
+                        <td>
+                            2026-10-31 02:19
+                        </td>
+
+                        <td>
+                            —
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+
+    
+    <div class="footer">
+
+        <h3>BusSheba</h3>
+
+        <p>
+            Online bus ticket booking and travel management system.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="">Home</a>
+            <a href="">Bus Ratings</a>
+            <a href="">Contact</a>
+
+        </div>
+
+        <p>
+            © 2026 BusSheba — All rights reserved.
+        </p>
+
+    </div>
+
+
+    <script src="../JavaScript/Manager-Maintenance-Requests.js"></script>
+
+</body>
+</html>
