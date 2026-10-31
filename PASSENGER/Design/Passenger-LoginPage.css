@@ -47,8 +47,6 @@ body {
     height: 40px;
     padding: 10px;
     border: 1px solid lightgrey;
-    margin-bottom: 20px;
-    font-size: 15px;
 }
 
 .login-button {
@@ -68,10 +66,9 @@ body {
     background-color: #0077B6;
 }
 
-#loginError {
+#usernameError, #passwordError {
     color: red;
     font-size: 12px;
-    margin-top: 10px;
 }
 
 .register {

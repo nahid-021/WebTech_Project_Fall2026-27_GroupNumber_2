@@ -1,24 +1,46 @@
-function validateLogin()
+function collect_data()
 {
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-    let loginError = document.getElementById("loginError");
+    let Username = validUsername();
+    let Password = validPassword();
 
-    loginError.textContent = "";
-
-    if (username.trim() == "")
+    if (Username && Password)
     {
-        loginError.textContent = "Username cannot be empty.";
-        return false;
+        window.location.href = "Passenger-HomePage.html";
     }
-    else if (password.trim() == "")
+
+    return false;
+}
+
+function validUsername()
+{
+    let Username = document.getElementById("username").value;
+    let Error = document.getElementById("usernameError");
+
+    if (Username == "")
     {
-        loginError.textContent = "Password cannot be empty.";
+        Error.innerHTML = "* Please Enter Your Username";
         return false;
     }
     else
-    {        
-        window.location.href="Passenger-HomePage.html";
+    {
+        Error.innerHTML = "";
+        return true;
+    }
+}
+
+function validPassword()
+{
+    let Password = document.getElementById("password").value;
+    let Error = document.getElementById("passwordError");
+
+    if (Password == "")
+    {
+        Error.innerHTML = "* Please Enter Your Password";
         return false;
+    }
+    else
+    {
+        Error.innerHTML = "";
+        return true;
     }
 }
