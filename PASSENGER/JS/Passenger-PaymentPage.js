@@ -1,17 +1,45 @@
-function validatePayment()
+function collect_data()
 {
-    let banking = document.getElementById("banking").checked;
-    let counter = document.getElementById("counter").checked;
-    let paymentError = document.getElementById("paymentError");
+    let Banking = validBanking();
+    let Counter = validCounter();
 
-    if (banking == false && counter == false)
+    if (Banking || Counter)
     {
-        paymentError.textContent = "*Please select at least one payment method.";
+        window.location.href = "Passenger-MyTicket.html";
+    }
+
+    return false;
+}
+
+function validBanking()
+{
+    let Banking = document.getElementById("banking").checked;
+    let Error = document.getElementById("paymentError");
+
+    if (Banking == true)
+    {
+        Error.innerHTML = "";
+        return true;
     }
     else
     {
-        paymentError.textContent = "";
-        window.location.href = "Passenger-MyTicket.html";
+        return false;
     }
 }
 
+function validCounter()
+{
+    let Counter = document.getElementById("counter").checked;
+    let Error = document.getElementById("paymentError");
+
+    if (Counter == true)
+    {
+        Error.innerHTML = "";
+        return true;
+    }
+    else
+    {
+        Error.innerHTML = "* Please select at least one payment method.";
+        return false;
+    }
+}
