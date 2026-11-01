@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../Design/style.css">
+        <script src="../JS/Register.js"></script>
+        <title> Create Account </title>
+
+    <body class="register">
+
+        <div class="loginhead">
+            <img src="../Assets/logo.png" id="logo">
+            <h1> Create your account </h1>
+        </div>
+
+        <form onsubmit="return collect_data()" novalidate>
+
+            <fieldset>
+                <legend> Personal Information </legend>
+                <table>
+                    <tr>
+                        <td> <label for="FullName"> Full Name </label> </td>
+                        <td> <input type="text" id="FullName" name="FullName" placeholder="Enter your full name">
+                             <p id="NameError"> </p> </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label for="Email"> Email </label> </td>
+                        <td> <input type="email" id="Email" name="Email" placeholder="Enter your email">
+                             <p id="EmailError"> </p> </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label for="Phone"> Phone </label> </td>
+                        <td> <input type="text" id="Phone" name="Phone" placeholder="01XXXXXXXXX">
+                             <p id="PhoneError"> </p> </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label for="DOB"> Date of Birth </label> </td>
+                        <td> <input type="date" id="DOB" name="DOB">
+                             <p id="DOBError"> </p> </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label> Gender </label> </td>
+                        <td> <input type="radio" id="Male" name="Gender" value="Male"> Male
+                             <input type="radio" id="Female" name="Gender" value="Female"> Female
+                             <p id="GenderError"> </p> </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label for="Address"> Address </label> </td>
+                        <td> <textarea id="Address" name="Address" style="resize: none;"></textarea>
+                             <p id="AddressError"> </p> </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend> Work Information </legend>
+                <table>
+                    <tr>
+                        <td> <label for="EmployeeID"> Employee ID </label> </td>
+                        <td> <input type="text" id="EmployeeID" name="EmployeeID" placeholder="Example: EMP-1024">
+                             <p id="EmployeeError"> </p> </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label for="Designation"> Designation </label> </td>
+                        <td> <select id="Designation" name="Designation">
+                                 <option value=""> Select Designation </option>
+                                 <option value="Operations Manager"> Operations Manager </option>
+                                 <option value="Terminal Manager"> Terminal Manager </option>
+                                 <option value="Accounts Officer"> Accounts Officer </option>
+                                 <option value="Maintenance Manager"> Maintenance Manager </option>
+                             </select>
+                             <p id="DesignationError"> </p> </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend> Login Account </legend>
+                <table>
+                    <tr>
+                        <td> <label for="UserName"> Username </label> </td>
+                        <td> <input type="text" id="UserName" name="UserName" placeholder="Choose a username">
+                             <p id="UserError"> </p> </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label for="Password"> Password </label> </td>
+                        <td> <input type="password" id="Password" name="Password" placeholder="At least 6 characters">
+                             <p id="PasswordError"> </p> </td>
+                    </tr>
+
+                    <tr>
+                        <td> <label for="ConfirmPassword"> Confirm Password </label> </td>
+                        <td> <input type="password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Type the password again">
+                             <p id="ConfirmError"> </p> </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <input type="checkbox" id="Terms" name="Terms"> I agree to the terms and conditions
+            <p id="TermsError"> </p>
+            <br>
+
+            <input type="submit" value="Create account">
+            <h3 class="ok" id="Result"> </h3>
+
+        </form>
+
+        <div class="newbox">
+            Already have an account? <a href="login.html"> Sign in </a>
+        </div>
+
+    </body>
+</html>
