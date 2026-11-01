@@ -1,36 +1,49 @@
 
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-<link rel="stylesheet" href="../ManagerDesign/manager-dashboard.css">
+
+    <link rel="stylesheet" href="../ManagerDesign/manager-dashboard.css">
 
     <title>BusSheba - Manager Dashboard</title>
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
+    
+
     <div class="topnav">
 
         <a href="" class="logo">BusSheba</a>
-        <a href="" class="active">Dashboard</a>
-        <a href="">Parts</a>
-        <a href="">Requests</a>
-        <a href="">Services</a>
 
-        <div class="manager-profile">
-            <span class="profile-icon">M</span>
-            <span class="manager-name">Manager</span>
+        <div class="nav-links">
+            <a href="" class="active">Dashboard</a>
+            <a href="manager-spare-parts.html">Parts</a>
+            <a href="manager-maintenance-requests.html">Requests</a>
+            <a href="manager-service-history.html">Services</a>
         </div>
 
-        <button class="signout" id="signout">Sign Out</button>
+        <div class="right-nav">
+
+            <button class="signout" id="signout">
+                Sign Out
+            </button>
+
+            <div class="manager-profile">
+                <span class="profile-icon">M</span>
+                <span class="manager-name">Manager</span>
+            </div>
+
+        </div>
 
     </div>
 
 
-    <!-- Main Dashboard -->
+    
+
     <div class="dashboard">
 
         <div class="welcome">
@@ -38,7 +51,8 @@
         </div>
 
 
-        <!-- Dashboard Summary Cards -->
+        
+
         <div class="stats">
 
             <div class="stat-card">
@@ -53,42 +67,45 @@
 
             <div class="stat-card">
                 <h4>LOW STOCK PARTS</h4>
-                <h2 class="red" id="lowStock">1</h2>
+                <h2 class="red" id="lowStock">0</h2>
             </div>
 
             <div class="stat-card">
                 <h4>TOTAL MAINTENANCE COST</h4>
-                <h2 class="blue" id="totalCost">৳110.00</h2>
+                <h2 class="blue" id="totalCost">৳0.00</h2>
             </div>
 
         </div>
 
 
-        <!-- Service-Due Alert -->
+        
+
         <div class="panel">
 
             <h3>Service-Due Alert</h3>
 
-            <p class="empty">
+            <div id="serviceAlert" class="empty">
                 No buses currently need servicing.
-            </p>
+            </div>
 
         </div>
 
 
-        <!-- Open Maintenance Requests -->
+        
+
         <div class="panel">
 
             <h3>My Open Maintenance Requests</h3>
 
-            <p class="empty">
+            <div id="openRequests" class="empty">
                 No open requests right now.
-            </p>
+            </div>
 
         </div>
 
 
-        <!-- Low Spare-Part Stock Alert -->
+        
+
         <div class="panel">
 
             <h3>Low Spare-Part Stock Alert</h3>
@@ -105,26 +122,21 @@
 
                 <tbody id="partsTable">
 
-                    <tr>
-                        <td>Engine Oil</td>
-                        <td>
-                            0 <span class="low">Low</span>
-                        </td>
-                        <td>৳10.00</td>
-                    </tr>
-
                 </tbody>
 
             </table>
 
             <p class="view-link">
-                <a href="">View all parts →</a>
+                <a href="manager-spare-parts.html">
+                    View all parts →
+                </a>
             </p>
 
         </div>
 
 
-        <!-- Maintenance Cost Report -->
+        
+
         <div class="panel">
 
             <h3>Maintenance Cost Report</h3>
@@ -133,19 +145,19 @@
 
                 <p>
                     <span>Labor / Service Cost</span>
-                    <span id="laborCost">৳100.00</span>
+                    <span id="laborCost">৳0.00</span>
                 </p>
 
                 <p>
                     <span>Parts Cost</span>
-                    <span id="partsCost">৳10.00</span>
+                    <span id="partsCost">৳0.00</span>
                 </p>
 
                 <hr>
 
                 <p class="total">
                     <span>Total</span>
-                    <span id="reportTotal">৳110.00</span>
+                    <span id="reportTotal">৳0.00</span>
                 </p>
 
             </div>
@@ -155,20 +167,27 @@
     </div>
 
 
-    <!-- Footer -->
+
+
     <div class="footer">
 
         <h3>BusSheba</h3>
 
-        <p>Online bus ticket booking and travel management system.</p>
+        <p>
+            Online bus ticket booking and travel management system.
+        </p>
 
         <div class="footer-links">
+
             <a href="">Home</a>
             <a href="">Bus Ratings</a>
             <a href="">Contact</a>
+
         </div>
 
-        <p>© 2026 BusSheba — All rights reserved.</p>
+        <p>
+            © 2026 BusSheba — All rights reserved.
+        </p>
 
     </div>
 
