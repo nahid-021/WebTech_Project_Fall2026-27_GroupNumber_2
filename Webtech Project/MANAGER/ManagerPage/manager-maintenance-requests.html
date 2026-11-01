@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,15 +14,18 @@
 <body>
 
     
+
     <div class="topnav">
 
         <a href="" class="logo">🚌 BusSheba</a>
 
         <div class="nav-links">
-            <a href="">Dashboard</a>
-            <a href="">Parts</a>
-            <a href="" class="active">Requests</a>
-            <a href="">Services</a>
+
+            <a href="manager-dashboard.html">Dashboard</a>
+            <a href="manager-spare-parts.html">Parts</a>
+            <a href="manager-maintenance-requests.html" class="active">Requests</a>
+            <a href="manager-service-history.html">Services</a>
+
         </div>
 
         <div class="manager-profile">
@@ -29,8 +33,10 @@
             <span class="profile-icon">M</span>
 
             <div class="profile-info">
+
                 <span class="manager-name">manager</span>
                 <span class="manager-role">Manager</span>
+
             </div>
 
         </div>
@@ -42,7 +48,8 @@
     </div>
 
 
-    
+    <!-- Main Content -->
+
     <div class="main-content">
 
 
@@ -99,12 +106,11 @@
 
 
         
+
         <div class="panel">
 
             <h3>My Maintenance Requests</h3>
 
-
-            
             <div class="search-box">
 
                 <input
@@ -113,25 +119,25 @@
                     placeholder="Search by issue or bus number..."
                 >
 
-                <button type="button" class="search-btn">
+                <button type="button" class="search-btn" id="searchBtn">
                     Search
                 </button>
 
             </div>
 
 
-
-            
             <table>
 
                 <thead>
 
                     <tr>
+
                         <th>Bus</th>
                         <th>Issue</th>
                         <th>Status</th>
                         <th>Reported</th>
                         <th>Action</th>
+
                     </tr>
 
                 </thead>
@@ -139,62 +145,11 @@
 
                 <tbody id="requestTable">
 
-                    <tr>
-
-                        <td>
-                            Green Line (DHAKA-BA-1234)
-                        </td>
-
-                        <td>
-                            service issue
-                        </td>
-
-                        <td>
-                            <span class="status done">
-                                Done
-                            </span>
-                        </td>
-
-                        <td>
-                            2026-10-31 02:18
-                        </td>
-
-                        <td>
-                            —
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td>
-                            Hanif Enterprise (DHAKA-BA-2001)
-                        </td>
-
-                        <td>
-                            tire issue
-                        </td>
-
-                        <td>
-                            <span class="status cancelled">
-                                Cancelled
-                            </span>
-                        </td>
-
-                        <td>
-                            2026-10-31 02:19
-                        </td>
-
-                        <td>
-                            —
-                        </td>
-
-                    </tr>
-
                 </tbody>
 
             </table>
+
+            <p id="emptyMsg" class="empty"></p>
 
         </div>
 
@@ -204,6 +159,7 @@
 
 
     
+
     <div class="footer">
 
         <h3>BusSheba</h3>
@@ -227,7 +183,11 @@
     </div>
 
 
-    <script src="../JavaScript/Manager-Maintenance-Requests.js"></script>
+
+    
+
+    <script src="../Managers/manager-maintenance-requests.js"></script>
 
 </body>
+
 </html>
