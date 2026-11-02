@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <link rel = "stylesheet" href="../DriverDesign/driver.css">
         <title>"BusSheba-Trip History"</title>
-        <script src = "../DriverJs/driver.js"></script>
+        <!-- <script src = "../DriverJs/driver.js"></script> -->
+         <script src = "../DriverJs/TripHistory.js"></script>
     </head>
 
     <body>
@@ -55,16 +56,7 @@
                 <button type = "button" onclick="filterTrips()">Search</button>
             </div>
 
-            <div class = "form-group">
-                <label for = "filterStatus">Filter By Status</label>
-                <select id = "filterStatus" onchange= "filterTrips()">
-                    <option value = "all">All Status</option>
-                    <option value = "completed">Completed</option>
-                    <option value = "cancelled">Cancelled</option>
-                    <option value = "pending">Pending</option>
-                </select>
-            </div>
-            
+        
            
         </div>
         

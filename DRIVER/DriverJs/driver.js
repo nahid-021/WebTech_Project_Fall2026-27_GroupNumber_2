@@ -67,9 +67,9 @@ else{
 
 function showDashboardTrips(){
     let Table = document.getElementById("tripTable");
-     let Count = document.getElementById("tripCount");
-     let Empty = document.getElementById("emptyMsg")
-     let total = 0;
+    let Count = document.getElementById("tripCount");
+    let Empty = document.getElementById("emptyMsg")
+    let total = 0;
 for(let i = 0;i<dashboardTrips.length;i++)
      {
         let valid = validateDashboardTrip(dashboardTrips[i]);
@@ -104,41 +104,6 @@ else{
 if(document.getElementById("tripTable")!=null){
     showDashboardTrips();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //avaibality Status
 function addSchedule()
@@ -302,9 +267,6 @@ let tripList = [
         arrival:"02:00 PM",
         seats: "40",
         status:"completed",
-        
-
-
     },
     {
         id: "TR-102",
@@ -318,9 +280,6 @@ let tripList = [
        
 
     }
-   
-    
-
 ];
  let selectedTripID = "";
 function showTrips(){
@@ -329,11 +288,11 @@ function showTrips(){
      table.innerHTML =
      "<tr>" +
        "<td>Trip ID</td>" +
-        "<td>Route</td>"+
+       "<td>Route</td>"+
        "<td>Bus Number</td>"+
-         "<td>Trip Date</td>"+
+        "<td>Trip Date</td>"+
         "<td>Status</td>"+
-           "<td>Action</td>"+
+        "<td>Action</td>"+
      "</tr>";
 
     for(let i = 0;i<tripList.length;i++){
@@ -341,10 +300,10 @@ function showTrips(){
         "<tr>" +
        "<td>"+ tripList[i].id+"</td>" +
         "<td>"+ tripList[i].route+"</td>" +
-         "<td>"+ tripList[i].bus+"</td>" +
-          "<td>"+ tripList[i].date+"</td>" +
-           "<td>"+ tripList[i].status+"</td>" +
-           "<td><button type = 'button' class = 'btn' onclick = \"viewDetails('" + tripList[i].id+ "')\">View Details</button></td>" +
+        "<td>"+ tripList[i].bus+"</td>" +
+        "<td>"+ tripList[i].date+"</td>" +
+        "<td>"+ tripList[i].status+"</td>" +
+        "<td><button type = 'button' class = 'btn' onclick = \"viewDetails('" + tripList[i].id+ "')\">View Details</button></td>" +
     "</tr>";
        
 
@@ -407,49 +366,37 @@ function showTrips(){
         document.getElementById("completedTrips").innerHTML = completed;
         document.getElementById("cancelledTrips").innerHTML = cancelled;
     }
+
 function filterTrips(){
     let search = document.getElementById("searchTrip").value.toLowerCase();
-    let status = document.getElementById("filterStatus").value;
+    let Table = document.getElementById("TripHistoryTable");
+    let total = 0;
 
-    let table = document.getElementById("TripHistoryTable");
+    Table.innerHTML = "";
+    for(let i =0;i<tripList.length;i++){
+        let validID = tripList[i].id.toLowerCase() == search;
+         let validRoute = tripList[i].route.toLowerCase() == search;
+          let validBus = tripList[i].bus.toLowerCase() == search;
+           let validStatus = tripList[i].status.toLowerCase().trim() == search.trim();
 
-
-    table.innerHTML =
-    "<tr>" +
-       "<td>Trip ID</td>" +
-        "<td>Route</td>"+
-       "<td>Bus Number</td>"+
-         "<td>Trip Date</td>"+
-        "<td>Status</td>"+
-           "<td>Action</td>"+
-     "</tr>";
-    for(let i=0;i<tripList.length;i++){
-        let trip = tripList[i];
-
-        let searchMatch = 
-        trip.id.toLowerCase().includes(search) ||
-         trip.route.toLowerCase().includes(search) ||
-          trip.bus.toLowerCase().includes(search)
-
-          let statusMatch =
-          status == "all" || trip.status == status;
-
-          if(searchMatch && statusMatch){
+           let isMatch = validID || validRoute || validBus || validStatus;
           
-            table.innerHTML +=
-        "<tr>" +
-       "<td>"+ trip.id+"</td>" +
-        "<td>"+ trip.route+"</td>" +
-         "<td>"+ trip.bus+"</td>" +
-          "<td>"+ trip.date+"</td>" +
-           "<td>"+ trip.status+"</td>" +
-           "<td><button type = 'button' class = 'btn' onclick = \"viewDetails('" + trip.id+ "')\">View Deatils</button></td>" +
-    "</tr>";
-
-          }
+           if(isMatch == true)
+           {
+            Table.innerHTML +=
+            "<tr>" +
+       "<td>"+ tripList[i].id+"</td>" +
+        "<td>"+ tripList[i].route+"</td>" +
+         "<td>"+ tripList[i].bus+"</td>" +
+          "<td>"+ tripList[i].date+"</td>" +
+           "<td>"+ tripList[i].status+"</td>" +
+          "</tr>";
+          total++;
+           }
     }
-    
-
+    if(total == 0){
+        Table.innerHTML = "<tr> No trips found.</tr>";
+    }
 }
 function updateTrip(){
     let status = document.getElementById("updateStatus").value;
