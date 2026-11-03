@@ -40,14 +40,9 @@ function filterBuses()
     for (let i = 0; i < filteredBuses.length; i++)
     {
         busList.innerHTML +=
-            "<div class='bus-card'>" +
-                "<div class='bus-info'>" +
-                    "<h4>" + filteredBuses[i].name + "</h4>" +
-                    "<p>Bus Type: " + filteredBuses[i].type + "</p>" +
-                    "<p>Ticket Price: " + filteredBuses[i].price + "</p>" +
+            "<div class='bus-card'>" + "<div class='bus-info'>" + "<h4>" + filteredBuses[i].name + "</h4>" + "<p>Bus Type: " + filteredBuses[i].type + "</p>" + "<p>Ticket Price: " + filteredBuses[i].price + "</p>" +
                 "</div>" +
-                "<input type='button' class='select-button' value='Select' " +
-                "onclick='selectBus(" + i + ")'>" +
+                "<input type='button' class='select-button' value='Select' " + "onclick='selectBus(" + i + ")'>" +
             "</div>";
     }
 
