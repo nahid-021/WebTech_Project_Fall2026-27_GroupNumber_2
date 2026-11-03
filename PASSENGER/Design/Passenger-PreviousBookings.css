@@ -13,6 +13,8 @@ body {
     background-color: #00B4D8;
     overflow: hidden;
     border-bottom: 1px solid lightgray;
+        position: fixed;
+    width: 100%;
 }
 
 .topnav a {
@@ -61,7 +63,7 @@ body {
 }
 
 .header {
-    padding: 20px 50px;
+    padding: 75px 50px 20px;
 }
 
 .header h2 {
