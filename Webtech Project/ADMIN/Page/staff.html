@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../Design/style.css">
+        <script src="../JS/Staff.js"></script>
+        <title> Staff </title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="header">
+                <img src="../Assets/logo.png" id="logo">
+                <h1> Staff and Applications </h1>
+            </div>
+
+            <div class="topnav">
+                <a href="dashboard.html"> Dashboard </a>
+                <a href="timetable.html"> Timetable </a>
+                <a href="buses.html"> Buses </a>
+                <a href="staff.html" class="active"> Staff </a>
+                <a href="fares.html"> Fares </a>
+                <a href="login.html"> Logout </a>
+            </div>
+
+            <br>
+
+            <fieldset>
+                <legend> Staff Summary </legend>
+                <table>
+                    <tr>
+                        <td class="card"> <h2> 7 </h2> Drivers </td>
+                        <td class="card"> <h2> 6 </h2> Conductors </td>
+                        <td class="card"> <h2> 6 </h2> Available Today </td>
+                        <td class="card"> <h2> 2 </h2> Unassigned Trips </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend> Unassigned Trips </legend>
+                <table class="data">
+                    <tr>
+                        <th> Departure </th>
+                        <th> Route </th>
+                        <th> Bus </th>
+                        <th> Driver </th>
+                        <th> Conductor </th>
+                    </tr>
+                    <tr>
+                        <td> 11:00 PM </td>
+                        <td> Dhaka to Rangpur </td>
+                        <td> DH-1008 (AC) </td>
+                        <td class="none"> Not Assigned </td>
+                        <td class="none"> Not Assigned </td>
+                    </tr>
+                    <tr>
+                        <td> 11:00 PM </td>
+                        <td> Rangpur to Dhaka </td>
+                        <td> RG-2012 (AC) </td>
+                        <td class="none"> Not Assigned </td>
+                        <td class="none"> Not Assigned </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <form onsubmit="return collect_data()" novalidate>
+                <fieldset>
+                    <legend> Assign Staff to a Trip </legend>
+                    <table>
+                        <tr>
+                            <td> <label for="Trip"> Trip </label> </td>
+                            <td> <select id="Trip" name="Trip">
+                                     <option value=""> Select Trip </option>
+                                     <option value="11:00 PM Dhaka to Rangpur (DH-1008)"> 11:00 PM Dhaka to Rangpur (DH-1008) </option>
+                                     <option value="11:00 PM Rangpur to Dhaka (RG-2012)"> 11:00 PM Rangpur to Dhaka (RG-2012) </option>
+                                 </select>
+                                 <p id="TripError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Driver"> Driver </label> </td>
+                            <td> <select id="Driver" name="Driver">
+                                     <option value=""> Select Driver </option>
+                                     <option value="Imran Hossain"> Imran Hossain (Available) </option>
+                                     <option value="Mizanur Rahman"> Mizanur Rahman (Available) </option>
+                                     <option value="Shahin Alam"> Shahin Alam (Available) </option>
+                                 </select>
+                                 <p id="DriverError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Conductor"> Conductor </label> </td>
+                            <td> <select id="Conductor" name="Conductor">
+                                     <option value=""> Select Conductor </option>
+                                     <option value="Anwar Hossain"> Anwar Hossain (Available) </option>
+                                     <option value="Billal Mia"> Billal Mia (Available) </option>
+                                     <option value="Shamim Reza"> Shamim Reza (Available) </option>
+                                 </select>
+                                 <p id="ConductorError"> </p> </td>
+                        </tr>
+                    </table>
+
+                    <br>
+                    <input type="submit" value="Assign Staff">
+                    <h3 class="ok" id="Result"> </h3>
+                </fieldset>
+            </form>
+
+            <fieldset>
+                <legend> Job Applications </legend>
+                <table class="data">
+                    <tr>
+                        <th> Applicant </th>
+                        <th> Position </th>
+                        <th> Experience </th>
+                        <th> License No. </th>
+                        <th> Date Applied </th>
+                        <th> Status </th>
+                        <th> Action </th>
+                    </tr>
+                    <tr>
+                        <td> Rakib Hasan </td>
+                        <td> Driver </td>
+                        <td> 6 years </td>
+                        <td> DL-458231 </td>
+                        <td> 24 Oct 2026 </td>
+                        <td id="AppStatus1"> Pending </td>
+                        <td id="AppAction1">
+                            <input type="button" class="approve" value="Approve" onclick="approve_app(1, 'Rakib Hasan')">
+                            <input type="button" class="reject" value="Reject" onclick="reject_app(1, 'Rakib Hasan')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Mehedi Hasan </td>
+                        <td> Driver </td>
+                        <td> 4 years </td>
+                        <td> DL-772910 </td>
+                        <td> 25 Oct 2026 </td>
+                        <td id="AppStatus2"> Pending </td>
+                        <td id="AppAction2">
+                            <input type="button" class="approve" value="Approve" onclick="approve_app(2, 'Mehedi Hasan')">
+                            <input type="button" class="reject" value="Reject" onclick="reject_app(2, 'Mehedi Hasan')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Sumon Mia </td>
+                        <td> Conductor </td>
+                        <td> 2 years </td>
+                        <td> Not required </td>
+                        <td> 27 Oct 2026 </td>
+                        <td id="AppStatus3"> Pending </td>
+                        <td id="AppAction3">
+                            <input type="button" class="approve" value="Approve" onclick="approve_app(3, 'Sumon Mia')">
+                            <input type="button" class="reject" value="Reject" onclick="reject_app(3, 'Sumon Mia')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Arif Hossain </td>
+                        <td> Driver </td>
+                        <td> 8 years </td>
+                        <td> DL-330145 </td>
+                        <td> 18 Oct 2026 </td>
+                        <td class="ok"> Approved </td>
+                        <td> Done </td>
+                    </tr>
+                    <tr>
+                        <td> Nasir Uddin </td>
+                        <td> Conductor </td>
+                        <td> 1 year </td>
+                        <td> Not required </td>
+                        <td> 15 Oct 2026 </td>
+                        <td class="none"> Rejected </td>
+                        <td> Done </td>
+                    </tr>
+                </table>
+                <h3 class="ok" id="AppResult"> </h3>
+            </fieldset>
+
+            <fieldset>
+                <legend> Staff Roster </legend>
+                <table class="data">
+                    <tr>
+                        <th> Name </th>
+                        <th> Position </th>
+                        <th> Phone </th>
+                        <th> Experience </th>
+                        <th> Status </th>
+                        <th> Current Assignment </th>
+                    </tr>
+                    <tr>
+                        <td> Karim Uddin </td>
+                        <td> Driver </td>
+                        <td> 01711000001 </td>
+                        <td> 9 years </td>
+                        <td> Assigned </td>
+                        <td> DH-1021, 07:00 AM, Dhaka to Rangpur </td>
+                    </tr>
+                    <tr>
+                        <td> Rafiq Ahmed </td>
+                        <td> Driver </td>
+                        <td> 01711000002 </td>
+                        <td> 7 years </td>
+                        <td> Assigned </td>
+                        <td> RG-2045, 07:00 AM, Rangpur to Dhaka </td>
+                    </tr>
+                    <tr>
+                        <td> Jahid Hasan </td>
+                        <td> Driver </td>
+                        <td> 01711000003 </td>
+                        <td> 5 years </td>
+                        <td> Assigned </td>
+                        <td> DH-1034, 09:30 AM, Dhaka to Rangpur </td>
+                    </tr>
+                    <tr>
+                        <td> Monir Hossain </td>
+                        <td> Driver </td>
+                        <td> 01711000004 </td>
+                        <td> 10 years </td>
+                        <td> Assigned </td>
+                        <td> DH-1040, 01:00 PM, Dhaka to Rangpur </td>
+                    </tr>
+                    <tr>
+                        <td> Imran Hossain </td>
+                        <td> Driver </td>
+                        <td> 01711000005 </td>
+                        <td> 6 years </td>
+                        <td class="ok"> Available </td>
+                        <td> None </td>
+                    </tr>
+                    <tr>
+                        <td> Mizanur Rahman </td>
+                        <td> Driver </td>
+                        <td> 01711000006 </td>
+                        <td> 4 years </td>
+                        <td class="ok"> Available </td>
+                        <td> None </td>
+                    </tr>
+                    <tr>
+                        <td> Shahin Alam </td>
+                        <td> Driver </td>
+                        <td> 01711000007 </td>
+                        <td> 8 years </td>
+                        <td class="ok"> Available </td>
+                        <td> None </td>
+                    </tr>
+                    <tr>
+                        <td> Sabbir Khan </td>
+                        <td> Conductor </td>
+                        <td> 01811000001 </td>
+                        <td> 5 years </td>
+                        <td> Assigned </td>
+                        <td> DH-1021, 07:00 AM, Dhaka to Rangpur </td>
+                    </tr>
+                    <tr>
+                        <td> Imran Ali </td>
+                        <td> Conductor </td>
+                        <td> 01811000002 </td>
+                        <td> 3 years </td>
+                        <td> Assigned </td>
+                        <td> RG-2045, 07:00 AM, Rangpur to Dhaka </td>
+                    </tr>
+                    <tr>
+                        <td> Anwar Hossain </td>
+                        <td> Conductor </td>
+                        <td> 01811000003 </td>
+                        <td> 4 years </td>
+                        <td class="ok"> Available </td>
+                        <td> None </td>
+                    </tr>
+                    <tr>
+                        <td> Billal Mia </td>
+                        <td> Conductor </td>
+                        <td> 01811000004 </td>
+                        <td> 2 years </td>
+                        <td class="ok"> Available </td>
+                        <td> None </td>
+                    </tr>
+                    <tr>
+                        <td> Shamim Reza </td>
+                        <td> Conductor </td>
+                        <td> 01811000005 </td>
+                        <td> 6 years </td>
+                        <td class="ok"> Available </td>
+                        <td> None </td>
+                    </tr>
+                    <tr>
+                        <td> Rubel Mia </td>
+                        <td> Conductor </td>
+                        <td> 01811000006 </td>
+                        <td> 3 years </td>
+                        <td class="late"> On Leave </td>
+                        <td> Back on 02 Nov 2026 </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <div class="footer">
+                <h5> @AIUB Bus Service </h5>
+            </div>
+
+        </div>
+    </body>
+</html>

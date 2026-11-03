@@ -3,35 +3,87 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../Design/style.css">
-        <title> Admin Page </title>
+        <script src="../JS/Login.js"></script>
+        <title> Admin Login </title>
+        <style>
+            body.login{
+                max-width: 360px;
+            }
+            .loginhead{
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .loginhead h1{
+                color: black;
+                font-weight: normal;
+                font-size: 24px;
+            }
+            fieldset{
+                background-color: whitesmoke;
+                border: 1px solid lightgray;
+                border-radius: 6px;
+                padding: 16px;
+            }
+            label{
+                font-size: 14px;
+                font-weight: bold;
+            }
+            p{
+                margin: 4px 0;
+            }
+            .newbox{
+                border: 1px solid lightgray;
+                border-radius: 6px;
+                text-align: center;
+                padding: 16px;
+                margin-top: 16px;
+            }
+            a{
+                color: steelblue;
+                text-decoration: none;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+        </style>
     </head>
     <body class="login">
-        <div class="header">
+
+        <div class="loginhead">
             <img src="../Assets/logo.png" id="logo">
-            <h1> Admin Login </h1>
+            <h1> Sign in to AIUB Bus </h1>
         </div>
-        <form>
+
+        <form onsubmit="return check_login()" novalidate>
             <fieldset>
                 <table>
                     <tr>
-                        <td> <label for="username">Username:</label> </td>
+                        <td> <label for="username">Username</label> </td>
                     </tr>
                     <tr>
-                        <td> <input type="text" id="username" name="username"> </td>
+                        <td> <input type="text" id="username" name="username">
+                             <p id="UserError"> </p> </td>
                     </tr>
                     <tr>
-                        <td> <label for="password">Password:</label> </td>
+                        <td> <label for="password">Password</label> </td>
                     </tr>
                     <tr>
-                        <td> <input type="password" id="password" name="password"> </td>
+                        <td> <input type="password" id="password" name="password">
+                             <p id="PassError"> </p> </td>
+                    </tr>
+                    <tr>
+                        <td> <p id="LoginError"> </p> </td>
+                    </tr>
+                    <tr>
+                        <td> <input type="submit" value="Sign in"> </td>
                     </tr>
                 </table>
             </fieldset>
-            <br>
-            <input type="submit" value="Login">
-            <!-- <input type="reset" value="Cancel"> -->
         </form>
+
+        <div class="newbox">
+            New to AIUB Bus? <a href="register.html"> Create an account </a>
+        </div>
+
     </body>
-
-
 </html>
