@@ -24,7 +24,7 @@ else if(DriverID.length<5){
     Error.innerHTML = "Driver ID Must Carry at least 5 characters";
 }
 else{
-    Error.innerHTML = "Driver ID:"+DriverID;
+    // Error.innerHTML = "Driver ID:"+DriverID;
     return true;
 }
 return false;
@@ -48,7 +48,7 @@ function validateName(){
          return false;
     }
     else{
-    Error.innerHTML = "Driver Name:"+Name;
+    // Error.innerHTML = "Driver Name:"+Name;
     return true;
 }
 return false;
@@ -67,7 +67,7 @@ function validateEmail()
         Error.innerHTML = "Please Enter  Email in the Correct Format";
     }
     else{
-        Error.innerHTML = "Patient Email: "+Email;
+        // Error.innerHTML = "Driver Email: "+Email;
         return true;
     }
     return false;
@@ -87,7 +87,7 @@ function validatePhone()
         Error.innerHTML = "Number Must Contain 11 Digits";
     }
     else{
-        Error.innerHTML = "Phone Number: "+Phone;
+        // Error.innerHTML = "Phone Number: "+Phone;
         return true;
     }
     return false;
@@ -117,7 +117,7 @@ function validatePassword(){
         Error.innerHTMl="Pasword must contain this charcter(@,#,$,%)!";
     }
     else{
-        Error.innerHTML = "Password Accepted";
+        // Error.innerHTML = "Password Accepted";
         return true;
     }
     

@@ -59,7 +59,6 @@ function showSchedule()
     "</tr>";
 }
 }
-
 function deleteSchedule(i){
      let ConfirmDelete = confirm ("Do you want to delete this?");
 

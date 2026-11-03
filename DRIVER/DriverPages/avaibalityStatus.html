@@ -19,16 +19,13 @@
             <a href="SafetyReports.html">Safety Reports</a>
             <a href="TripHistory.html">Trip History</a>
             <a href="PassengerVerify.html">Passenger Verify</a>
-
             <a href="Login.html" class="signout">Sign Out</a>
         </div>
         <div class="container">
-
         <h2>Availability Status</h2>
         <form class = "schedule-form" onsubmit= "return addSchedule()">
             <label for = "date">Date</label>
-            <input type = "date" id="date" name="date" class="schedule-input" required>
-
+            <input type = "date" id="date" name="date" class="schedule-input">
             <label for="status">Status</label>
             <select id="status" name="status" class="schedule-input" >
                 <option value = "">Select Status</option>
@@ -36,43 +33,31 @@
                 <option value="On Duty">On Duty</option>
                 <option value = "On leave ">On leave</option>
             </select>
-
             <label for="note">Note</label>
             <input type="text" id="note"  class="schedule-input">
             <p id = "ScheduleError" ></p>
-
             <button type="submit" class = "btn">ADD</button>
             </form>
         </div>
-
         <div class="container-card">
             <h2>Driver Schedule</h2>
 
             <div class="table-wrap">
-                <table class="data-table" id="ScheduleTable">
-                    
+                <table class="data-table" id="ScheduleTable">                 
                         <tr>
                             <td>Date</td>
                             <td>Status</td>
                             <td>Note</td>
                             <td>Action</td>
-                        </tr>
-                    
+                        </tr>                   
                 </table>
             </div>
         </div>
-
-
-
-
-
-
          <div class = "bus-sheba">
         <h2>BusSheba</h2>
         <p>Safe Journeys, On-time trips,Happy passengers.</p>
         <p>Check Your Bus Before Every Trip And Drive Safe</p>
-     </div>
-     
+     </div>    
      <footer class = "site-footer">
         <p>2026 BusSheba.All rights Reserved.</p>
      </footer>
