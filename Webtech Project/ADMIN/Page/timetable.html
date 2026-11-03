@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../Design/Style.css">
+        <script src="../JS/Timetable.js"></script>
+        <title> Timetable </title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="header">
+                <img src="../Assets/logo.png" id="logo">
+                <h1> Routes and Timetable </h1>
+            </div>
+
+            <div class="topnav">
+                <a href="dashboard.html"> Dashboard </a>
+                <a href="timetable.html" class="active"> Timetable </a>
+                <a href="buses.html"> Buses </a>
+                <a href="staff.html"> Staff </a>
+                <a href="fares.html"> Fares </a>
+                <a href="login.html"> Logout </a>
+            </div>
+
+            <br>
+
+            <fieldset>
+                <legend> Route: Dhaka - Rangpur </legend>
+                <table>
+                    <tr>
+                        <td>
+                            <h3> Departing Dhaka </h3>
+                            <table class="data">
+                                <tr>
+                                    <th> Time </th>
+                                    <th> Bus </th>
+                                    <th> Driver </th>
+                                    <th> Conductor </th>
+                                    <th> Status </th>
+                                </tr>
+                                <tr>
+                                    <td> 06:30 AM </td>
+                                    <td> DH-1015 (Non-AC) </td>
+                                    <td> Hasan Ali </td>
+                                    <td> Rubel Mia </td>
+                                    <td class="ok"> On Time </td>
+                                </tr>
+                                <tr>
+                                    <td> 07:00 AM </td>
+                                    <td> DH-1021 (AC) </td>
+                                    <td> Karim Uddin </td>
+                                    <td> Sabbir Khan </td>
+                                    <td class="ok"> On Time </td>
+                                </tr>
+                                <tr>
+                                    <td> 09:30 AM </td>
+                                    <td> DH-1034 (Non-AC) </td>
+                                    <td> Jahid Hasan </td>
+                                    <td> Nayeem Sheikh </td>
+                                    <td class="late"> Delayed </td>
+                                </tr>
+                                <tr>
+                                    <td> 01:00 PM </td>
+                                    <td> DH-1040 (AC) </td>
+                                    <td> Monir Hossain </td>
+                                    <td> Tareq Aziz </td>
+                                    <td class="ok"> On Time </td>
+                                </tr>
+                                <tr>
+                                    <td> 11:00 PM </td>
+                                    <td> DH-1008 (AC) </td>
+                                    <td> Not Assigned </td>
+                                    <td> Not Assigned </td>
+                                    <td class="none"> No Driver </td>
+                                </tr>
+                            </table>
+                        </td>
+
+                        <td>
+                            <h3> Departing Rangpur </h3>
+                            <table class="data">
+                                <tr>
+                                    <th> Time </th>
+                                    <th> Bus </th>
+                                    <th> Driver </th>
+                                    <th> Conductor </th>
+                                    <th> Status </th>
+                                </tr>
+                                <tr>
+                                    <td> 06:30 AM </td>
+                                    <td> RG-2030 (Non-AC) </td>
+                                    <td> Delwar Hossain </td>
+                                    <td> Kamal Pasha </td>
+                                    <td class="ok"> On Time </td>
+                                </tr>
+                                <tr>
+                                    <td> 07:00 AM </td>
+                                    <td> RG-2045 (AC) </td>
+                                    <td> Rafiq Ahmed </td>
+                                    <td> Imran Ali </td>
+                                    <td class="ok"> On Time </td>
+                                </tr>
+                                <tr>
+                                    <td> 09:30 AM </td>
+                                    <td> RG-2051 (Non-AC) </td>
+                                    <td> Sohel Rana </td>
+                                    <td> Faruk Mia </td>
+                                    <td class="ok"> On Time </td>
+                                </tr>
+                                <tr>
+                                    <td> 01:00 PM </td>
+                                    <td> RG-2060 (AC) </td>
+                                    <td> Jewel Rana </td>
+                                    <td> Rasel Ahmed </td>
+                                    <td class="ok"> On Time </td>
+                                </tr>
+                                <tr>
+                                    <td> 11:00 PM </td>
+                                    <td> RG-2012 (AC) </td>
+                                    <td> Not Assigned </td>
+                                    <td> Not Assigned </td>
+                                    <td class="none"> No Driver </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <form onsubmit="return collect_data()" novalidate>
+                <fieldset>
+                    <legend> Assign a Bus to a Departure </legend>
+                    <table>
+                        <tr>
+                            <td> <label for="Route"> Route </label> </td>
+                            <td> <select id="Route" name="Route">
+                                     <option value=""> Select Route </option>
+                                     <option value="Dhaka - Rangpur"> Dhaka - Rangpur </option>
+                                     <option value="Dhaka - Bogura"> Dhaka - Bogura </option>
+                                     <option value="Dhaka - Sylhet"> Dhaka - Sylhet </option>
+                                 </select>
+                                 <p id="RouteError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label> Departing From </label> </td>
+                            <td> <input type="radio" id="FromDhaka" name="Terminal" value="Dhaka"> Dhaka
+                                 <input type="radio" id="FromRangpur" name="Terminal" value="Rangpur"> Rangpur
+                                 <p id="TerminalError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Time"> Departure Time </label> </td>
+                            <td> <input type="time" id="Time" name="Time">
+                                 <p id="TimeError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label> Service Type </label> </td>
+                            <td> <input type="radio" id="AC" name="Service" value="AC"> AC
+                                 <input type="radio" id="NonAC" name="Service" value="Non-AC"> Non-AC
+                                 <p id="ServiceError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Bus"> Bus </label> </td>
+                            <td> <select id="Bus" name="Bus">
+                                     <option value=""> Select Bus </option>
+                                     <option value="DH-1008 (AC)"> DH-1008 (AC) </option>
+                                     <option value="DH-1015 (Non-AC)"> DH-1015 (Non-AC) </option>
+                                     <option value="DH-1021 (AC)"> DH-1021 (AC) </option>
+                                     <option value="DH-1034 (Non-AC)"> DH-1034 (Non-AC) </option>
+                                     <option value="DH-1040 (AC)"> DH-1040 (AC) </option>
+                                     <option value="RG-2012 (AC)"> RG-2012 (AC) </option>
+                                     <option value="RG-2030 (Non-AC)"> RG-2030 (Non-AC) </option>
+                                     <option value="RG-2045 (AC)"> RG-2045 (AC) </option>
+                                     <option value="RG-2051 (Non-AC)"> RG-2051 (Non-AC) </option>
+                                     <option value="RG-2060 (AC)"> RG-2060 (AC) </option>
+                                 </select>
+                                 <p id="BusError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Driver"> Driver </label> </td>
+                            <td> <select id="Driver" name="Driver">
+                                     <option value=""> Select Driver </option>
+                                     <option value="Imran Hossain"> Imran Hossain (Available) </option>
+                                     <option value="Mizanur Rahman"> Mizanur Rahman (Available) </option>
+                                     <option value="Shahin Alam"> Shahin Alam (Available) </option>
+                                 </select>
+                                 <p id="DriverError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Conductor"> Conductor </label> </td>
+                            <td> <select id="Conductor" name="Conductor">
+                                     <option value=""> Select Conductor </option>
+                                     <option value="Anwar Hossain"> Anwar Hossain (Available) </option>
+                                     <option value="Billal Mia"> Billal Mia (Available) </option>
+                                     <option value="Shamim Reza"> Shamim Reza (Available) </option>
+                                 </select>
+                                 <p id="ConductorError"> </p> </td>
+                        </tr>
+                    </table>
+
+                    <br>
+                    <input type="submit" value="Assign Bus">
+                    <h3 class="ok" id="Result"> </h3>
+                </fieldset>
+            </form>
+
+            <div class="footer">
+                <h5> @AIUB Bus Service </h5>
+            </div>
+
+        </div>
+    </body>
+</html>
