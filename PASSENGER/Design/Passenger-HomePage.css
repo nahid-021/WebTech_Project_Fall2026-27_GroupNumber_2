@@ -13,6 +13,8 @@ body {
     background-color: #00B4D8;
     overflow: hidden;
     border-bottom: 1px solid lightgray;
+    position: fixed;
+    width: 100%;
 }
 
 .topnav a {
@@ -58,7 +60,7 @@ body {
 .main {
     background-color: #0077B6;
     text-align: center;
-    padding: 50px 20px;
+    padding: 100px 20px 50px;
     color: white;
 }
 
