@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../Design/style.css">
+        <script src="../JS/Buses.js"></script>
+        <title> Buses </title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="header">
+                <img src="../Assets/logo.png" id="logo">
+                <h1> Buses </h1>
+            </div>
+
+            <div class="topnav">
+                <a href="dashboard.html"> Dashboard </a>
+                <a href="timetable.html"> Timetable </a>
+                <a href="buses.html" class="active"> Buses </a>
+                <a href="staff.html"> Staff </a>
+                <a href="fares.html"> Fares </a>
+                <a href="login.html"> Logout </a>
+            </div>
+
+            <br>
+
+            <fieldset>
+                <legend> Bus Summary </legend>
+                <table>
+                    <tr>
+                        <td class="card"> <h2> 10 </h2> Total Buses </td>
+                        <td class="card"> <h2> 6 </h2> AC Buses </td>
+                        <td class="card"> <h2> 4 </h2> Non-AC Buses </td>
+                        <td class="card"> <h2> 1 </h2> Maintenance Due </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend> Bus List </legend>
+                <table class="data">
+                    <tr>
+                        <th> Bus No. </th>
+                        <th> Make </th>
+                        <th> Type </th>
+                        <th> Seats </th>
+                        <th> Fuel </th>
+                        <th> Last Service </th>
+                        <th> Status </th>
+                    </tr>
+                    <tr>
+                        <td> DH-1008 </td>
+                        <td> Volvo </td>
+                        <td> AC </td>
+                        <td> 40 </td>
+                        <td> Diesel </td>
+                        <td> 02 Oct 2026 </td>
+                        <td class="ok"> Active </td>
+                    </tr>
+                    <tr>
+                        <td> DH-1015 </td>
+                        <td> Hino </td>
+                        <td> Non-AC </td>
+                        <td> 44 </td>
+                        <td> Diesel </td>
+                        <td> 15 Sep 2026 </td>
+                        <td class="ok"> Active </td>
+                    </tr>
+                    <tr>
+                        <td> DH-1021 </td>
+                        <td> Scania </td>
+                        <td> AC </td>
+                        <td> 40 </td>
+                        <td> Diesel </td>
+                        <td> 28 Sep 2026 </td>
+                        <td class="ok"> Active </td>
+                    </tr>
+                    <tr>
+                        <td> DH-1034 </td>
+                        <td> Ashok Leyland </td>
+                        <td> Non-AC </td>
+                        <td> 44 </td>
+                        <td> CNG </td>
+                        <td> 20 Jul 2026 </td>
+                        <td class="late"> Maintenance Due </td>
+                    </tr>
+                    <tr>
+                        <td> DH-1040 </td>
+                        <td> Volvo </td>
+                        <td> AC </td>
+                        <td> 40 </td>
+                        <td> Diesel </td>
+                        <td> 10 Oct 2026 </td>
+                        <td class="ok"> Active </td>
+                    </tr>
+                    <tr>
+                        <td> RG-2012 </td>
+                        <td> Scania </td>
+                        <td> AC </td>
+                        <td> 40 </td>
+                        <td> Diesel </td>
+                        <td> 05 Oct 2026 </td>
+                        <td class="ok"> Active </td>
+                    </tr>
+                    <tr>
+                        <td> RG-2030 </td>
+                        <td> Hino </td>
+                        <td> Non-AC </td>
+                        <td> 44 </td>
+                        <td> Diesel </td>
+                        <td> 22 Sep 2026 </td>
+                        <td class="ok"> Active </td>
+                    </tr>
+                    <tr>
+                        <td> RG-2045 </td>
+                        <td> Volvo </td>
+                        <td> AC </td>
+                        <td> 40 </td>
+                        <td> Diesel </td>
+                        <td> 12 Oct 2026 </td>
+                        <td class="ok"> Active </td>
+                    </tr>
+                    <tr>
+                        <td> RG-2051 </td>
+                        <td> Ashok Leyland </td>
+                        <td> Non-AC </td>
+                        <td> 44 </td>
+                        <td> CNG </td>
+                        <td> 30 Aug 2026 </td>
+                        <td class="none"> In Workshop </td>
+                    </tr>
+                    <tr>
+                        <td> RG-2060 </td>
+                        <td> Scania </td>
+                        <td> AC </td>
+                        <td> 40 </td>
+                        <td> Diesel </td>
+                        <td> 18 Oct 2026 </td>
+                        <td class="ok"> Active </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <form onsubmit="return collect_data()" novalidate>
+                <fieldset>
+                    <legend> Add a New Bus </legend>
+                    <table>
+                        <tr>
+                            <td> <label for="BusNo"> Bus Number </label> </td>
+                            <td> <input type="text" id="BusNo" name="BusNo" placeholder="Example: DH-1050">
+                                 <p id="BusNoError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Make"> Make </label> </td>
+                            <td> <select id="Make" name="Make">
+                                     <option value=""> Select Make </option>
+                                     <option value="Volvo"> Volvo </option>
+                                     <option value="Scania"> Scania </option>
+                                     <option value="Hino"> Hino </option>
+                                     <option value="Ashok Leyland"> Ashok Leyland </option>
+                                     <option value="Tata"> Tata </option>
+                                 </select>
+                                 <p id="MakeError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label> Service Type </label> </td>
+                            <td> <input type="radio" id="AC" name="Service" value="AC"> AC
+                                 <input type="radio" id="NonAC" name="Service" value="Non-AC"> Non-AC
+                                 <p id="ServiceError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Seats"> Number of Seats </label> </td>
+                            <td> <input type="number" id="Seats" name="Seats" placeholder="Between 20 and 60">
+                                 <p id="SeatsError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Year"> Year of Manufacture </label> </td>
+                            <td> <input type="number" id="Year" name="Year" placeholder="Example: 2019">
+                                 <p id="YearError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label> Fuel Type </label> </td>
+                            <td> <input type="radio" id="Diesel" name="Fuel" value="Diesel"> Diesel
+                                 <input type="radio" id="CNG" name="Fuel" value="CNG"> CNG
+                                 <p id="FuelError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Status"> Status </label> </td>
+                            <td> <select id="Status" name="Status">
+                                     <option value=""> Select Status </option>
+                                     <option value="Active"> Active </option>
+                                     <option value="In Workshop"> In Workshop </option>
+                                 </select>
+                                 <p id="StatusError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="ServiceDate"> Last Service Date </label> </td>
+                            <td> <input type="date" id="ServiceDate" name="ServiceDate">
+                                 <p id="ServiceDateError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Certificate"> Fitness Certificate (optional) </label> </td>
+                            <td> <input type="file" id="Certificate" name="Certificate"> </td>
+                        </tr>
+                    </table>
+
+                    <br>
+                    <input type="submit" value="Add Bus">
+                    <h3 class="ok" id="Result"> </h3>
+                </fieldset>
+            </form>
+
+            <div class="footer">
+                <h5> @AIUB Bus Service </h5>
+            </div>
+
+        </div>
+    </body>
+</html>
