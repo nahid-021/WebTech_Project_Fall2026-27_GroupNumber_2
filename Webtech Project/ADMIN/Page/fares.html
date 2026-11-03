@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../Design/style.css">
+        <script src="../JS/Fares.js"></script>
+        <title> Fares </title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="header">
+                <img src="../Assets/logo.png" id="logo">
+                <h1> Fare Management </h1>
+            </div>
+
+            <div class="topnav">
+                <a href="dashboard.html"> Dashboard </a>
+                <a href="timetable.html"> Timetable </a>
+                <a href="buses.html"> Buses </a>
+                <a href="staff.html"> Staff </a>
+                <a href="fares.html" class="active"> Fares </a>
+                <a href="login.html"> Logout </a>
+            </div>
+
+            <br>
+
+            <fieldset>
+                <legend> Fuel and Fare Summary </legend>
+                <table>
+                    <tr>
+                        <td class="card"> <h2> Tk 105 </h2> Diesel (per litre) </td>
+                        <td class="card"> <h2> Tk 43 </h2> CNG (per cubic metre) </td>
+                        <td class="card"> <h2> 12 Sep 2026 </h2> Fares Last Updated </td>
+                        <td class="card"> <h2> 3 </h2> Routes </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend> Current Fares </legend>
+                <table class="data">
+                    <tr>
+                        <th> Route </th>
+                        <th> Distance </th>
+                        <th> AC Fare </th>
+                        <th> Non-AC Fare </th>
+                        <th> Last Updated </th>
+                    </tr>
+                    <tr>
+                        <td> Dhaka - Rangpur </td>
+                        <td> 295 km </td>
+                        <td> Tk 1500 </td>
+                        <td> Tk 900 </td>
+                        <td> 12 Sep 2026 </td>
+                    </tr>
+                    <tr>
+                        <td> Dhaka - Bogura </td>
+                        <td> 200 km </td>
+                        <td> Tk 1000 </td>
+                        <td> Tk 650 </td>
+                        <td> 20 Jun 2026 </td>
+                    </tr>
+                    <tr>
+                        <td> Dhaka - Sylhet </td>
+                        <td> 240 km </td>
+                        <td> Tk 1100 </td>
+                        <td> Tk 700 </td>
+                        <td> 01 Aug 2026 </td>
+                    </tr>
+                </table>
+                <p> The same fare applies in both directions. </p>
+            </fieldset>
+
+            <form onsubmit="return collect_data()" novalidate>
+                <fieldset>
+                    <legend> Change a Fare </legend>
+                    <table>
+                        <tr>
+                            <td> <label for="Route"> Route </label> </td>
+                            <td> <select id="Route" name="Route">
+                                     <option value=""> Select Route </option>
+                                     <option value="Dhaka - Rangpur"> Dhaka - Rangpur </option>
+                                     <option value="Dhaka - Bogura"> Dhaka - Bogura </option>
+                                     <option value="Dhaka - Sylhet"> Dhaka - Sylhet </option>
+                                 </select>
+                                 <p id="RouteError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label> Bus Type </label> </td>
+                            <td> <input type="radio" id="AC" name="Type" value="AC"> AC
+                                 <input type="radio" id="NonAC" name="Type" value="Non-AC"> Non-AC
+                                 <p id="TypeError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label> Change </label> </td>
+                            <td> <input type="radio" id="Increase" name="Change" value="Increase"> Increase
+                                 <input type="radio" id="Decrease" name="Change" value="Decrease"> Decrease
+                                 <p id="ChangeError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Percent"> Percentage (%) </label> </td>
+                            <td> <input type="number" id="Percent" name="Percent" placeholder="Between 1 and 50">
+                                 <p id="PercentError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Reason"> Reason </label> </td>
+                            <td> <select id="Reason" name="Reason">
+                                     <option value=""> Select Reason </option>
+                                     <option value="Fuel price change"> Fuel price change </option>
+                                     <option value="Maintenance cost"> Maintenance cost </option>
+                                     <option value="Festival season"> Festival season </option>
+                                     <option value="Other"> Other </option>
+                                 </select>
+                                 <p id="ReasonError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="EffectiveDate"> Effective From </label> </td>
+                            <td> <input type="date" id="EffectiveDate" name="EffectiveDate">
+                                 <p id="DateError"> </p> </td>
+                        </tr>
+                    </table>
+
+                    <br>
+                    <input type="submit" value="Update Fare">
+                    <h3 class="ok" id="Result"> </h3>
+                </fieldset>
+            </form>
+
+            <fieldset>
+                <legend> Recent Fare Changes </legend>
+                <table class="data">
+                    <tr>
+                        <th> Date </th>
+                        <th> Route </th>
+                        <th> Type </th>
+                        <th> Old Fare </th>
+                        <th> New Fare </th>
+                        <th> Reason </th>
+                    </tr>
+                    <tr>
+                        <td> 12 Sep 2026 </td>
+                        <td> Dhaka - Rangpur </td>
+                        <td> AC </td>
+                        <td> Tk 1400 </td>
+                        <td> Tk 1500 </td>
+                        <td> Fuel price change </td>
+                    </tr>
+                    <tr>
+                        <td> 12 Sep 2026 </td>
+                        <td> Dhaka - Rangpur </td>
+                        <td> Non-AC </td>
+                        <td> Tk 850 </td>
+                        <td> Tk 900 </td>
+                        <td> Fuel price change </td>
+                    </tr>
+                    <tr>
+                        <td> 01 Aug 2026 </td>
+                        <td> Dhaka - Sylhet </td>
+                        <td> AC </td>
+                        <td> Tk 1050 </td>
+                        <td> Tk 1100 </td>
+                        <td> Maintenance cost </td>
+                    </tr>
+                    <tr>
+                        <td> 20 Jun 2026 </td>
+                        <td> Dhaka - Bogura </td>
+                        <td> Non-AC </td>
+                        <td> Tk 600 </td>
+                        <td> Tk 650 </td>
+                        <td> Maintenance cost </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <div class="footer">
+                <h5> @AIUB Bus Service </h5>
+            </div>
+
+        </div>
+    </body>
+</html>
