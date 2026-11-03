@@ -4,8 +4,6 @@ function submitReport(){
     let date = document.getElementById("reportDate").value;
     let Type = document.getElementById("type").value;
     let Description = document.getElementById("description").value.trim();
-    
-
     if ( date == "")
     {
         alert("Please Select The Report Date");
@@ -25,8 +23,7 @@ function submitReport(){
 
         if(confirmReport == true)
         {
-           
-            let Report = {
+              let Report = {
                 Date:date,
                 Type:Type,
                 Description: Description,
@@ -66,7 +63,7 @@ function showReports(){
         }
 }
 
-function deleteReport()
+function deleteReport(i)
 {
     let ConfirmDelete = confirm("");
     if(ConfirmDelete==true)

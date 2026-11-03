@@ -1,0 +1,81 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0 auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:azure;
+}
+.header{
+    background-color:darkslateblue ;
+    color:white;
+    text-align:center;
+    padding:35px;
+    border-bottom: 1px solid ligthgray;
+}
+.header h1{
+    margin:0;
+    font-size: 32px;
+}
+.header p{
+    margin-top:10px;
+    color:lightcyan;
+    font-size:17px;
+}
+
+.user-grid{
+    display:flex;
+    align-items:stretch;
+    flex-wrap:wrap;
+    gap:25px;
+    padding: 60px 30px;
+    min-height:450px;
+    justify-content:center;
+}
+.user-card{
+    width: 240px;
+    background-color:white;
+    text-align:center;
+    padding:30px 20px;
+    border:1px solid lightblue;
+    border-top:5px solid mediumseagreen;
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+}
+.user-card h2{
+    color:darkslategray;
+    margin-bottom:15px;
+    font-size:23px;
+}
+.user-card p{
+    color:dimgray;
+    font-size:15px;
+    min-height:65px;
+
+}
+.user-btn{
+    width: 100%;
+    padding:12px;
+    background-color:teal;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:auto;
+    font-weight:bold;
+}
+.user-btn:hover{
+    background-color:seagreen;
+}
+.footer{
+    background-color: darkslateblue;
+    color:white;
+    text-align:center;
+    padding:18px;
+    border-top:1px solid lightgray;
+}
+.footer h5{
+    margin:0 auto;
+    font-size:15px;
+}

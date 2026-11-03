@@ -60,7 +60,7 @@ function showSchedule()
 }
 }
 
-function deleteSchedule(){
+function deleteSchedule(i){
      let ConfirmDelete = confirm ("Do you want to delete this?");
 
     if(ConfirmDelete == true)
