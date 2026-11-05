@@ -5,7 +5,7 @@
         <link rel = "stylesheet" href="../DriverDesign/driver.css">
         <title>BusSheba-Safety Report</title>
         <!-- <script src = "../DriverJs/driver.js"></script> -->
-         <script src = "../DriverJs/SafetyReports.js"></script>
+         <script src = "../DriverJs/SafetyReports.js" defer></script>
     </head>
 
     <body>
@@ -25,40 +25,69 @@
         <div class="SafetyReports">
             <div class="safety-cards">
                 <h2>Submit a Safety Report</h2>
-               
+               <div class = "form-row">
                 <div class = "form-group">
                   <label for="reportDate">Report Date</label>
                   <input type = "date" id = "reportDate">
-
-                </div> 
-
+                  <p class = "error-msg" id="dateError"></p>
+                </div>                 
               <div class="form-group">
                 <label for="type">Report Type</label>
-              
-
                 <select id = "type">
                     <option value ="">Select Report Type</option>
                     <option value ="Accident">Accident</option>
-                    <option value ="Vehicle Damage">Vehicle Damage</option>
+                    <option value ="Breakdown">Breakdown</option>
+                    <option value ="Fire/Emergency">Fire / Emergency</option>
+                    <option value ="Passenger Incident">Passenger Incident</option>
+                    <option value ="Road Hazard">Road Hazard</option>
+                    <option value ="Maintenance Required">Maintenance Required</option>
                     <option value ="Other">Other</option>
                 </select>
+                 <p class = "error-msg" id="typeError"></p>
               </div>
-            
+              </div>            
               <div class = "form-group">
                 <label for="DESCRIPTION">Description</label>
-
                 <textarea
                 id="description"
-                rows="10"
+                rows="4"
                 placeholder="Describe the safety issue"
                 ></textarea>
+                 <p class = "error-msg" id="descError"></p>
               </div>
-
+               <div class = "form-group">
+                  <label>Safety issue</label>
+                  <div class="issue-options">
+                    <label>
+                  <input type="checkbox" name="issues" value="Brake Problem">
+                Brake Problem
+                </label>
+                <label>
+                <input type="checkbox" name="issues" value="Engine Problem">
+                Engine Problem
+                </label>
+                <label>
+                <input type="checkbox" name="issues" value="Tire Problem">
+                Tire Problem
+                </label>
+                <label>
+                <input type="checkbox" name="issues" value="Light Problem">
+                Light Problem
+                </label>
+                <label>
+                <input type="checkbox" name="issues" value="Steering Problem">
+                 Steering Problem
+                 </label>
+                 <label>
+                <input type="checkbox" name="issues" value="Other">
+                Other
+                </label>
+                </div>
+               </div>
+                <p class = "error-msg" id = "issueError"></p>
               <button type = "button" class ="submit-button" onclick="submitReport()">
-    
-                Submit Report
-              </button>
-              
+                  Submit Report
+              </button> 
               <p id = "ReportError"></p>
             </div>
         </div>
@@ -72,23 +101,19 @@
                     <td>Date</td>
                     <td>Report Type</td>
                     <td>Description</td>
+                    <td>Safety Issue</td>
                     <td>Action</td>
                   </tr>
                 </table>
               </div>
-              </div>
-
-       
-        
+              </div>        
          <div class = "bus-sheba">
         <h2>BusSheba</h2>
         <p>Safe Journeys, On-time trips,Happy passengers.</p>
         <p>Check Your Bus Before Every Trip And Drive Safe</p>
-     </div>
-     
+     </div>     
      <footer class = "site-footer">
-        <p></p>2026 BusSheba.All Rights Reserved.</p>
-        
+        <p></p>2026 BusSheba.All Rights Reserved.</p>        
      </footer>
     </body>
 </html>

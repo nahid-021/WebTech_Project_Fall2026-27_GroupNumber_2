@@ -186,73 +186,34 @@ body{
     color: midnightblue;
 
 }
-/* .topnav a.active {
-    color:lightyellow;
-    border-bottom: 1px solid lightsteelblue;
-    padding-bottom:12 px;
-} */
-
-.schedule-form label{
-    display: block;
-    margin:8px 0 6px;
-    font-weight:bold;
-    color:midnightblue;
-    background-color: transparent;
-}
-
-.schedule-input {
-    width:100%;
-    height:34px;
-    padding:0 8px;
-    border:1px solid;
-    border-radius:4px;
-    font-family:'Segoe UI' , 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size:12px;
-    background-color: white;
-    
-}
-.schedule-input:focus{
-    outline:1px solid royalblue;
-    border-color:royalblue;
-    
-}
-.schedule-form .btn {
-    margin-top: 12px;
-    padding:8px 18px;
-}
-.schedule-form #ScheduleError {
-    color: red;
-    font-size: 14px;
-    font-weight: bold;
-}
 .SafetyReports{
-    margin: 20px 16px;
-    padding: 18px;
+     margin: 10px 16px; 
+    padding: 12px;
     background-color: lightsteelblue;
     border-radius: 8px;
 }
-.safety-card{
+.safety-cards{
     max-width:650px;
     margin:0 auto;
-    padding: 18px;
+    padding: 12px 18px;
     background-color:white;
     border:1px solid lightsteelblue;
     border-radius:8px;
 }
 .safety-card,
 .safety-cards h2{
-    margin:0 0 18px;
-    font-size: 20px;
+    margin:0 0 10px;
+    font-size: 18px;
     color: midnightblue;
     text-align: center;
 
 }
 .form-group{
-    margin-bottom: 13px;
+    margin-bottom: 8px;
 }
 .form-group label{
     display: block;
-    margin-bottom:6px;
+    margin-bottom:4px;
     font-weight: bold;
     font-size: 12px;
     color:midnightblue;
@@ -314,8 +275,6 @@ body{
 .section-description {
     margin-bottom:18px;
 }
-
-
 
 /* Trip History */
 .modal-buttons{
@@ -640,4 +599,41 @@ color:white;
     padding:10px;
     margin-top:14px;
     font-size:15px;
+}
+.issue-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.issue-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: aliceblue;
+    padding: 6px 10px;
+    border: 1px solid lightsteelblue;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.issue-options input {
+    cursor: pointer;
+    width:auto;
+}
+
+#IssueError
+{
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+.form-row{
+    display:flex;
+    gap: 12px;
+
+}
+.error-msg{
+    color:red;
 }

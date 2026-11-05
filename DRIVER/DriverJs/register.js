@@ -29,8 +29,6 @@ else{
 }
 return false;
 }
-    
-
 function validateName(){
     let Name = document.getElementById("driverName").value.trim();
     let Error = document.getElementById("NameError");

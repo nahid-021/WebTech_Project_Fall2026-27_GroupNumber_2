@@ -45,12 +45,10 @@ function showTrips(){
         "<td>"+ tripList[i].date+"</td>" +
         "<td>"+ tripList[i].status+"</td>" +
         "<td><button type = 'button' class = 'btn' onclick = \"viewDetails('" + tripList[i].id+ "')\">View Details</button></td>" +
-    "</tr>";
-       
+    "</tr>";      
 
     }
-    showTripCount();
-        
+    showTripCount();      
         
     }
 
@@ -61,21 +59,13 @@ function showTrips(){
                 let trip = tripList[i];
                 selectedTripID = tripID;
                 document.getElementById("updateStatus").value = trip.status;
-                
-            
-
                 document.getElementById("detialTripID").innerHTML = "<strong>Trip ID:</strong>" + trip.id;
                 document.getElementById("detialRoute").innerHTML = "<strong>Route:</strong>" + trip.route;
                 document.getElementById("detialBus").innerHTML = "<strong>Bus Number:</strong>" + trip.bus ;
                 document.getElementById("detialDate").innerHTML = "<strong>Date:</strong>" + trip.date;
                 document.getElementById("detialDeparture").innerHTML = "<strong>Deaparture:</strong>" + trip.departure;
-                document.getElementById("detialArrival").innerHTML = "<strong>Arrival:</strong>" + trip.arrival;
-                
-                
+                document.getElementById("detialArrival").innerHTML = "<strong>Arrival:</strong>" + trip.arrival;    
                 document.getElementById("detialSeat").innerHTML = "<strong>seats:</strong>" + trip.seats;
-               
-                
-
             let modal = document.getElementById("tripModal");
             modal.style.display = "block";
         
@@ -116,21 +106,21 @@ function filterTrips(){
     Table.innerHTML = "";
     for(let i =0;i<tripList.length;i++){
         let validID = tripList[i].id.toLowerCase() == search;
-         let validRoute = tripList[i].route.toLowerCase() == search;
-          let validBus = tripList[i].bus.toLowerCase() == search;
-           let validStatus = tripList[i].status.toLowerCase().trim() == search.trim();
+        let validRoute = tripList[i].route.toLowerCase() == search;
+        let validBus = tripList[i].bus.toLowerCase() == search;
+        let validStatus = tripList[i].status.toLowerCase().trim() == search.trim();
 
-           let isMatch = validID || validRoute || validBus || validStatus;
+        let isMatch = validID || validRoute || validBus || validStatus;
           
-           if(isMatch == true)
+        if(isMatch == true)
            {
             Table.innerHTML +=
             "<tr>" +
        "<td>"+ tripList[i].id+"</td>" +
         "<td>"+ tripList[i].route+"</td>" +
-         "<td>"+ tripList[i].bus+"</td>" +
-          "<td>"+ tripList[i].date+"</td>" +
-           "<td>"+ tripList[i].status+"</td>" +
+        "<td>"+ tripList[i].bus+"</td>" +
+        "<td>"+ tripList[i].date+"</td>" +
+        "<td>"+ tripList[i].status+"</td>" +
           "</tr>";
           total++;
            }
@@ -139,16 +129,16 @@ function filterTrips(){
         Table.innerHTML = "<tr> No trips found.</tr>";
     }
 }
-function updateTrip(){
-    let status = document.getElementById("updateStatus").value;
+// function updateTrip(){
+//     let status = document.getElementById("updateStatus").value;
 
-    for(let i = 0;i<tripList.length;i++){
-        if(tripList[i].id==selectedTripID){
-            tripList[i].status = status;
-        }
-    }
+//     for(let i = 0;i<tripList.length;i++){
+//         if(tripList[i].id==selectedTripID){
+//             tripList[i].status = status;
+//         }
+//     }
    
-    showTrips();
-    showTripCount();
-    closeDetails();
-}
+//     showTrips();
+//     showTripCount();
+//     closeDetails();
+// }

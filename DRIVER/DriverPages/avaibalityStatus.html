@@ -21,32 +21,56 @@
             <a href="PassengerVerify.html">Passenger Verify</a>
             <a href="Login.html" class="signout">Sign Out</a>
         </div>
-        <div class="container">
+        <div class="SafetyReports">
+            <div class="safety-cards">
         <h2>Availability Status</h2>
-        <form class = "schedule-form" onsubmit= "return addSchedule()">
+        <!-- <form class = "schedule-form" onsubmit= "return addSchedule()"> -->
+            <div class="form-row">
+                <div class = "form-group">
             <label for = "date">Date</label>
-            <input type = "date" id="date" name="date" class="schedule-input">
+            <input type = "date" id="date" >
+            <p class="error-msg"id="dateError"></p>
+                </div>
+                <div class="form-group">
+
+                
             <label for="status">Status</label>
-            <select id="status" name="status" class="schedule-input" >
+            <select id="status" name="status">
                 <option value = "">Select Status</option>
                 <option value="Available">Available</option>
                 <option value="On Duty">On Duty</option>
-                <option value = "On leave ">On leave</option>
+                <option value = "On leave">On Leave</option>
             </select>
+            <p class = "error-msg"id="statusError"></p>
+                </div>
+            </div>
+            <div class ="form-row">
+                <div class = "form-group">
+                    <label>Shift</label>
+                   <div class="issue-options">
+                    <label><input type ="radio"name="shift"value="Morning">Morning</label>
+                    <label><input type ="radio"name="shift"value="Afternoon">Afternoon</label>
+                    <label><input type ="radio"name="shift"value="Night">Night</label>
+                   </div>
+                   <p class = "error-msg" id="shiftError"></p>
+                </div>
+            </div>
+            <div class="form-group">        
             <label for="note">Note</label>
-            <input type="text" id="note"  class="schedule-input">
-            <p id = "ScheduleError" ></p>
-            <button type="submit" class = "btn">ADD</button>
-            </form>
+            <textarea id="note" rows="4" placeholder="Write a note here "></textarea> 
+             <p class = "error-msg" id="noteError"></p>
+            </div>         
+            <button type="button" class = "submit-button" onclick="addSchedule()">ADD</button>
+            </div>
         </div>
         <div class="container-card">
             <h2>Driver Schedule</h2>
-
             <div class="table-wrap">
                 <table class="data-table" id="ScheduleTable">                 
                         <tr>
                             <td>Date</td>
                             <td>Status</td>
+                            <td>Shift</td>
                             <td>Note</td>
                             <td>Action</td>
                         </tr>                   

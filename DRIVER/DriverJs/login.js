@@ -25,7 +25,7 @@ function driverLogin(){
         }
     }
     if(found==false){
-        alert("Pasword must contain this charcter(@,#,$,%)!")
+        alert("Pasword must contain this charcter(@,#,$,%,&)!")
     }
     if(password == "123@456"){
         alert("Welcome to BusSheba Driver Panel!");
