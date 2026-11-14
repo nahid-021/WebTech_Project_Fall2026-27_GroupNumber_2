@@ -1,21 +1,21 @@
 function collect_data()
 {
-    let n  = validName();
-    let e  = validEmail();
-    let ph = validPhone();
-    let d  = validDOB();
-    let g  = validGender();
-    let a  = validAddress();
-    let em = validEmployee();
-    let de = validDesignation();
-    let us = validUser();
-    let pa = validPassword();
-    let cp = validConfirm();
-    let te = validTerms();
+    let name  = validName();
+    let email  = validEmail();
+    let phone = validPhone();
+    let dob  = validDOB();
+    let gender  = validGender();
+    let address  = validAddress();
+    let employee = validEmployee();
+    let designation = validDesignation();
+    let username = validUser();
+    let password = validPassword();
+    let confirm_password = validConfirm();
+    let terms = validTerms();
 
     let Result = document.getElementById("Result");
 
-    if (n && e && ph && d && g && a && em && de && us && pa && cp && te)
+    if (name && email && phone && dob && gender && address && employee && designation && username && password && confirm_password && terms)
     {
         Result.innerHTML = "Account created successfully! You can now sign in.";
     }
