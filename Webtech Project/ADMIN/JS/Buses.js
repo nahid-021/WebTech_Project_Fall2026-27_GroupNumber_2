@@ -1,24 +1,20 @@
 function collect_data()
 {
-    let b  = validBusNo();
-    let m  = validMake();
-    let s  = validService();
-    let se = validSeats();
-    let y  = validYear();
-    let f  = validFuel();
-    let st = validStatus();
-    let d  = validServiceDate();
+    let bus = validBus();
+    let status = validStatus();
+    let reason = validReason();
+    let date = validDate();
 
     let Result = document.getElementById("Result");
 
-    if (b && m && s && se && y && f && st && d)
+    if (bus && status && reason && date)
     {
-        let busno = document.getElementById("BusNo").value.trim();
-        let make = document.getElementById("Make").value;
-        let service = selectedValue("Service");
-        let seats = document.getElementById("Seats").value;
+        let busno = document.getElementById("Bus").value;
+        let newstatus = document.getElementById("Status").value;
+        let why = document.getElementById("Reason").value;
+        let when = document.getElementById("StatusDate").value;
 
-        Result.innerHTML = "Bus " + busno + " (" + service + ", " + make + ", " + seats + " seats) added successfully!";
+        Result.innerHTML = busno + " status changed to " + newstatus + " (" + why + ") on " + when + ".";
     }
     else
     {
@@ -27,124 +23,13 @@ function collect_data()
     return false;
 }
 
-function selectedValue(groupName)
+function validBus()
 {
-    let options = document.querySelectorAll('input[name="' + groupName + '"]');
-    let chosen = "";
-
-    for (let i = 0; i < options.length; i++)
+    let bus = document.getElementById("Bus").value;
+    let Error = document.getElementById("BusError");
+    if (bus == "")
     {
-        if (options[i].checked)
-        {
-            chosen = options[i].value;
-            break;
-        }
-    }
-    return chosen;
-}
-
-function validBusNo()
-{
-    let busno = document.getElementById("BusNo").value.trim();
-    let Error = document.getElementById("BusNoError");
-    if (busno == "")
-    {
-        Error.innerHTML = "* Please enter the bus number";
-        return false;
-    }
-    else if (busno.length != 7 || busno.slice(2, 3) != "-")
-    {
-        Error.innerHTML = "* Bus number must look like DH-1050";
-        return false;
-    }
-    else
-    {
-        Error.innerHTML = "";
-        return true;
-    }
-}
-
-function validMake()
-{
-    let make = document.getElementById("Make").value;
-    let Error = document.getElementById("MakeError");
-    if (make == "")
-    {
-        Error.innerHTML = "* Please select the make";
-        return false;
-    }
-    else
-    {
-        Error.innerHTML = "";
-        return true;
-    }
-}
-
-function validService()
-{
-    let service = selectedValue("Service");
-    let Error = document.getElementById("ServiceError");
-    if (service == "")
-    {
-        Error.innerHTML = "* Please select AC or Non-AC";
-        return false;
-    }
-    else
-    {
-        Error.innerHTML = "";
-        return true;
-    }
-}
-
-function validSeats()
-{
-    let seats = document.getElementById("Seats").value;
-    let Error = document.getElementById("SeatsError");
-    if (seats == "")
-    {
-        Error.innerHTML = "* Please enter the number of seats";
-        return false;
-    }
-    else if (seats < 20 || seats > 60)
-    {
-        Error.innerHTML = "* Seats must be between 20 and 60";
-        return false;
-    }
-    else
-    {
-        Error.innerHTML = "";
-        return true;
-    }
-}
-
-function validYear()
-{
-    let year = document.getElementById("Year").value;
-    let Error = document.getElementById("YearError");
-    if (year == "")
-    {
-        Error.innerHTML = "* Please enter the year of manufacture";
-        return false;
-    }
-    else if (year < 2005 || year > 2026)
-    {
-        Error.innerHTML = "* Year must be between 2005 and 2026";
-        return false;
-    }
-    else
-    {
-        Error.innerHTML = "";
-        return true;
-    }
-}
-
-function validFuel()
-{
-    let fuel = selectedValue("Fuel");
-    let Error = document.getElementById("FuelError");
-    if (fuel == "")
-    {
-        Error.innerHTML = "* Please select the fuel type";
+        Error.innerHTML = "* Please select a bus";
         return false;
     }
     else
@@ -160,7 +45,7 @@ function validStatus()
     let Error = document.getElementById("StatusError");
     if (status == "")
     {
-        Error.innerHTML = "* Please select the status";
+        Error.innerHTML = "* Please select the new status";
         return false;
     }
     else
@@ -170,13 +55,24 @@ function validStatus()
     }
 }
 
-function validServiceDate()
+function validReason()
 {
-    let date = document.getElementById("ServiceDate").value;
-    let Error = document.getElementById("ServiceDateError");
-    if (date == "")
+    let reason = document.getElementById("Reason").value;
+    let status = document.getElementById("Status").value;
+    let Error = document.getElementById("ReasonError");
+    if (reason == "")
     {
-        Error.innerHTML = "* Please select the last service date";
+        Error.innerHTML = "* Please select a reason";
+        return false;
+    }
+    else if (status == "Active" && reason != "Back in service")
+    {
+        Error.innerHTML = "* An active bus must have the reason: Back in service";
+        return false;
+    }
+    else if (status != "" && status != "Active" && reason == "Back in service")
+    {
+        Error.innerHTML = "* Choose a reason other than Back in service";
         return false;
     }
     else
@@ -184,4 +80,29 @@ function validServiceDate()
         Error.innerHTML = "";
         return true;
     }
+}
+
+function validDate()
+{
+    let date = document.getElementById("StatusDate").value;
+    let Error = document.getElementById("DateError");
+    if (date == "")
+    {
+        Error.innerHTML = "* Please select the date";
+        return false;
+    }
+    else
+    {
+        Error.innerHTML = "";
+        return true;
+    }
+}
+
+function clear_messages()
+{
+    document.getElementById("BusError").innerHTML = "";
+    document.getElementById("StatusError").innerHTML = "";
+    document.getElementById("ReasonError").innerHTML = "";
+    document.getElementById("DateError").innerHTML = "";
+    document.getElementById("Result").innerHTML = "";
 }

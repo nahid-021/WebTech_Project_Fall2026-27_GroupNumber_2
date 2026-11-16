@@ -1,26 +1,24 @@
 function collect_data()
 {
-    let r  = validRoute();
-    let t  = validTerminal();
-    let ti = validTime();
-    let s  = validService();
-    let b  = validBus();
-    let d  = validDriver();
-    let c  = validConductor();
+    let route  = validRoute();
+    let direction = validDirection();
+    let time = validTime();
+    let bus  = validBus();
+    let driver  = validDriver();
+    let conductor  = validConductor();
 
     let Result = document.getElementById("Result");
 
-    if (r && t && ti && s && b && d && c)
+    if (route && direction && time && bus && driver && conductor)
     {
         let route = document.getElementById("Route").value;
-        let terminal = selectedValue("Terminal");
+        let direction = selectedValue("Direction");
         let time = document.getElementById("Time").value;
         let bus = document.getElementById("Bus").value;
         let driver = document.getElementById("Driver").value;
         let conductor = document.getElementById("Conductor").value;
-
-        Result.innerHTML = "Assigned " + bus + " to the " + route + " departure from " + terminal + " at " + time + ". Driver: " + driver + ", Conductor: " + conductor + ".";
-    }
+        
+        Result.innerHTML = "Assigned " + bus + " to the " + route + " route(" + direction + ") at " + time + ". Driver: " + driver + ", Conductor: " + conductor + ".";    }
     else
     {
         Result.innerHTML = "";
@@ -60,13 +58,13 @@ function validRoute()
     }
 }
 
-function validTerminal()
+function validDirection()
 {
-    let terminal = selectedValue("Terminal");
-    let Error = document.getElementById("TerminalError");
-    if (terminal == "")
+    let direction = selectedValue("Direction");
+    let Error = document.getElementById("DirectionError");
+    if (direction == "")
     {
-        Error.innerHTML = "* Please select the departing terminal";
+        Error.innerHTML = "* Please select the direction";
         return false;
     }
     else
@@ -92,42 +90,13 @@ function validTime()
     }
 }
 
-function validService()
-{
-    let service = selectedValue("Service");
-    let Error = document.getElementById("ServiceError");
-    if (service == "")
-    {
-        Error.innerHTML = "* Please select AC or Non-AC";
-        return false;
-    }
-    else
-    {
-        Error.innerHTML = "";
-        return true;
-    }
-}
-
 function validBus()
 {
     let bus = document.getElementById("Bus").value;
-    let service = selectedValue("Service");
     let Error = document.getElementById("BusError");
-    let isNonAC = bus.indexOf("Non-AC") != -1;
-
     if (bus == "")
     {
         Error.innerHTML = "* Please select a bus";
-        return false;
-    }
-    else if (service == "AC" && isNonAC)
-    {
-        Error.innerHTML = "* This bus is Non-AC. Choose an AC bus or change the service type";
-        return false;
-    }
-    else if (service == "Non-AC" && !isNonAC)
-    {
-        Error.innerHTML = "* This bus is AC. Choose a Non-AC bus or change the service type";
         return false;
     }
     else
@@ -167,4 +136,15 @@ function validConductor()
         Error.innerHTML = "";
         return true;
     }
+}
+
+function clear_messages()
+{
+    document.getElementById("RouteError").innerHTML = "";
+    document.getElementById("DirectionError").innerHTML = "";
+    document.getElementById("TimeError").innerHTML = "";
+    document.getElementById("BusError").innerHTML = "";
+    document.getElementById("DriverError").innerHTML = "";
+    document.getElementById("ConductorError").innerHTML = "";
+    document.getElementById("Result").innerHTML = "";
 }

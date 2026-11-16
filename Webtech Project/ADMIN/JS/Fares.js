@@ -1,15 +1,15 @@
 function collect_data()
 {
-    let r  = validRoute();
-    let t  = validType();
-    let c  = validChange();
-    let p  = validPercent();
-    let re = validReason();
-    let d  = validDate();
+    let route  = validRoute();
+    let type  = validType();
+    let change  = validChange();
+    let percent  = validPercent();
+    let reason = validReason();
+    let date  = validDate();
 
     let Result = document.getElementById("Result");
 
-    if (r && t && c && p && re && d)
+    if (route && type && change && percent && reason && date)
     {
         let route = document.getElementById("Route").value;
         let type = selectedValue("Type");
@@ -185,4 +185,15 @@ function validDate()
         Error.innerHTML = "";
         return true;
     }
+}
+
+function clear_messages()
+{
+    document.getElementById("RouteError").innerHTML = "";
+    document.getElementById("TypeError").innerHTML = "";
+    document.getElementById("ChangeError").innerHTML = "";
+    document.getElementById("PercentError").innerHTML = "";
+    document.getElementById("ReasonError").innerHTML = "";
+    document.getElementById("DateError").innerHTML = "";
+    document.getElementById("Result").innerHTML = "";
 }

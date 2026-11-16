@@ -2,7 +2,7 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../Design/Style.css">
+        <link rel="stylesheet" href="../Design/style.css">
         <script src="../JS/Timetable.js"></script>
         <title> Timetable </title>
     </head>
@@ -43,29 +43,22 @@
                                 <tr>
                                     <td> 06:30 AM </td>
                                     <td> DH-1015 (Non-AC) </td>
-                                    <td> Hasan Ali </td>
-                                    <td> Rubel Mia </td>
-                                    <td class="ok"> On Time </td>
-                                </tr>
-                                <tr>
-                                    <td> 07:00 AM </td>
-                                    <td> DH-1021 (AC) </td>
-                                    <td> Karim Uddin </td>
-                                    <td> Sabbir Khan </td>
+                                    <td> Ishrak </td>
+                                    <td> Ishtiak </td>
                                     <td class="ok"> On Time </td>
                                 </tr>
                                 <tr>
                                     <td> 09:30 AM </td>
                                     <td> DH-1034 (Non-AC) </td>
-                                    <td> Jahid Hasan </td>
-                                    <td> Nayeem Sheikh </td>
+                                    <td> Nhiyan </td>
+                                    <td> Nawmi </td>
                                     <td class="late"> Delayed </td>
                                 </tr>
                                 <tr>
                                     <td> 01:00 PM </td>
                                     <td> DH-1040 (AC) </td>
-                                    <td> Monir Hossain </td>
-                                    <td> Tareq Aziz </td>
+                                    <td> Saba </td>
+                                    <td> Shammi </td>
                                     <td class="ok"> On Time </td>
                                 </tr>
                                 <tr>
@@ -91,29 +84,22 @@
                                 <tr>
                                     <td> 06:30 AM </td>
                                     <td> RG-2030 (Non-AC) </td>
-                                    <td> Delwar Hossain </td>
-                                    <td> Kamal Pasha </td>
-                                    <td class="ok"> On Time </td>
-                                </tr>
-                                <tr>
-                                    <td> 07:00 AM </td>
-                                    <td> RG-2045 (AC) </td>
-                                    <td> Rafiq Ahmed </td>
-                                    <td> Imran Ali </td>
+                                    <td> Naim </td>
+                                    <td> Fahim </td>
                                     <td class="ok"> On Time </td>
                                 </tr>
                                 <tr>
                                     <td> 09:30 AM </td>
                                     <td> RG-2051 (Non-AC) </td>
-                                    <td> Sohel Rana </td>
-                                    <td> Faruk Mia </td>
+                                    <td> Shuvro </td>
+                                    <td> Bipro </td>
                                     <td class="ok"> On Time </td>
                                 </tr>
                                 <tr>
                                     <td> 01:00 PM </td>
                                     <td> RG-2060 (AC) </td>
-                                    <td> Jewel Rana </td>
-                                    <td> Rasel Ahmed </td>
+                                    <td> Zemam </td>
+                                    <td> Abeg </td>
                                     <td class="ok"> On Time </td>
                                 </tr>
                                 <tr>
@@ -138,30 +124,23 @@
                             <td> <select id="Route" name="Route">
                                      <option value=""> Select Route </option>
                                      <option value="Dhaka - Rangpur"> Dhaka - Rangpur </option>
-                                     <option value="Dhaka - Bogura"> Dhaka - Bogura </option>
+                                     <option value="Dhaka - Noakhali"> Dhaka - Noakhali </option>
                                      <option value="Dhaka - Sylhet"> Dhaka - Sylhet </option>
                                  </select>
                                  <p id="RouteError"> </p> </td>
                         </tr>
 
                         <tr>
-                            <td> <label> Departing From </label> </td>
-                            <td> <input type="radio" id="FromDhaka" name="Terminal" value="Dhaka"> Dhaka
-                                 <input type="radio" id="FromRangpur" name="Terminal" value="Rangpur"> Rangpur
-                                 <p id="TerminalError"> </p> </td>
+                            <td> <label> Direction </label> </td>
+                            <td> <input type="radio" id="FromDhaka" name="Direction" value="From Dhaka"> From Dhaka
+                                 <input type="radio" id="ToDhaka" name="Direction" value="To Dhaka"> To Dhaka (return)
+                                 <p id="DirectionError"> </p> </td>
                         </tr>
 
                         <tr>
                             <td> <label for="Time"> Departure Time </label> </td>
                             <td> <input type="time" id="Time" name="Time">
                                  <p id="TimeError"> </p> </td>
-                        </tr>
-
-                        <tr>
-                            <td> <label> Service Type </label> </td>
-                            <td> <input type="radio" id="AC" name="Service" value="AC"> AC
-                                 <input type="radio" id="NonAC" name="Service" value="Non-AC"> Non-AC
-                                 <p id="ServiceError"> </p> </td>
                         </tr>
 
                         <tr>
@@ -186,9 +165,9 @@
                             <td> <label for="Driver"> Driver </label> </td>
                             <td> <select id="Driver" name="Driver">
                                      <option value=""> Select Driver </option>
-                                     <option value="Imran Hossain"> Imran Hossain (Available) </option>
-                                     <option value="Mizanur Rahman"> Mizanur Rahman (Available) </option>
-                                     <option value="Shahin Alam"> Shahin Alam (Available) </option>
+                                     <option value="Rashik"> Rashik (Available) </option>
+                                     <option value="Mahedi"> Mahedi (Available) </option>
+                                     <option value="Shakib"> Shakib (Available) </option>
                                  </select>
                                  <p id="DriverError"> </p> </td>
                         </tr>
@@ -197,9 +176,9 @@
                             <td> <label for="Conductor"> Conductor </label> </td>
                             <td> <select id="Conductor" name="Conductor">
                                      <option value=""> Select Conductor </option>
-                                     <option value="Anwar Hossain"> Anwar Hossain (Available) </option>
-                                     <option value="Billal Mia"> Billal Mia (Available) </option>
-                                     <option value="Shamim Reza"> Shamim Reza (Available) </option>
+                                     <option value="Ishtiak"> Ishtiak (Available) </option>
+                                     <option value="Raiyan"> Raiyan (Available) </option>
+                                     <option value="Sabrin"> Sabrin (Available) </option>
                                  </select>
                                  <p id="ConductorError"> </p> </td>
                         </tr>
@@ -207,6 +186,7 @@
 
                     <br>
                     <input type="submit" value="Assign Bus">
+                    <input type="reset" value="Reset" onclick="clear_messages()">
                     <h3 class="ok" id="Result"> </h3>
                 </fieldset>
             </form>

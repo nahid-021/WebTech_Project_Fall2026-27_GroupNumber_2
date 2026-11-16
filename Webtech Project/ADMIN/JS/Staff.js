@@ -1,12 +1,12 @@
 function collect_data()
 {
-    let t = validTrip();
-    let d = validDriver();
-    let c = validConductor();
+    let trip = validTrip();
+    let driver = validDriver();
+    let conductor = validConductor();
 
     let Result = document.getElementById("Result");
 
-    if (t && d && c)
+    if (trip && driver && conductor)
     {
         let trip = document.getElementById("Trip").value;
         let driver = document.getElementById("Driver").value;
@@ -91,4 +91,12 @@ function reject_app(n, name)
     status.className = "none";
     action.innerHTML = "Done";
     result.innerHTML = name + "'s application has been rejected.";
+}
+
+function clear_messages()
+{
+    document.getElementById("TripError").innerHTML = "";
+    document.getElementById("DriverError").innerHTML = "";
+    document.getElementById("ConductorError").innerHTML = "";
+    document.getElementById("Result").innerHTML = "";
 }

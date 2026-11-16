@@ -30,9 +30,9 @@
                 <legend> Fuel and Fare Summary </legend>
                 <table>
                     <tr>
-                        <td class="card"> <h2> Tk 105 </h2> Diesel (per litre) </td>
-                        <td class="card"> <h2> Tk 43 </h2> CNG (per cubic metre) </td>
-                        <td class="card"> <h2> 12 Sep 2026 </h2> Fares Last Updated </td>
+                        <td class="card"> <h2> Tk 105 </h2> Diesel </td>
+                        <td class="card"> <h2> Tk 43 </h2> CNG </td>
+                        <td class="card"> <h2> Sep 2026 </h2> Fares Last Updated </td>
                         <td class="card"> <h2> 3 </h2> Routes </td>
                     </tr>
                 </table>
@@ -56,7 +56,7 @@
                         <td> 12 Sep 2026 </td>
                     </tr>
                     <tr>
-                        <td> Dhaka - Bogura </td>
+                        <td> Dhaka - Noakhali </td>
                         <td> 200 km </td>
                         <td> Tk 1000 </td>
                         <td> Tk 650 </td>
@@ -82,7 +82,7 @@
                             <td> <select id="Route" name="Route">
                                      <option value=""> Select Route </option>
                                      <option value="Dhaka - Rangpur"> Dhaka - Rangpur </option>
-                                     <option value="Dhaka - Bogura"> Dhaka - Bogura </option>
+                                     <option value="Dhaka - Bogura"> Dhaka - Noakhali </option>
                                      <option value="Dhaka - Sylhet"> Dhaka - Sylhet </option>
                                  </select>
                                  <p id="RouteError"> </p> </td>
@@ -129,55 +129,10 @@
 
                     <br>
                     <input type="submit" value="Update Fare">
+                    <input type="reset" value="Reset" onclick="clear_messages()">
                     <h3 class="ok" id="Result"> </h3>
                 </fieldset>
             </form>
-
-            <fieldset>
-                <legend> Recent Fare Changes </legend>
-                <table class="data">
-                    <tr>
-                        <th> Date </th>
-                        <th> Route </th>
-                        <th> Type </th>
-                        <th> Old Fare </th>
-                        <th> New Fare </th>
-                        <th> Reason </th>
-                    </tr>
-                    <tr>
-                        <td> 12 Sep 2026 </td>
-                        <td> Dhaka - Rangpur </td>
-                        <td> AC </td>
-                        <td> Tk 1400 </td>
-                        <td> Tk 1500 </td>
-                        <td> Fuel price change </td>
-                    </tr>
-                    <tr>
-                        <td> 12 Sep 2026 </td>
-                        <td> Dhaka - Rangpur </td>
-                        <td> Non-AC </td>
-                        <td> Tk 850 </td>
-                        <td> Tk 900 </td>
-                        <td> Fuel price change </td>
-                    </tr>
-                    <tr>
-                        <td> 01 Aug 2026 </td>
-                        <td> Dhaka - Sylhet </td>
-                        <td> AC </td>
-                        <td> Tk 1050 </td>
-                        <td> Tk 1100 </td>
-                        <td> Maintenance cost </td>
-                    </tr>
-                    <tr>
-                        <td> 20 Jun 2026 </td>
-                        <td> Dhaka - Bogura </td>
-                        <td> Non-AC </td>
-                        <td> Tk 600 </td>
-                        <td> Tk 650 </td>
-                        <td> Maintenance cost </td>
-                    </tr>
-                </table>
-            </fieldset>
 
             <div class="footer">
                 <h5> @BusSheba </h5>

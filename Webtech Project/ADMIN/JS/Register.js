@@ -269,3 +269,20 @@ function validTerms()
         return true;
     }
 }
+
+function clear_messages()
+{
+    document.getElementById("NameError").innerHTML = "";
+    document.getElementById("EmailError").innerHTML = "";
+    document.getElementById("PhoneError").innerHTML = "";
+    document.getElementById("DOBError").innerHTML = "";
+    document.getElementById("GenderError").innerHTML = "";
+    document.getElementById("AddressError").innerHTML = "";
+    document.getElementById("EmployeeError").innerHTML = "";
+    document.getElementById("DesignationError").innerHTML = "";
+    document.getElementById("UserError").innerHTML = "";
+    document.getElementById("PasswordError").innerHTML = "";
+    document.getElementById("ConfirmError").innerHTML = "";
+    document.getElementById("TermsError").innerHTML = "";
+    document.getElementById("Result").innerHTML = "";
+}
