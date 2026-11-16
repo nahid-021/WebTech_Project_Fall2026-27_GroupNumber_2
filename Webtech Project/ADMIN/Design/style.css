@@ -51,6 +51,9 @@ h1{
 .topnav{
     background-color: steelblue;
     overflow: hidden;
+    /* margin: 10px; */
+    margin-left: 2px;
+    margin-right: 2px;
 }
 .topnav a{
     float: left;
