@@ -6,16 +6,16 @@ function collect_data()
     let dob  = validDOB();
     let gender  = validGender();
     let address  = validAddress();
-    let employee = validEmployee();
+    let employeeId = validEmployeeId();
     let designation = validDesignation();
     let username = validUser();
     let password = validPassword();
-    let confirm_password = validConfirm();
+    let confirm= validConfirm();
     let terms = validTerms();
 
     let Result = document.getElementById("Result");
 
-    if (name && email && phone && dob && gender && address && employee && designation && username && password && confirm_password && terms)
+    if (name && email && phone && dob && gender && address && employeeId && designation && username && password && confirm && terms)
     {
         Result.innerHTML = "Account created successfully! You can now sign in.";
     }
@@ -153,7 +153,7 @@ function validAddress()
     }
 }
 
-function validEmployee()
+function validEmployeeId()
 {
     let id = document.getElementById("EmployeeID").value.trim();
     let Error = document.getElementById("EmployeeError");
@@ -162,9 +162,9 @@ function validEmployee()
         Error.innerHTML = "* Please enter your employee ID";
         return false;
     }
-    else if (id.length < 5)
+    else if (id.length < 6)
     {
-        Error.innerHTML = "* Employee ID must have at least 5 characters";
+        Error.innerHTML = "* Employee ID must have at least 6 characters";
         return false;
     }
     else
@@ -220,9 +220,9 @@ function validPassword()
         Error.innerHTML = "* Please enter a password";
         return false;
     }
-    else if (pass.length < 6)
+    else if (pass.length < 4)
     {
-        Error.innerHTML = "* Password must have at least 6 characters";
+        Error.innerHTML = "* Password must have at least 4 characters";
         return false;
     }
     else
