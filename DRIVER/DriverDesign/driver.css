@@ -1,0 +1,639 @@
+*{
+    box-sizing: border-box;
+}
+body{
+   font-family: 'Segoe UI' , 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 14px;
+   background-color: whitesmoke;
+   padding-left: 270px;
+   margin: 0 auto;
+   color:darkslategray;
+   overflow-x: hidden;
+   
+}
+.BUSNames{
+     display: flex;
+    align-items: center;
+    padding:8px 12px 14px;
+    color:white;
+    font-size: 17px;
+    font-weight: bold;
+    gap: 10px;
+}
+.logo{
+    float : none;
+    display:block;
+    
+    width: 36px;
+    
+    margin: 0 8px 0 0;
+    cursor: pointer;
+    
+}
+.topnav{
+    position: fixed;
+    top:8px;
+    left:3px;
+    width:264px;
+    height:100vh; 
+    background-color: midnightblue;
+    overflow-y:auto; 
+    border:3px solid lightskyblue;
+    padding: 3px 8px;
+    
+}
+.topnav a{
+    float: none;;
+    
+    display: block; 
+    color:white; 
+    text-align:left;
+    padding: 11px 14px;
+    text-decoration: none;
+    font-weight:bold; 
+    font-size: 13px;
+
+}
+.topnav a:hover {
+    background-color:lightblue;
+    color: midnightblue;
+}
+.topnav .signout{
+    position: fixed;
+    top:10px;
+    right:12px;
+    float: none;
+    background-color:lightblue;
+    color: midnightblue;
+    border-radius:5px;
+    font-size: 12px;
+    padding:7px 13px;
+}
+.topnav .signout:hover {
+    background-color: black;
+    color: lightblue;
+}
+.topnav a.active {
+    color:lightyellow;
+    border-bottom:1px solid lightsteelblue;
+    padding-bottom: 10px;
+}
+.container {
+    margin: 6px 0;
+    padding: 10px 14px;
+    background-color: lightsteelblue;
+    border-radius: 10px;
+
+}
+.container h2{
+    margin:0 0 14px;
+    padding: 10px 14px;
+    background-color: lightsteelblue;
+    
+    border:none;
+}
+
+.container-card h2{
+    text-align: center;
+    margin-bottom: 14px;
+    
+}
+.dashboard.title {
+    margin-top: 10px;
+    margin-bottom:12px;
+    color:darkslategray;
+}
+.dashboard.lines{
+    margin-bottom:5px;
+}
+.data-table{
+    width:100%;
+    border-collapse: collapse;
+    background-color:white;
+    font-size: 12px;
+}
+
+.data-table td {
+    border: 1px solid lightsteelblue;
+    padding:12px 8px;
+    text-align:center;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+.btn{
+    padding: 6px 11px;
+    border:none;
+    border-radius:4px;
+    background-color:royalblue;
+    color:white;
+    font-size:12px;
+    cursor:pointer;
+}
+.btn:hover {
+    background-color: midnightblue;
+}
+.card {
+    background-color: white;
+    border:1px solid lightsteelblue;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.bus-sheba h2{
+    margin:0 0 7px;
+    font-size:20px;
+    color: royalblue;
+
+}
+.bus-sheba{
+    width: 100%;
+    margin: 20px 0 6px;
+    color:slategray;
+    font-size:13px;
+    padding: 14px;
+    text-align: center;
+    background-color: whitesmoke;
+    border: 1px solid lightsteelblue;
+    border-radius:8px;
+    
+}
+.bus-sheba p {
+    margin: 5px 0;
+    color: slategray;
+    font-size: 12px;
+}
+.site-footer{
+    text-align:center;
+    padding: 12px 8px;
+    border-top:1px solid lightsteelblue;
+    color:slategray;
+    font-size:11px;
+    width: 100%;
+    margin-top: 12px;
+
+}
+.site-footer p{
+    margin : 5px 0;
+}
+.site-footer a {
+    color: royalblue;
+    margin:0 6px;
+    text-decoration: none;
+}
+.site-footer a:hover {
+    color: midnightblue;
+
+}
+.SafetyReports{
+     margin: 10px 16px; 
+    padding: 12px;
+    background-color: lightsteelblue;
+    border-radius: 8px;
+}
+.safety-cards{
+    max-width:650px;
+    margin:0 auto;
+    padding: 12px 18px;
+    background-color:white;
+    border:1px solid lightsteelblue;
+    border-radius:8px;
+}
+.safety-card,
+.safety-cards h2{
+    margin:0 0 10px;
+    font-size: 18px;
+    color: midnightblue;
+    text-align: center;
+
+}
+.form-group{
+    margin-bottom: 8px;
+}
+.form-group label{
+    display: block;
+    margin-bottom:4px;
+    font-weight: bold;
+    font-size: 12px;
+    color:midnightblue;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding:8px;
+    border:1px solid lightsteelblue;
+    border-radius: 4px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    background-color:white;
+}
+.form-group textarea {
+    resize:vertical
+}
+.submit-button{
+    padding: 8px 18px;
+    border:none ;
+    border-radius:4px;
+    font-weight:bold;
+    cursor:pointer;
+    background-color:royalblue;
+}
+.empty-row{
+    text-align : center;
+    color:slategray;
+    padding : 18px;
+    margin: 0;
+}
+.trip-count-box{
+    background-color:midnightblue;
+    color: darkslategray;
+    overflow: hidden;
+    border-radius: 10px; 
+    text-align: center;
+     border: 2px solid lightskyblue; 
+}
+.trip-count-box p {
+    color:midnightblue;
+    color:lightblue;
+    font-size: 14px;
+    font-weight: bold; 
+    margin: 0;
+    padding: 12px;
+}
+.trip-count-box h2{
+    background-color: white;
+    color: rgb(77, 102, 243);
+    font-size: 32px;
+    margin: 0;
+    padding: 20px;
+}
+.dashboard-header {
+    padding :5px 0;
+}
+.section-description {
+    margin-bottom:18px;
+}
+
+/* Trip History */
+.modal-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+.modal buttons button{
+    padding:12px;
+    border:none;
+    border-radius:7ox;
+    cursor:pointer;
+}
+.trip-history-container {
+    margin: 20px 16px;
+    padding:18px;
+    background-color: lightsteelblue;
+    border-radius: 8px;
+    
+}
+.trip-history-container h2{
+    margin: 0 0 10px;
+    color:midnightblue;
+    font-size:20px;
+}
+.search-panel{
+    padding:20px;
+    border-radius:8px;
+    gap:10px;
+    display:flex;
+    align-items: stretch
+    ;
+    margin:10px 0 18px;
+    background-color: white;
+    border:1px solid lightsteelblue;;
+}
+.search-panel .form-group{
+    width:100%;
+    margin : 0;
+}
+
+.search-panel input,
+.search-panel select {
+    width : 100%;
+    height:36px;
+    padding: 6px 8px;
+    border: 1px solid lightsteelblue;
+    border-radius:4px;
+    font-size:12px;
+}
+
+
+.search-button,.reset-button{
+    font-size: 8px 16px;
+    min-width:75px;
+    padding:0 14px;
+    height:36px;
+    border:none;
+    border-radius:4px;
+    background-color:royalblue;
+    color:white;
+    cursor:pointer;
+}
+.search-button:hover{
+    background-color: darkslategray;
+}
+
+.reset-button:hover{
+    background-color: darkslategray;
+}
+#TripHistoryTable td {
+    padding:12px 8px;
+    background-color:midnightblue;
+color:white;
+}
+.trip-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background-color: rgb(0,0,0,0.5);
+    align-items:center;
+    place-items: center;
+    z-index:1000;
+    
+}
+.trip-modal-content{
+    width:90%;
+    max-width:500px;
+    padding:20px;
+    background-color: white;
+    border-radius:8px;
+    
+}
+.trip-modal-content h2{
+    color:midnightblue;
+    margin-top:0;
+}
+.trip-note{
+    text-align:center;
+    color:gray;
+    font-size:14px;
+    margin:20px;
+}
+.close-button{
+    background-color:steelblue;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+.trip-count-box{
+    display:flex;
+    margin:15px 16px;
+    padding:15px;
+    background-color: white;
+    border: 1px solid lightsteelblue;
+    border-radius:8px;
+    text-align:center;
+}
+.trip-count-box div{
+    flex:1;
+    padding:12px;
+    background-color: lightsteelblue;
+    border-radius:6px;
+}
+.trip-count-box p{
+    color:midnightblue;
+    font:bold;
+}
+.trip-count-box h2{
+    color:midnightblue;
+    font-size:25px;
+    margin:5px 0;
+}
+.Update{
+    background-color:steelblue;
+    color:white;
+    padding: 10px 20px;
+    border:none;
+    border-radius:5px;
+    
+    cursor:pointer;
+    margin-left:10px;
+}
+.Update:hover{
+    background-color: midnightblue;
+}
+
+/*Passenger Verification*/
+
+.passenger-section{
+    background-color: white;
+    padding:30px;
+    margin-top:25px;
+    border-radius:10px;
+    box-shadow:0 3px 10px lightgray;
+}
+.passenger-section h2{
+    color:midnightblue;
+    margin-bottom:20px;
+}
+ .passenger-group{
+    display:flex;
+    flex-direction:colum;
+    gap:10px;
+    max-width:450px;
+}
+.passenger-group label{
+    font-weight:bold;
+    color:midnightblue;
+}
+.passenger-group input{
+    padding: 12px;
+    border:1px solid lightgray;
+}
+.passenger input:focus{
+    outline: none;
+    border:1px solid steelblue;
+}
+.passenger button{
+    background-color: midnightblue;
+    color:white;
+    padding:12px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:15px;
+    margin-top:5px;
+}
+.passenger button:hover{
+    background-color:steelblue;
+
+} 
+#verifyMessage{
+    color:red;
+    font-weight:bold;
+    margin-top:15px;
+}
+#passengerDetails{
+    background-color:aliceblue;
+    border-left:5px slod steelblue;
+    padding:20px;
+    margin-top:25px;
+    border-radius:7px;
+}
+#passengerDeatils{
+    color:midnightblue;
+}
+#passengerDetails p{
+    font-size: 16px;
+    color:darkslategray;
+    margin:12px 0;
+}
+/* Login */
+.login-container{
+    width:100%;
+    display:flex;
+    
+    display:flex;
+    align-items:center;
+    background-color:aliceblue;
+    padding:30px;
+
+    
+}
+.login-image{
+    width:50%;
+    height:450px;
+}
+.login-image img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius:15px;
+}
+.login{
+    width:40%;
+    max-width:430px;
+    background-color: white;
+    margin-left:45px;
+    border-radius:15px;
+    padding:35px;
+}
+.login h2,
+.login h1{
+    text-align: center;
+    color:midnightblue;
+}
+.login p{
+    text-align:center;
+    color:gray;
+    margin-bottom:25px;
+}
+.login label{
+    display:block;
+    color:midnightblue;
+    font-weight: bold;
+    margin-top:18px;
+}
+.login input{
+    width:100%;
+    padding:13px;
+    margin-top:8px;
+    border:1px solid lightsteelblue;
+    border-radius:7px;
+}
+.login button{
+    width:100%;
+    padding:14px;
+    margin-top:25px;
+    background-color: royalblue;
+    color:white;
+    border-radius: 8px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.login button:hover{
+    background-color: royalblue;
+}
+.login .register-link a{
+    color:royalblue;
+    text-decoration:none;
+    font-weight: bold;
+}
+.login-page{
+    padding-left:0;
+}
+.login-page .login-container{
+    min-height: 100vh;
+    align-items: center;
+}
+/* Register page */
+.register-page{
+    padding-left:0;
+}
+.register-page .login-container{
+    min-height:100vh;
+    padding:5px 30px;
+}
+.register-page .login-image{
+    min-height: 600px;
+}.register-page login{
+    font-size:16px;
+    margin:0;
+}
+.register-page .login p{
+    margin:4px 0 6px;
+    font-size:13px;
+}
+.register-page .login label{
+    margin-top:8px;
+    font-size:12px;
+}
+.register-page .login input{
+    padding:8px 10px;
+    margin-top:4px;
+    font-size:13px;
+}
+.register-page .login button{
+    padding:10px;
+    margin-top:14px;
+    font-size:15px;
+}
+.issue-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.issue-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: aliceblue;
+    padding: 6px 10px;
+    border: 1px solid lightsteelblue;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.issue-options input {
+    cursor: pointer;
+    width:auto;
+}
+
+#IssueError
+{
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+.form-row{
+    display:flex;
+    gap: 12px;
+
+}
+.error-msg{
+    color:red;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <link rel = "stylesheet" href="../DriverDesign/driver.css">
+        <!-- <script src = "../DriverJs/driver.js"></script> -->
+           <script src = "../DriverJs/dashboard.js"></script>    
+        <title>BusSheba-Driver Dashboard</title>
+    </head>
+
+    <body>   
+        <div
+        class="topnav">
+        <div class = "BUSNames">
+            <img src="../DriverAssest/driver-logoi.jpeg" class="logo">
+            BusSheba
+        </div>       
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="avaibalityStatus.html">Availability Status</a>
+            <a href="SafetyReports.html">Safety Reports</a>
+            <a href="TripHistory.html">Trip History</a>
+            <a href="PassengerVerify.html">Passenger Verify</a>
+
+            <a href="Login.html" class="signout">Sign Out</a>
+        </div>   
+        <div class = "container">
+            <h1 class = "dashboard title">Driver Dashboard</h1>
+            <p class = "Dashboard lines">
+                Welcome to BusSheba! 
+                Check your asssigned Trips Below.
+            </p>
+        </div>
+            <div class = "container">               
+            <div class = "trip-count-box">
+                <p> Total Assigned Trips:</p>
+                <h2 id ="tripCount">0</h2>
+            </div>
+            </div>
+            <div class = "container">
+            <h2> Assigned Trips</h2>
+            <p class = "section-description">
+                View Your Assigned Bus Trip Infromation.
+            </p>                                                       
+            <table class = "data-table" id = "tripTable">                
+                    <tr>
+                        <td>Route</td>
+                        <td>Bus</td>
+                        <td>Date</td>
+                        <td>Departure</td>
+                        <td>Arrival</td>
+                        <td>Price</td>
+                        <td>Available Seat</td>
+                        <td>Status</td>
+                        
+                    </tr>   
+            </table>
+          
+             <p class="trip-note">
+    Note: The information displayed above is dummy data for demonstration purposes.
+    Actual trip details will appear here once the Admin assigns trips to the Driver.
+</p>
+            </div>
+     <div class = "bus-sheba">
+        <h2>BusSheba</h2>
+        <p>Safe Journeys, On-time trips,Happy passengers.</p>
+        <p>Check Your Bus Before Every Trip And Drive Safe</p>
+     </div>
+     
+     <footer class = "site-footer">
+        <p>2026 BusSheba.All rights Reserved.</p>
+        
+     </footer>
+     <script>
+        showDashboardTrips();
+     </script>
+    </body>
+</html>

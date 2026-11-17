@@ -1,0 +1,643 @@
+console.log("JS Connected");
+// alert("js connected ");
+let scheduleList = [];
+let reportList = [];
+
+//dashboard
+let dashboardTrips = [
+    {
+        route:"Dhaka to chittangong",
+        bus:"DHA-123",
+        date:"2026-11-05",
+        departure:"08:00AM",
+        arrival:"02:00PM",
+        price:750,
+        seat:20,
+        status:"assigned"
+    },
+    {
+        route:"Dhaka to Sylhet",
+        bus:"DHA-567",
+        date:"2026-11-06",
+        departure:"10:00AM",
+        arrival:"10:00PM",
+        price:950,
+        seat:30,
+        status:"assigned"
+    },
+    {
+        route:"Dhaka to Cox's Bazar",
+        bus:"DHA-321",
+        date:"2026-11-12",
+        departure:"12:00AM",
+        arrival:"12:00PM",
+        price:1750,
+        seat:0,
+        status:"assigned"
+    },
+    {
+        route:"Dhaka to Rajshahi",
+        bus:"DHA-4567",
+        date:"2026-11-23",
+        departure:"01:00AM",
+        arrival:"07:00PM",
+        price:550,
+        seat:25,
+        status:"Cancelled"
+    },
+
+];
+function validateDashboardTrip(trip)
+{
+if(trip.price <= 0){
+    return false;
+}
+else if(trip.seat<=0)
+{
+    return false;
+}
+else if(trip.status!="assigned")
+{
+    return false;
+}
+else{
+    return true;
+}
+}
+
+function showDashboardTrips(){
+    let Table = document.getElementById("tripTable");
+    let Count = document.getElementById("tripCount");
+    let Empty = document.getElementById("emptyMsg")
+    let total = 0;
+for(let i = 0;i<dashboardTrips.length;i++)
+     {
+        let valid = validateDashboardTrip(dashboardTrips[i]);
+     
+     if(valid == true)
+     {
+        Table.innerHTML +=
+        "<tr>" +
+        "<td>" + dashboardTrips[i].route + "</td>" +
+        "<td>" + dashboardTrips[i].bus + "</td>" +
+        "<td>" + dashboardTrips[i].date + "</td>" +
+        "<td>" + dashboardTrips[i].departure + "</td>" +
+        "<td>" + dashboardTrips[i].arrival + "</td>" +
+        "<td>" + dashboardTrips[i].price + "</td>" +
+        "<td>" + dashboardTrips[i].seat + "</td>" +
+        "<td>" + dashboardTrips[i].status + "</td>" +
+       "</tr>";
+       total++;
+     }
+}
+Count.innerHTML = total;
+if(total == 0){
+    Empty.innerHTML = "No Trips assigned yet.";
+}
+
+else{
+    Empty.innerHTML ="";
+}
+}
+
+
+if(document.getElementById("tripTable")!=null){
+    showDashboardTrips();
+}
+
+//avaibality Status
+function addSchedule()
+{
+
+    let Date = document.getElementById("date").value;
+    let Status = document.getElementById("status").value;
+    let Note = document.getElementById("note").value;
+    let Error = document.getElementById("ScheduleError");
+
+if(Date == "")
+{
+    Error.innerHTML = "Please Select The Date";
+    return false;
+}
+else if (Status == "")
+{
+    Error.innerHTML = "Please Select The Status";
+    return false;
+}
+else{
+
+   let Schedule = {
+    Date: Date, Status: Status, Note: Note
+   };
+   
+    
+     scheduleList.push(Schedule);
+     showSchedule();
+
+    Error.innerHTML = "Schedule Added Successfully";
+    document.getElementById("date").value="";
+    document.getElementById("note").value="";
+    document.getElementById("status").value="";
+    
+
+    return false;
+}
+}
+
+function showSchedule()
+{
+    let Table = document.getElementById("ScheduleTable");
+    Table.innerHTML = 
+    "<tr>" + 
+    "<td>Date</td>" +
+     "<td>Status</td>" +
+      "<td>Note</td>" +
+       "<td>Action</td>" +
+        "</tr>";
+    for(let i = 0; i<scheduleList.length;i++){
+        let RowID = "ScheduleRow" + i;
+     Table.innerHTML +=
+    "<tr id ='" + RowID + "'>" +
+     "<td>" + scheduleList[i].Date + "</td>" +
+     "<td>" + scheduleList[i].Status + "</td>" +
+    "<td>" + scheduleList[i].Note + "</td>" +
+    "<td><button type = 'button' onclick = 'deleteSchedule("+i+")'>Delete</button></td>" +
+    "</tr>";
+}
+}
+
+function deleteSchedule(){
+     let ConfirmDelete = confirm ("Do you want to delete this?");
+
+    if(ConfirmDelete == true)
+    {
+        scheduleList.pop();
+        showSchedule();
+    }
+}
+
+//Safety Report
+function submitReport(){
+    let date = document.getElementById("reportDate").value;
+    let Type = document.getElementById("type").value;
+    let Description = document.getElementById("description").value.trim();
+    // let Error = document.getElementById("ReportError");
+
+    if ( date == "")
+    {
+        alert("Please Select The Report Date");
+        return false;
+    }
+    else if(Description == "")
+    {
+        alert("Please Enter The Description");
+        return false;
+    }
+    else if(Type == ""){
+        alert("Please Select The Report Type");
+        return false;
+    }
+    else{
+        let confirmReport = confirm("Do you want to submit this Report?");
+
+        if(confirmReport == true)
+        {
+           
+            let Report = {
+                Date:date,
+                Type:Type,
+                Description: Description,
+            };
+            reportList.push(Report);
+            showReports();
+            document.getElementById("reportDate").value="";
+            document.getElementById("type").value="";
+            document.getElementById("description").value="";
+           
+        }
+        return false;
+    }
+
+}
+function showReports(){
+    let Table = document.getElementById("ReportTable");
+
+    Table.innerHTML = 
+    "<tr>" + 
+    "<td>Date</td>" +
+     "<td>Report Type</td>" +
+      "<td>Description</td>" +
+       "<td>Action</td>" +
+        "</tr>";
+
+        for (let i =0;i<reportList.length;i++)
+        {
+            Table.innerHTML +=
+            "<tr>"+
+     "<td>" + reportList[i].Date + "</td>" +
+     "<td>" + reportList[i].Type + "</td>" +
+    "<td>" + reportList[i].Description + "</td>" +
+    "<td><button type = 'button' onclick = 'deleteReport(" + i + ")'>Delete</button></td>" +
+    "</tr>";
+
+        }
+        
+
+}
+
+function deleteReport()
+{
+    let ConfirmDelete = confirm("");
+    if(ConfirmDelete==true)
+    {
+        reportList.pop();
+        showReports();
+    }
+    return false;
+}
+
+//Trip History
+let tripList = [
+    {
+        id: "TR-101",
+        route: "Dhaka to Chittagong",
+        bus:"DHA-1234",
+        date:"25-10-2026",
+        departure:"08:00 AM",
+        arrival:"02:00 PM",
+        seats: "40",
+        status:"completed",
+    },
+    {
+        id: "TR-102",
+        route: "Dhaka to Sylhet",
+        bus:"DHA-5678",
+        date:"28-10-2026",
+        departure:"10:00 AM",
+        arrival:"08:00 PM",
+        seats: "40",
+        status:"cancelled",
+       
+
+    }
+];
+ let selectedTripID = "";
+function showTrips(){
+    let table = document.getElementById("TripHistoryTable");
+
+     table.innerHTML =
+     "<tr>" +
+       "<td>Trip ID</td>" +
+       "<td>Route</td>"+
+       "<td>Bus Number</td>"+
+        "<td>Trip Date</td>"+
+        "<td>Status</td>"+
+        "<td>Action</td>"+
+     "</tr>";
+
+    for(let i = 0;i<tripList.length;i++){
+        table.innerHTML +=
+        "<tr>" +
+       "<td>"+ tripList[i].id+"</td>" +
+        "<td>"+ tripList[i].route+"</td>" +
+        "<td>"+ tripList[i].bus+"</td>" +
+        "<td>"+ tripList[i].date+"</td>" +
+        "<td>"+ tripList[i].status+"</td>" +
+        "<td><button type = 'button' class = 'btn' onclick = \"viewDetails('" + tripList[i].id+ "')\">View Details</button></td>" +
+    "</tr>";
+       
+
+    }
+    showTripCount();
+        
+        
+    }
+
+    function viewDetails(tripID){
+        let found = false;
+        for(let i= 0;i<tripList.length;i++){
+            if(tripList[i].id==tripID){
+                let trip = tripList[i];
+                selectedTripID = tripID;
+                document.getElementById("updateStatus").value = trip.status;
+                
+            
+
+                document.getElementById("detialTripID").innerHTML = "<strong>Trip ID:</strong>" + trip.id;
+                document.getElementById("detialRoute").innerHTML = "<strong>Route:</strong>" + trip.route;
+                document.getElementById("detialBus").innerHTML = "<strong>Bus Number:</strong>" + trip.bus ;
+                document.getElementById("detialDate").innerHTML = "<strong>Date:</strong>" + trip.date;
+                document.getElementById("detialDeparture").innerHTML = "<strong>Deaparture:</strong>" + trip.departure;
+                document.getElementById("detialArrival").innerHTML = "<strong>Arrival:</strong>" + trip.arrival;
+                
+                
+                document.getElementById("detialSeat").innerHTML = "<strong>seats:</strong>" + trip.seats;
+               
+                
+
+            let modal = document.getElementById("tripModal");
+            modal.style.display = "grid";
+        
+            }
+        }
+       
+    }
+
+    function closeDetails(){
+         let modal = document.getElementById("tripModal");
+            modal.style.display = "none";
+   
+    }
+    function showTripCount(){
+
+        let total = tripList.length;
+        let completed = 0;
+        let cancelled = 0;
+
+        for(let i=0;i<tripList.length;i++){
+            if(tripList[i].status == "completed"){
+                completed++;
+            }
+            else if(tripList[i].status=="cancelled"){
+                cancelled++;
+            }
+        }
+        document.getElementById("totalTrips").innerHTML = total;
+        document.getElementById("completedTrips").innerHTML = completed;
+        document.getElementById("cancelledTrips").innerHTML = cancelled;
+    }
+
+function filterTrips(){
+    let search = document.getElementById("searchTrip").value.toLowerCase();
+    let Table = document.getElementById("TripHistoryTable");
+    let total = 0;
+
+    Table.innerHTML = "";
+    for(let i =0;i<tripList.length;i++){
+        let validID = tripList[i].id.toLowerCase() == search;
+         let validRoute = tripList[i].route.toLowerCase() == search;
+          let validBus = tripList[i].bus.toLowerCase() == search;
+           let validStatus = tripList[i].status.toLowerCase().trim() == search.trim();
+
+           let isMatch = validID || validRoute || validBus || validStatus;
+          
+           if(isMatch == true)
+           {
+            Table.innerHTML +=
+            "<tr>" +
+       "<td>"+ tripList[i].id+"</td>" +
+        "<td>"+ tripList[i].route+"</td>" +
+         "<td>"+ tripList[i].bus+"</td>" +
+          "<td>"+ tripList[i].date+"</td>" +
+           "<td>"+ tripList[i].status+"</td>" +
+          "</tr>";
+          total++;
+           }
+    }
+    if(total == 0){
+        Table.innerHTML = "<tr> No trips found.</tr>";
+    }
+}
+function updateTrip(){
+    let status = document.getElementById("updateStatus").value;
+
+    for(let i = 0;i<tripList.length;i++){
+        if(tripList[i].id==selectedTripID){
+            tripList[i].status = status;
+        }
+    }
+   
+    showTrips();
+    showTripCount();
+    closeDetails();
+}
+//passengfer verify
+
+let passengerList = [
+{
+    bookingID : "BK101",
+    name:"Rahim",
+    route:"Dhaka to Chittagong",
+    bus:"DHA-1234",
+    seat:"A1",
+    status:"Not Verified"
+},
+{
+ bookingID : "BK102",
+    name:"Samia",
+    route:"Dhaka to Sylhet",
+    bus:"DHA-4567",
+    seat:"B1",
+    status:"Not Verified"
+}
+];
+let selectedPassengerID = "";
+function verifyPassenger(){
+    let bookingID = document.getElementById("bookingID").value;
+    let found=false;
+    for(let i = 0;i<passengerList.length;i++){
+        if(passengerList[i].bookingID==bookingID){
+            found=true;
+            selectedPassengerID=bookingID;
+            document.getElementById("passengerDetails").style.display = "block";
+            document.getElementById("passengerName").innerHTML = "<strong>Name:</strong>" + passengerList[i].name;
+            document.getElementById("passengerBus").innerHTML = "<strong>Bus Number:</strong>" + passengerList[i].bus;
+            document.getElementById("passengerRoute").innerHTML = "<strong>Route:</strong>" + passengerList[i].route;
+            document.getElementById("passengerSeat").innerHTML = "<strong>Seat:</strong>" + passengerList[i].seat;
+            document.getElementById("passengerStatus").innerHTML = "<strong>Status:</strong>" + passengerList[i].status;
+            document.getElementById("verifyMessage").innerHTML="";
+        }
+    }
+    if(found==false){
+        document.getElementById("passengerDetails").style.display="none";
+        document.getElementById("verifyMessage").innerHTML = "Invalid Booking Id! passenger Not Found";
+    }
+}
+function confirmPassenger(){
+
+    for(let i =0;i<passengerList.length;i++){
+        if(passengerList[i].bookingID == selectedPassengerID){
+            passengerList[i].status = "verified";
+            document.getElementById("passengerStatus").innerHTML = "<strong>Status:</strong> Verified";
+        }
+    }
+}
+
+//Driver Login
+
+function driverLogin(){
+    let driverID = document.getElementById("driverID").value.trim();
+    let password = document.getElementById("password").value;
+
+    if(driverID == "" || password == ""){
+        alert("Invalid Driver ID!");
+        return false;
+    }
+    
+    if(driverID!="DRIVER101"){
+        alert("Invalid");
+        return false;
+
+    }
+    if(password.length < 5){
+        alert("Password must contain at least 5 characters!");
+        return false;
+    }
+    let found = false;
+    for(let i =0;i<password.length;i++){
+        if(password[i]=="@"|| password[i]=="$"|| password[i]=="#"||
+            password[i]=="%"|| password[i]=="&"
+        ){
+            found = true;
+        }
+    }
+    if(found==false){
+        alert("Pasword must contain this charcter(@,#,$,%)!")
+    }
+    if(password == "123@456"){
+        alert("Welcome to BusSheba Driver Panel!");
+        return true;
+    }
+    else{
+        alert("Incorrect Password");
+    }
+}
+//Register Verification
+function driverRegister(){
+    let ID = validID();
+    let Name = validateName();
+    let Email = validateEmail();
+    let Phone = validatePhone();
+    let Password = validatePassword();
+    let Confirm = validateConfirmPassword();
+
+    if(ID && Name && Email && Phone && Password && Confirm)
+    {
+        alert("Driver Registration Succesful!");
+    }
+    return false;
+
+}
+function validID(){
+    let DriverID = document.getElementById("registerID").value;
+    let Error = document.getElementById("IDError");
+
+if(DriverID==""){
+    Error.innerHTML = "*Please Enter Driver ID";
+}
+else if(DriverID.length<5){
+    Error.innerHTML = "Driver ID Must Carry at least 5 characters";
+}
+else{
+    Error.innerHTML = "Driver ID:"+DriverID;
+    return true;
+}
+return false;
+}
+    
+
+function validateName(){
+    let Name = document.getElementById("driverName").value;
+    let Error = document.getElementById("NameError");
+
+    if(Name == ""){
+        Error.innerHTML ="*Please Enter Your Name"
+    }
+    else if(Name.length<3){
+        Error.innerHTML = "Name mus carry at least 3 char";
+    }
+    else{
+    Error.innerHTML = "Driver Name:"+Name;
+    return true;
+}
+return false;
+}
+function validateEmail()
+{
+    let Email = document.getElementById("registerEmail").value;
+    let Error = document.getElementById("EmailError");
+    let RegularExpression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(Email=="")
+    {
+        Error.innerHTML = "Please Enter Your Email";
+    }
+    else if (!RegularExpression.test(Email))
+    {
+        Error.innerHTML = "Please Enter  Email in the Correct Format";
+    }
+    else{
+        Error.innerHTML = "Patient Email: "+Email;
+        return true;
+    }
+    return false;
+}
+function validatePhone()
+{
+    let Phone = document.getElementById("registerNumber").value.trim();
+    let Error = document.getElementById("PhoneError");
+    
+    if(Phone=="")
+    {
+        Error.innerHTML = "Please Enter The Phone Number";
+    }
+    else if (Phone.length!=11)
+    {
+        Error.innerHTML = "Number Must Contain 11 Digits";
+    }
+    else{
+        Error.innerHTML = "Phone Number: "+Phone;
+        return true;
+    }
+    return false;
+}
+function validatePassword(){
+    let password = document.getElementById("registerpassword").value;
+    let Error = document.getElementById("passwordError");
+
+    if(password == ""){
+        Error.innerHTML = "*Please Enter password";
+        return false;
+    }
+     else if (password.length<6)
+    {
+        Error.innerHTML = "Must Contain 6 charcter";
+        return false;
+    }
+     let found = false;
+    for(let i =0;i<password.length;i++){
+        if(password[i]=="@"|| password[i]=="$"|| password[i]=="#"||
+            password[i]=="%"|| password[i]=="&"
+        ){
+            found = true;
+        }
+    }
+    if(found==false){
+        Error.innerHTMl="Pasword must contain this charcter(@,#,$,%)!";
+    }
+    else{
+        Error.innerHTML = "Password Accepted";
+        return true;
+    }
+    
+}
+function validateConfirmPassword()
+{
+    let Password = document.getElementById("registerpassword").value;
+    let ConfirmPassword = document.getElementById("confirmPassword").value;
+    let Error = document.getElementById("ConfirmError");
+
+    if (ConfirmPassword == "")
+    {
+        Error.innerHTML = "*Please Confirm Your Password";
+        return false;
+    }
+    else if (Password != ConfirmPassword)
+    {
+        Error.innerHTML = "*Passwords Do Not Match";
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
