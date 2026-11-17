@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../ManagerDesign/manager-dashboard.css">
+
+    <title>BusSheba - Manager Dashboard</title>
+</head>
+
+<body>
+
+    
+
+    <div class="topnav">
+
+        <a href="" class="logo">BusSheba</a>
+
+        <div class="nav-links">
+            <a href="" class="active">Dashboard</a>
+            <a href="manager-spare-parts.html">Parts</a>
+            <a href="manager-maintenance-requests.html">Requests</a>
+            <a href="manager-service-history.html">Services</a>
+        </div>
+
+        <div class="right-nav">
+
+            <button class="signout" id="signout">
+                Sign Out
+            </button>
+
+            <div class="manager-profile">
+                <span class="profile-icon">M</span>
+                <span class="manager-name">Manager</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    
+
+    <div class="dashboard">
+
+        <div class="welcome">
+            Welcome back, manager!
+        </div>
+
+
+        
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h4>BUSES NEEDING SERVICE</h4>
+                <h2 class="red" id="buses">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <h4>OPEN REQUESTS</h4>
+                <h2 class="orange" id="requests">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <h4>LOW STOCK PARTS</h4>
+                <h2 class="red" id="lowStock">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <h4>TOTAL MAINTENANCE COST</h4>
+                <h2 class="blue" id="totalCost">৳0.00</h2>
+            </div>
+
+        </div>
+
+
+        
+
+        <div class="panel">
+
+            <h3>Service-Due Alert</h3>
+
+            <div id="serviceAlert" class="empty">
+                No buses currently need servicing.
+            </div>
+
+        </div>
+
+
+        
+
+        <div class="panel">
+
+            <h3>My Open Maintenance Requests</h3>
+
+            <div id="openRequests" class="empty">
+                No open requests right now.
+            </div>
+
+        </div>
+
+
+        
+
+        <div class="panel">
+
+            <h3>Low Spare-Part Stock Alert</h3>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Part</th>
+                        <th>Stock</th>
+                        <th>Unit Price</th>
+                    </tr>
+                </thead>
+
+                <tbody id="partsTable">
+
+                </tbody>
+
+            </table>
+
+            <p class="view-link">
+                <a href="manager-spare-parts.html">
+                    View all parts →
+                </a>
+            </p>
+
+        </div>
+
+
+        
+
+        <div class="panel">
+
+            <h3>Maintenance Cost Report</h3>
+
+            <div class="cost-report">
+
+                <p>
+                    <span>Labor / Service Cost</span>
+                    <span id="laborCost">৳0.00</span>
+                </p>
+
+                <p>
+                    <span>Parts Cost</span>
+                    <span id="partsCost">৳0.00</span>
+                </p>
+
+                <hr>
+
+                <p class="total">
+                    <span>Total</span>
+                    <span id="reportTotal">৳0.00</span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="footer">
+
+        <h3>BusSheba</h3>
+
+        <p>
+            Online bus ticket booking and travel management system.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="">Home</a>
+            <a href="">Bus Ratings</a>
+            <a href="">Contact</a>
+
+        </div>
+
+        <p>
+            © 2026 BusSheba — All rights reserved.
+        </p>
+
+    </div>
+
+
+    <script src="../JavaScript/Manager-Dashboard.js"></script>
+
+</body>
+</html>

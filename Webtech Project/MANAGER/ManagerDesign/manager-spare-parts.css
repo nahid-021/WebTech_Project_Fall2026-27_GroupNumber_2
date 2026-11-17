@@ -1,0 +1,327 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightblue;
+    color: darkblue;
+    font-size: 14px;
+}
+
+
+
+.topnav {
+    max-width: 854px;
+    margin: 0 auto;
+    background-color: beige;
+    overflow: hidden;
+    padding: 10px 5%;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.topnav a {
+    display: block;
+    color: darkblue;
+    text-align: center;
+    padding: 12px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+.topnav a.logo {
+    color: darkblue;
+    font-size: 19px;
+    margin-right: auto;
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+
+.topnav a.active {
+    color: darkblue;
+}
+
+
+.topnav a:hover {
+    color: darkblue;
+}
+
+
+
+.manager-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 15px;
+}
+
+
+.profile-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.manager-name {
+    font-size: 12px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+
+.manager-role {
+    font-size: 10px;
+    color: gray;
+}
+
+
+
+.signout {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 17px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+
+.signout:hover {
+    background-color: red;
+}
+
+
+
+
+.main-content {
+    max-width: 854px;
+    margin: 0 auto;
+    padding: 40px 43px 50px;
+    background-color: white;
+    min-height: 500px;
+}
+
+
+
+
+.panel {
+    background-color: white;
+    padding: 22px 20px;
+    border-radius: 13px;
+    margin-bottom: 18px;
+    box-shadow: 0 5px 20px gray;
+}
+
+
+.panel h3 {
+    font-size: 14px;
+    margin: 0 0 20px;
+    color: darkblue;
+    font-weight: bold;
+}
+
+
+
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 13px;
+}
+
+
+.form-group {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: darkblue;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.form-group input {
+    width: 100%;
+    padding: 9px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: white;
+    color: darkblue;
+    height: 32px;
+}
+
+
+.form-group input:focus {
+    outline: none;
+    border-color: darkblue;
+}
+
+
+
+
+.submit-btn {
+    background: linear-gradient(to right, blue, blue);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 18px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.submit-btn:hover {
+    background: darkblue;
+}
+
+
+
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 13px;
+}
+
+
+.search-box input {
+    width: 50%;
+    max-width: 360px;
+    padding: 9px 10px;
+    border: 1px solid black;
+    border-radius: 7px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.search-box input:focus {
+    outline: none;
+    border-color: black;
+}
+
+
+.search-btn {
+    background-color: skyblue;
+    color: black;
+    border: none;
+    border-radius: 7px;
+    padding: 9px 13px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.search-btn:hover {
+    background-color: white;
+}
+
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+
+th {
+    background-color: lightblue;
+    color: darkblue;
+    font-weight: bold;
+}
+
+
+th, td {
+    padding: 13px 10px;
+    border-bottom: 1px solid lightblue;
+    font-size: 11px;
+}
+
+
+td {
+    color: lightblue;
+}
+
+
+
+
+
+
+.footer {
+    max-width: 854px;
+    margin: 0 auto;
+    padding: 35px 15px 20px;
+    border-top: 1px solid lightblue;
+    background-color: lightblue;
+    text-align: center;
+    color: black;
+}
+
+
+.footer h3 {
+    color: darkblue;
+    font-size: 14px;
+}
+
+
+.footer p {
+    font-size: 11px;
+    margin: 10px 0;
+}
+
+
+.footer-links a {
+    text-decoration: none;
+    color: darkblue;
+    margin: 0 7px;
+    font-size: 11px;
+}
+
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+
+

@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times,
+                 'Times New Roman', serif;
+    font-size: 16px;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.header {
+    background-color: beige;
+    text-align: center;
+    color: darkblue;
+    padding: 15px;
+    border-bottom: 5px solid darkblue; 
+}
+
+.header h1 {
+    margin: 5px;
+    font-size: 32px;
+}
+
+.header p {
+    margin: 5px;
+    color: black;
+}
+
+
+
+.container {
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+
+
+.welcome {
+    flex: 1;
+    background-color: darkblue;
+    color: white;
+    padding: 40px 25px;
+    border-radius: 12px;
+    text-align: center;
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome h2 {
+    color: orange;
+    font-size: 30px;
+}
+
+.welcome p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.welcome h3 {
+    color: orange;
+    margin-top: 20px;
+}
+
+
+
+.registration-container {
+    flex: 1;
+    max-width: 450px;
+    width: 100%;
+    background-color: white;
+    padding: 30px;
+    border: 1px solid white;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px black;
+}
+
+.registration-container h2 {
+    text-align: center;
+    color: darkblue;
+    margin-bottom: 10px;
+}
+
+.description {
+    text-align: center;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+
+
+form > label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 11px;
+    font-family: inherit;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: snow;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: orange;
+    background-color: white;
+}
+
+
+.password-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 65px;
+}
+
+.password-box button {
+    position: absolute;
+    right: 8px;
+    background-color: transparent;
+    border: none;
+    color: darkblue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.terms input {
+    accent-color: #101f36;
+}
+
+.terms label {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
+#register {
+    width: 100%;
+    padding: 12px;
+    background-color: orange;
+    color: darkblue;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#register:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: orange;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+
+.footer {
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    margin-top: 30px;
+}
+
+.footer p {
+    margin: 5px;
+    font-size: 14px;
+}
+
+
+

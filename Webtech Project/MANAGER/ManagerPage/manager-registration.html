@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../ManagerDesign/manager-registration.css">
+    <title>BusSheba - Registration</title>
+</head>
+
+<body>
+
+    
+
+    <div class="header">
+        <h1>🚌 BusSheba</h1>
+        <p>Your Journey, Our Responsibility</p>
+    </div>
+
+    
+
+    <div class="container">
+
+        
+
+        <div class="welcome">
+
+            <h2>Join BusSheba!</h2>
+
+            <p>
+                Create your account and enjoy safe,
+                comfortable and easy bus ticket booking.
+            </p>
+
+            <h3>Start Your Journey With Us!</h3>
+
+        </div>
+
+        
+
+        <div class="registration-container">
+
+            <h2>Create Your Account</h2>
+
+            <p class="description">
+                Fill in the information below to register.
+            </p>
+
+            <form id="registrationForm">
+
+                <label for="fullName">Full Name:</label>
+
+                <input type="text"
+                       id="fullName"
+                       name="fullName"
+                       placeholder="Enter your full name"
+                       required>
+
+                <label for="email">Email Address:</label>
+
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="Enter your email"
+                       required>
+
+                <label for="phone">Phone Number:</label>
+
+                <input type="tel"
+                       id="phone"
+                       name="phone"
+                       placeholder="01XXXXXXXXX"
+                       pattern="01[0-9]{9}"
+                       title="Enter a valid Bangladeshi phone number"
+                       required>
+
+                <label for="userRole">Account Type:</label>
+
+                <select id="userRole" name="userRole" required>
+
+                    <option value="">Select Account Type</option>
+
+                    <option value="Passenger">Passenger</option>
+
+                    <option value="Driver">Driver</option>
+
+                    <option value="Admin">Admin</option>
+
+                    <option value="Manager">Manager</option>
+
+                </select>
+
+                <label for="password">Password:</label>
+
+                <div class="password-box">
+
+                    <input type="password"
+                           id="password"
+                           name="password"
+                           placeholder="Create a password"
+                           minlength="6"
+                           required>
+
+                    <button type="button"
+                            onclick="togglePassword('password', this)">
+                        Show
+                    </button>
+
+                </div>
+
+                <label for="confirmPassword">Confirm Password:</label>
+
+                <div class="password-box">
+
+                    <input type="password"
+                           id="confirmPassword"
+                           name="confirmPassword"
+                           placeholder="Confirm your password"
+                           minlength="6"
+                           required>
+
+                    <button type="button"
+                            onclick="togglePassword('confirmPassword', this)">
+                        Show
+                    </button>
+
+                </div>
+
+                
+
+                <div class="terms">
+
+                    <input type="checkbox"
+                           id="terms"
+                           name="terms"
+                           required>
+
+                    <label for="terms">
+                        I agree to the Terms and Conditions.
+                    </label>
+
+                </div>
+
+                
+
+                <input type="submit"
+                       id="register"
+                       value="Create Account">
+
+                
+
+                <p class="login-link">
+                    Already have an account?
+                    <a href="login.html">Login Now</a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    
+
+    <div class="footer">
+
+        <p>&copy; 2026 BusSheba. All Rights Reserved.</p>
+
+        <p>Safe Journey | Easy Booking | Better Service</p>
+
+    </div>
+
+    <script src="../Manager.js/manager-registration.js"></script>
+
+</body>
+</html>

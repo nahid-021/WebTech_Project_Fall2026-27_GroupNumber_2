@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../ManagerDesign/manager-spare-parts.css">
+
+    <title>BusSheba - Manager Spare Parts</title>
+</head>
+
+<body>
+
+    
+    <div class="topnav">
+
+        <a href="" class="logo">🚌 BusSheba</a>
+
+        <div class="nav-links">
+            <a href="">Dashboard</a>
+            <a href="" class="active">Parts</a>
+            <a href="">Requests</a>
+            <a href="">Services</a>
+        </div>
+
+        <div class="manager-profile">
+
+            <span class="profile-icon">M</span>
+
+            <div class="profile-info">
+                <span class="manager-name">manager</span>
+                <span class="manager-role">Manager</span>
+            </div>
+
+        </div>
+
+        <button class="signout" id="signout">
+            Sign out
+        </button>
+
+    </div>
+
+
+    
+    <div class="main-content">
+
+
+        
+        <div class="panel">
+
+            <h3>Add Spare Part</h3>
+
+            <form id="partForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="partName">Part Name</label>
+
+                        <input
+                            type="text"
+                            id="partName"
+                            name="partName"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="stock">Stock Quantity</label>
+
+                        <input
+                            type="number"
+                            id="stock"
+                            name="stock"
+                            min="0"
+                            value="0"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="price">Unit Price (৳)</label>
+
+                        <input
+                            type="number"
+                            id="price"
+                            name="price"
+                            min="0"
+                            step="0.01"
+                            value="0"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Add Part
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        
+        <div class="panel">
+
+            <h3>All Spare Parts</h3>
+
+
+            
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchPart"
+                    placeholder="Search by part name..."
+                >
+
+                <button type="button" class="search-btn" id="searchBtn">
+                    Search
+                </button>
+
+            </div>
+
+
+
+            
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Part Name</th>
+                        <th>Stock</th>
+                        <th>Unit Price</th>
+                        <th>Last Updated</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="partsTable">
+
+                    
+
+                </tbody>
+
+            </table>
+
+            <p id="emptyMsg" class="empty">
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    
+    <div class="footer">
+
+        <h3>BusSheba</h3>
+
+        <p>
+            Online bus ticket booking and travel management system.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="">Home</a>
+            <a href="">Bus Ratings</a>
+            <a href="">Contact</a>
+
+        </div>
+
+        <p>
+            © 2026 BusSheba — All rights reserved.
+        </p>
+
+    </div>
+
+
+    
+    <script src="../ManagerJs/manager-spare-parts.js"></script>
+
+</body>
+
+</html>
