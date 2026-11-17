@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+    font-size: 15px;
+}
+
+.topnav {
+    background-color: #00B4D8;
+    overflow: hidden;
+    border-bottom: 1px solid lightgray;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.topnav a:hover {
+    color: #023E8A;
+}
+
+.topnav .logo {
+    padding: 5px 15px;
+}
+
+.topnav .logo img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    object-fit: contain;
+}
+
+.topnav .signout {
+    float: right;
+    background-color: crimson;
+    color: white;
+    border-radius: 5px;
+    margin: 5px 15px;
+    padding: 10px 20px;
+}
+
+.topnav .signout:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.heading {
+    padding: 30px 50px;
+}
+
+.heading h2 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+
+.heading p {
+    margin: 0;
+    color: grey;
+    font-size: 15px;
+}
+
+.ratings-section {
+    background-color: white;
+    margin: 0 50px;
+    padding: 30px;
+    height: 470px;
+    border-radius: 20px;
+}
+
+.ratings-section h3 {
+    margin: 10px 0 0;
+    font-size: 20px;
+}
+
+.footer {
+    background-color: #00B4D8;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.copyright {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 5px 0 0;
+}
+
+.rights {
+    display: inline-block;
+    font-size: 13px;
+    margin: 0;
+}
