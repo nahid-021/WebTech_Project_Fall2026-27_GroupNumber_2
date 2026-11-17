@@ -2,7 +2,7 @@ function goToLogin(user){
     switch(user){
 
         case "admin":
-            // window.location.href = "";
+            window.location.href = "Webtech Project/ADMIN/Page/login.html";
              alert("Unknown user type:"+user);
             break;
          case "manager":
