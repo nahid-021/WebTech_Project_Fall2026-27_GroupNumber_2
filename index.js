@@ -3,7 +3,7 @@ function goToLogin(user){
 
         case "admin":
             window.location.href = "Webtech Project/ADMIN/Page/login.html";
-             alert("Unknown user type:"+user);
+            //  alert("Unknown user type:"+user);
             break;
          case "manager":
             // window.location.href = "";
