@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../Design/style.css">
+        <script src="../JS/Staff.js"></script>
+        <title> Staff </title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="header">
+                <img src="../Assets/logo.png" id="logo">
+                <h1> Staff and Applications </h1>
+            </div>
+
+            <div class="topnav">
+                <a href="dashboard.html"> Dashboard </a>
+                <a href="timetable.html"> Timetable </a>
+                <a href="buses.html"> Buses </a>
+                <a href="staff.html" class="active"> Staff </a>
+                <a href="fares.html"> Fares </a>
+                <a href="login.html"> Logout </a>
+            </div>
+
+            <br>
+
+            <fieldset>
+                <legend> Staff Summary </legend>
+                <table>
+                    <tr>
+                        <td class="card"> <h2> 14 </h2> Drivers </td>
+                        <td class="card"> <h2> 14 </h2> Conductors </td>
+                        <td class="card"> <h2> 6 </h2> Available Staff </td>
+                        <td class="card"> <h2> 2 </h2> Trips Requiring Staff </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend> Trips Requiring Staff </legend>
+                <table class="data">
+                    <tr>
+                        <th> Departure </th>
+                        <th> Route </th>
+                        <th> Bus </th>
+                        <th> Driver </th>
+                        <th> Conductor </th>
+                    </tr>
+                    <tr>
+                        <td> 11:00 PM </td>
+                        <td> Dhaka to Rangpur </td>
+                        <td> DH-1008 (AC) </td>
+                        <td class="none"> Not Assigned </td>
+                        <td class="none"> Not Assigned </td>
+                    </tr>
+                    <tr>
+                        <td> 11:00 PM </td>
+                        <td> Rangpur to Dhaka </td>
+                        <td> RG-2012 (AC) </td>
+                        <td class="none"> Not Assigned </td>
+                        <td class="none"> Not Assigned </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <form onsubmit="return collect_data()" novalidate>
+                <fieldset>
+                    <legend> Assign Staff to a Trip </legend>
+                    <table>
+                        <tr>
+                            <td> <label for="Trip"> Trip </label> </td>
+                            <td> <select id="Trip" name="Trip">
+                                     <option value=""> Select Trip </option>
+                                     <option value="11:00 PM Dhaka to Rangpur (DH-1008)"> 11:00 PM Dhaka to Rangpur (DH-1008) </option>
+                                     <option value="11:00 PM Rangpur to Dhaka (RG-2012)"> 11:00 PM Rangpur to Dhaka (RG-2012) </option>
+                                 </select>
+                                 <p id="TripError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Driver"> Driver </label> </td>
+                            <td> <select id="Driver" name="Driver">
+                                     <option value=""> Select Driver </option>
+                                     <option value="Naim"> Naim (Available) </option>
+                                     <option value="Rafiul"> Rafiul (Available) </option>
+                                     <option value="Rahi"> Rahi (Available) </option>
+                                 </select>
+                                 <p id="DriverError"> </p> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <label for="Conductor"> Conductor </label> </td>
+                            <td> <select id="Conductor" name="Conductor">
+                                     <option value=""> Select Conductor </option>
+                                     <option value="Ratul"> Ratul (Available) </option>
+                                     <option value="Roni"> Roni (Available) </option>
+                                     <option value="Mithu"> Mithu (Available) </option>
+                                 </select>
+                                 <p id="ConductorError"> </p> </td>
+                        </tr>
+                    </table>
+
+                    <br>
+                    <input type="submit" value="Assign Staff">
+                    <input type="reset" value="Reset" onclick="clear_messages()">
+                    <h3 class="ok" id="Result"> </h3>
+                </fieldset>
+            </form>
+
+            <fieldset>
+                <legend> Job Applications </legend>
+                <table class="data">
+                    <tr>
+                        <th> Applicant </th>
+                        <th> Position </th>
+                        <th> Experience </th>
+                        <th> License No. </th>
+                        <th> Date Applied </th>
+                        <th> Status </th>
+                        <th> Action </th>
+                    </tr>
+                    <tr>
+                        <td> Kiron </td>
+                        <td> Driver </td>
+                        <td> 6 years </td>
+                        <td> DL-458231 </td>
+                        <td> 24 Oct 2026 </td>
+                        <td id="AppStatus1"> Pending </td>
+                        <td id="AppAction1">
+                            <input type="button" class="approve" value="Approve" onclick="approve_app(1, 'Kiron')">
+                            <input type="button" class="reject" value="Reject" onclick="reject_app(1, 'Kiron')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Hassan </td>
+                        <td> Driver </td>
+                        <td> 4 years </td>
+                        <td> DL-772910 </td>
+                        <td> 25 Oct 2026 </td>
+                        <td id="AppStatus2"> Pending </td>
+                        <td id="AppAction2">
+                            <input type="button" class="approve" value="Approve" onclick="approve_app(2, 'Hassan')">
+                            <input type="button" class="reject" value="Reject" onclick="reject_app(2, 'Hassan')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Soykot </td>
+                        <td> Conductor </td>
+                        <td> 2 years </td>
+                        <td> Not required </td>
+                        <td> 27 Oct 2026 </td>
+                        <td id="AppStatus3"> Pending </td>
+                        <td id="AppAction3">
+                            <input type="button" class="approve" value="Approve" onclick="approve_app(3, 'Soykot')">
+                            <input type="button" class="reject" value="Reject" onclick="reject_app(3, 'Soykot')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Rejbanul </td>
+                        <td> Driver </td>
+                        <td> 8 years </td>
+                        <td> DL-330145 </td>
+                        <td> 18 Oct 2026 </td>
+                        <td class="ok"> Approved </td>
+                        <td> Done </td>
+                    </tr>
+                    <tr>
+                        <td> Saikat </td>
+                        <td> Conductor </td>
+                        <td> 1 year </td>
+                        <td> Not required </td>
+                        <td> 15 Oct 2026 </td>
+                        <td class="none"> Rejected </td>
+                        <td> Done </td>
+                    </tr>
+                </table>
+                <h3 class="ok" id="AppResult"> </h3>
+            </fieldset>
+
+            <fieldset>
+                <legend> Staff List </legend>
+                <table class="data">
+                    <tr>
+                        <th> Name </th>
+                        <th> Position </th>
+                        <th> Phone </th>
+                        <th> Experience </th>
+                        <th> Status </th>
+                        <th> Current Assignment </th>
+                    </tr>
+                    <tr>
+                        <td> Inkiad </td>
+                        <td> Driver </td>
+                        <td> 01500000001 </td>
+                        <td> 9 years </td>
+                        <td> Assigned </td>
+                        <td> DH-1021, 07:00 AM, Dhaka to Rangpur </td>
+                    </tr>
+                    <tr>
+                        <td> Pranto </td>
+                        <td> Driver </td>
+                        <td> 01500000002 </td>
+                        <td> 6 years </td>
+                        <td class="ok"> Available </td>
+                        <td> None </td>
+                    </tr>
+                    <tr>
+                        <td> Rafin </td>
+                        <td> Driver </td>
+                        <td> 01500000003 </td>
+                        <td> 4 years </td>
+                        <td class="ok"> Available </td>
+                        <td> None </td>
+                    </tr>
+                    <tr>
+                        <td> Turjo </td>
+                        <td> Conductor </td>
+                        <td> 01500000004 </td>
+                        <td> 3 years </td>
+                        <td class="late"> On Leave </td>
+                        <td> Back on 02 Nov 2026 </td>
+                    </tr>
+                </table>
+                <p>Showing 4 of 28 staff</p>
+            </fieldset>
+
+            <div class="footer">
+                <h5> @BusSheba </h5>
+            </div>
+
+        </div>
+    </body>
+</html>
