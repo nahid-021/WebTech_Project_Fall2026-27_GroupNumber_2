@@ -120,7 +120,7 @@ function validUsername()
 
 function validPassword()
 {
-    let Password = document.getElementById("Password").value;
+    let Password = document.getElementById("Password").value.trim();
     let Error = document.getElementById("PasswordError");
 
     if (Password == "")
@@ -140,8 +140,8 @@ function validPassword()
 
 function validateConfirmPassword()
 {
-    let Password = document.getElementById("Password").value;
-    let ConfirmPassword = document.getElementById("ConfirmPassword").value;
+    let Password = document.getElementById("Password").value.trim();
+    let ConfirmPassword = document.getElementById("ConfirmPassword").value.trim();
     let Error = document.getElementById("ConfirmPasswordError");
 
     if (ConfirmPassword == "")
