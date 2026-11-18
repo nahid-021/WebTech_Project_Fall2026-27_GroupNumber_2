@@ -60,7 +60,7 @@ function ValidateGender()
 
 function validAge()
 {
-    let Age = document.getElementById("Age").value;
+    let Age = document.getElementById("Age").value.trim();
     let Error = document.getElementById("AgeError");
 
     if (Age == "")
