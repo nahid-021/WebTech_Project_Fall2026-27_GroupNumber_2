@@ -69,29 +69,29 @@ function validConductor()
     }
 }
 
-function approve_app(n, name)
-{
-    let status = document.getElementById("AppStatus" + n);
-    let action = document.getElementById("AppAction" + n);
-    let result = document.getElementById("AppResult");
+// function approve_app(n, name)
+// {
+//     let status = document.getElementById("AppStatus" + n);
+//     let action = document.getElementById("AppAction" + n);
+//     let result = document.getElementById("AppResult");
 
-    status.innerHTML = "Approved";
-    status.className = "ok";
-    action.innerHTML = "Done";
-    result.innerHTML = name + "'s application has been approved. Login details will be sent to the applicant.";
-}
+//     status.innerHTML = "Approved";
+//     status.className = "ok";
+//     action.innerHTML = "Done";
+//     result.innerHTML = name + "'s application has been approved. Login details will be sent to the applicant.";
+// }
 
-function reject_app(n, name)
-{
-    let status = document.getElementById("AppStatus" + n);
-    let action = document.getElementById("AppAction" + n);
-    let result = document.getElementById("AppResult");
+// function reject_app(n, name)
+// {
+//     let status = document.getElementById("AppStatus" + n);
+//     let action = document.getElementById("AppAction" + n);
+//     let result = document.getElementById("AppResult");
 
-    status.innerHTML = "Rejected";
-    status.className = "none";
-    action.innerHTML = "Done";
-    result.innerHTML = name + "'s application has been rejected.";
-}
+//     status.innerHTML = "Rejected";
+//     status.className = "none";
+//     action.innerHTML = "Done";
+//     result.innerHTML = name + "'s application has been rejected.";
+// }
 
 function clear_messages()
 {
