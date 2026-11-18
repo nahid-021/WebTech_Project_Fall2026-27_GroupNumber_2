@@ -128,6 +128,10 @@ function validPassword()
         Error.innerHTML = "*Please Enter Your Password";
         return false;
     }
+    else if(Password.length<6){
+        Error.innerHTML = "*Password Must Be Atleast 6 Characters";
+        return false;
+    }
     else
     {
         return true;
