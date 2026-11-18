@@ -31,6 +31,10 @@ body {
     color: #023E8A;
 }
 
+.topnav a.active {
+    color: #023E8A;
+}
+
 .topnav .logo {
     padding: 5px 15px;
 }

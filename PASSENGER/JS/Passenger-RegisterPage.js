@@ -60,7 +60,7 @@ function ValidateGender()
 
 function validAge()
 {
-    let Age = document.getElementById("Age").value;
+    let Age = document.getElementById("Age").value.trim();
     let Error = document.getElementById("AgeError");
 
     if (Age == "")
@@ -120,12 +120,16 @@ function validUsername()
 
 function validPassword()
 {
-    let Password = document.getElementById("Password").value;
+    let Password = document.getElementById("Password").value.trim();
     let Error = document.getElementById("PasswordError");
 
     if (Password == "")
     {
         Error.innerHTML = "*Please Enter Your Password";
+        return false;
+    }
+    else if(Password.length<6){
+        Error.innerHTML = "*Password Must Be Atleast 6 Characters";
         return false;
     }
     else
@@ -136,8 +140,8 @@ function validPassword()
 
 function validateConfirmPassword()
 {
-    let Password = document.getElementById("Password").value;
-    let ConfirmPassword = document.getElementById("ConfirmPassword").value;
+    let Password = document.getElementById("Password").value.trim();
+    let ConfirmPassword = document.getElementById("ConfirmPassword").value.trim();
     let Error = document.getElementById("ConfirmPasswordError");
 
     if (ConfirmPassword == "")
